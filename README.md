@@ -79,7 +79,7 @@
 
 ### Prerrequisitos
 
-- Node.js 18+
+- Node.js 22+ (requerido por Vercel)
 - pnpm 8+ (recomendado)
 
 ### Instalación
