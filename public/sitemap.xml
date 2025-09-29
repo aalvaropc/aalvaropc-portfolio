@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://aalvaropc.vercel.app</loc>
+    <lastmod>2025-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aalvaropc.vercel.app" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://aalvaropc.vercel.app?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aalvaropc.vercel.app" />
+  </url>
+  <url>
+    <loc>https://aalvaropc.vercel.app/works</loc>
+    <lastmod>2025-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aalvaropc.vercel.app/works" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://aalvaropc.vercel.app/works?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aalvaropc.vercel.app/works" />
+  </url>
+  <url>
+    <loc>https://aalvaropc.vercel.app/posts</loc>
+    <lastmod>2025-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aalvaropc.vercel.app/posts" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://aalvaropc.vercel.app/posts?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aalvaropc.vercel.app/posts" />
+  </url>
+  <url>
+    <loc>https://aalvaropc.vercel.app/works/analisisWD</loc>
+    <lastmod>2025-01-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aalvaropc.vercel.app/works/appDevfest</loc>
+    <lastmod>2025-01-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aalvaropc.vercel.app/works/cineflix</loc>
+    <lastmod>2025-01-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aalvaropc.vercel.app/works/covid</loc>
+    <lastmod>2025-01-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aalvaropc.vercel.app/works/farmaLuren</loc>
+    <lastmod>2025-01-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aalvaropc.vercel.app/works/lexer</loc>
+    <lastmod>2025-01-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aalvaropc.vercel.app/works/numzzle</loc>
+    <lastmod>2025-01-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aalvaropc.vercel.app/works/rmap</loc>
+    <lastmod>2025-01-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aalvaropc.vercel.app/works/userBehaviorPipeline</loc>
+    <lastmod>2025-01-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aalvaropc.vercel.app/works/webDevfest</loc>
+    <lastmod>2025-01-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aalvaropc.vercel.app/posts/ArqBasadaEventos</loc>
+    <lastmod>2025-01-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aalvaropc.vercel.app/posts/GrupoEstadistica</loc>
+    <lastmod>2025-01-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+</urlset>

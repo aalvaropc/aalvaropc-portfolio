@@ -1,0 +1,98 @@
+{
+  "works": {
+    "title": "Works",
+    "subtitle": "Featured Projects", 
+    "projects": [
+      {
+        "id": "userBehaviorPipeline",
+        "title": "User Behavior Analysis Pipeline",
+        "description": "Automated data pipeline developed with Airflow, Apache Spark and Docker. User behavior analysis with interactive dashboards.",
+        "technologies": ["Apache Airflow", "Apache Spark", "Docker", "PostgreSQL", "DuckDB", "MinIO", "Python"],
+        "thumbnail": "/images/works/userBehaviorPipeline/pipeline.png",
+        "date": "2024-07",
+        "category": "Data Engineering"
+      },
+      {
+        "id": "farmaLuren",
+        "title": "Automated Billing System - FarmaLuren", 
+        "description": "Billing system designed for pharmacies, developed with Django Rest Framework. Includes recommendation system and discount coupons.",
+        "technologies": ["Django", "Django REST Framework", "RabbitMQ", "Celery", "Redis", "PostgreSQL"],
+        "thumbnail": "/images/works/farmaLuren.png",
+        "date": "2023-08",
+        "category": "Backend Development"
+      },
+      {
+        "id": "rmap",
+        "title": "Recycling Mobile App with Gamification - Rmap",
+        "description": "Recycling app with gamification focused on SDGs. Top 8 of 42 participants in GDSC Peru Hack 2023.",
+        "technologies": ["Flutter", "Firebase", "Google Maps API", "Dart"],
+        "thumbnail": "/images/works/rmap.png",
+        "date": "2023-02", 
+        "category": "Mobile Development"
+      },
+      {
+        "id": "cineflix",
+        "title": "Cinema Management System - Cineflix",
+        "description": "Complete cinema management system with reservations, scheduling and theater administration.",
+        "technologies": ["Java", "Spring Boot", "MySQL", "React"],
+        "thumbnail": "/images/works/cineflix/conceptual-model.png",
+        "date": "2023-06",
+        "category": "Full Stack"
+      },
+      {
+        "id": "covid",
+        "title": "COVID-19 Dashboard",
+        "description": "Interactive dashboard for COVID-19 data visualization with real-time metrics.",
+        "technologies": ["Python", "Dash", "Plotly", "Pandas"],
+        "thumbnail": "/images/works/covid.png",
+        "date": "2020-05",
+        "category": "Data Visualization" 
+      },
+      {
+        "id": "numzzle",
+        "title": "Number Puzzle Game - Numzzle",
+        "description": "Numeric puzzle game developed as an interactive web application.",
+        "technologies": ["JavaScript", "HTML5", "CSS3", "Canvas API"],
+        "thumbnail": "/images/works/numzzle/numzzle_home.png",
+        "date": "2022-03",
+        "category": "Game Development"
+      },
+      {
+        "id": "analisisWD",
+        "title": "WorldCup Database Analysis",
+        "description": "Analysis and modeling of WorldCup database with advanced data analysis techniques.",
+        "technologies": ["SQL", "Python", "Power BI", "Data Analysis"],
+        "thumbnail": "/images/works/analisisWD/analisisWD_dashboard.jpg",
+        "date": "2022-12",
+        "category": "Data Analysis"
+      },
+      {
+        "id": "webDevfest",
+        "title": "DevFest Ica 2023 Website",
+        "description": "Official website development for DevFest Ica 2023 event.",
+        "technologies": ["Next.js", "React", "Chakra UI", "Vercel"],
+        "thumbnail": "/images/works/webdevfest.png",
+        "date": "2023-10",
+        "category": "Web Development"
+      },
+      {
+        "id": "appDevfest",
+        "title": "DevFest Ica 2023 Mobile App",
+        "description": "Official mobile application for DevFest Ica 2023 event.",
+        "technologies": ["Flutter", "Firebase", "Dart", "Google APIs"],
+        "thumbnail": "/images/works/appdevfest.png",
+        "date": "2023-10",
+        "category": "Mobile Development"
+      },
+      {
+        "id": "lexer",
+        "title": "Lexical Analyzer",
+        "description": "Implementation of a lexical analyzer for programming language processing.",
+        "technologies": ["Python", "Regex", "Compiler Design", "Parsing"],
+        "thumbnail": "/images/works/lexer.png",
+        "date": "2023-05",
+        "category": "Compiler Design"
+      }
+    ]
+  }
+}

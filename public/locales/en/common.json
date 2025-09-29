@@ -1,0 +1,109 @@
+{
+  "common": {
+    "name": "Alvaro Peña",
+    "fullName": "Alvaro Rodrigo Peña Peña", 
+    "email": "aalvaropc@gmail.com",
+    "location": "Ica, Peru",
+    "phone": "+51 XXX XXX XXX"
+  },
+  "navigation": {
+    "home": "Home",
+    "works": "Works",
+    "posts": "Posts", 
+    "contact": "Contact"
+  },
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "posts": "Posts",
+    "cv": "Resume",
+    "certificates": "Certificates"
+  },
+  "hero": {
+    "greeting": "Hi! I'm Alvaro 👋",
+    "title": "Backend-focused Full Stack Developer",
+    "subtitle": "Designing scalable architectures and distributed systems",
+    "description": "Backend Developer specialized in Go, Python and Java. Expert in microservices and scalable architectures."
+  },
+  "about": {
+    "title": "About me",
+    "description1": "Backend-focused Full Stack Developer specialized in designing scalable architectures with Go, Python and Java. Experience building REST services, real-time systems and distributed microservices.",
+    "description2": "Member of Google Developer Group Ica, contributing to local tech community growth through events and mentoring.",
+    "cta": "View projects"
+  },
+  "experience": {
+    "title": "Experience",
+    "jobs": [
+      {  
+        "period": "February 2025 - present",
+        "position": "Backend Developer",
+        "company": "Guinea Mobile", 
+        "description": "Design and development of microservices in Go and Python to automate mobile line activation"
+      },
+      {
+        "period": "February 2024 - February 2025",
+        "position": "Centers Junior",
+        "company": "NTT Data",
+        "description": "Development of enhancements for critical public service systems"
+      },
+      {
+        "period": "October 2023 - January 2024", 
+        "position": "Full-Stack Junior",
+        "company": "Proveedy",
+        "description": "Design and optimization of PostgreSQL databases with Django ORM"
+      },
+      {
+        "period": "July 2023 - present",
+        "position": "Member",
+        "company": "Google Developer Group Ica",
+        "description": "Contributing to local tech community growth"
+      }
+    ]
+  },
+  "skills": {
+    "title": "Stack",
+    "technologies": "Go • Python • FastAPI • Java • Spring Boot • Typescript • React JS • PostgreSQL • Redis • Docker • GCP • AWS • RabbitMQ"
+  },
+  "interests": {
+    "title": "Interests",
+    "list": "Scalable architectures • Distributed systems • Microservices • Cloud Native"
+  },
+  "contact": {
+    "title": "Contact",
+    "message": "Have an interesting project? I'd love to meet you!",
+    "social": {
+      "github": {
+        "label": "GitHub",
+        "description": "My projects and open source contributions",
+        "url": "https://github.com/aalvaropc"
+      },
+      "linkedin": {
+        "label": "LinkedIn",
+        "description": "Professional network and career updates", 
+        "url": "https://www.linkedin.com/in/aalvarop-pe/"
+      },
+      "email": {
+        "label": "Email",
+        "description": "For opportunities and collaborations",
+        "url": "mailto:aalvaropc@gmail.com"
+      }
+    }
+  },
+  "footer": {
+    "copyright": "© {year} Alvaro Peña"
+  },
+  "prepositions": {
+    "at": "at",
+    "of": "of"
+  },
+  "metadata": {
+    "repository": "Repository",
+    "platform": "Platform",
+    "stack": "Stack", 
+    "website": "Website",
+    "slides": "Slides",
+    "presentation": "Presentation",
+    "event": "Event Website",
+    "tags": "Tags"
+  }
+}

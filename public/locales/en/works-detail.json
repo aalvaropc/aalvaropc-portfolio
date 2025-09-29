@@ -1,0 +1,422 @@
+{
+  "userBehaviorPipeline": {
+    "title": "User Behavior Analysis Pipeline",
+    "year": "2024",
+    "description": "This project aims to build an automated data pipeline that feeds the user_behavior_metric table. This OLAP table is used by analysts and visualization tools to generate user behavior metrics, integrating purchase data and movie reviews. It uses Airflow for orchestration, Spark for data processing, and Quarto with Plotly for visualization.",
+    "meta": {
+      "repository": "https://github.com/aalvaropc/etl-airflow-pyspark",
+      "platform": "Windows/macOS/Linux/",
+      "stack": "/Spark/Airflow/Docker/Minio/Postgres/DuckDB/Quarto/"
+    },
+    "sections": {
+      "architecture": {
+        "title": "Architecture",
+        "items": [
+          {
+            "tech": "Apache Airflow",
+            "description": "Schedule and orchestrate DAG."
+          },
+          {
+            "tech": "Postgres",
+            "description": "Store Airflow details and user purchase data."
+          },
+          {
+            "tech": "DuckDB",
+            "description": "Data warehouse for processing."
+          },
+          {
+            "tech": "Quarto with Plotly",
+            "description": "Convert Markdown format code to HTML files that can be embedded in applications or served as is."
+          },
+          {
+            "tech": "Apache Spark",
+            "description": "Process data and execute classification algorithms."
+          },
+          {
+            "tech": "Minio",
+            "description": "S3-compatible storage system."
+          },
+          {
+            "tech": "Docker",
+            "description": "Containerization of services like Airflow, Minio, PostgreSQL, among others."
+          }
+        ]
+      },
+      "images": [
+        {
+          "src": "/images/works/userBehaviorPipeline/pipeline.png",
+          "alt": "pipeline",
+          "title": ""
+        },
+        {
+          "src": "/images/works/userBehaviorPipeline/airflow.png",
+          "alt": "logical-model",
+          "title": "Airflow Control Panel"
+        },
+        {
+          "src": "/images/works/userBehaviorPipeline/minio2.png",
+          "alt": "physical-model",
+          "title": "Minio Control Panel"
+        }
+      ]
+    }
+  },
+  "farmaLuren": {
+    "title": "Automated Billing System - FarmaLuren",
+    "year": "2023",
+    "description": "Billing system designed for pharmacies, developed with Django Rest Framework. Includes recommendation system and discount coupons.",
+    "meta": {
+      "repository": "https://github.com/aalvaropc/farmaLuren",
+      "platform": "Web",
+      "stack": "Django/Django REST Framework/RabbitMQ/Celery/Redis/PostgreSQL"
+    },
+    "sections": {
+      "features": {
+        "title": "Features",
+        "items": [
+          {
+            "tech": "REST API",
+            "description": "Complete interface for pharmacy management"
+          },
+          {
+            "tech": "Recommendation System",
+            "description": "Intelligent algorithm to suggest products"
+          },
+          {
+            "tech": "Discount Coupons",
+            "description": "Flexible promotion system"
+          },
+          {
+            "tech": "Asynchronous Processing",
+            "description": "Background tasks with Celery"
+          }
+        ]
+      },
+      "images": [
+        {
+          "src": "/images/works/farmaLuren.png",
+          "alt": "farmaLuren",
+          "title": ""
+        }
+      ]
+    }
+  },
+  "rmap": {
+    "title": "Recycling Mobile App with Gamification - Rmap",
+    "year": "2023",
+    "description": "Recycling app with gamification focused on SDGs. Top 8 of 42 participants in GDSC Peru Hack 2023.",
+    "meta": {
+      "repository": "https://github.com/aalvaropc/rmap",
+      "platform": "Android/iOS",
+      "stack": "Flutter/Firebase/Google Maps API/Dart"
+    },
+    "sections": {
+      "achievements": {
+        "title": "Achievements",
+        "items": [
+          {
+            "tech": "GDSC Peru Hack 2023",
+            "description": "Top 8 of 42 participants"
+          },
+          {
+            "tech": "Environmental Impact",
+            "description": "Contribution to Sustainable Development Goals"
+          }
+        ]
+      },
+      "images": [
+        {
+          "src": "/images/works/rmap.png",
+          "alt": "rmap",
+          "title": ""
+        }
+      ]
+    }
+  },
+  "cineflix": {
+    "title": "Cinema Database System - CineFlix",
+    "year": "2024",
+    "description": "The project comprises the design and management of a database for the CineFlix cinema in Ica. The database is designed to handle movie screenings, seat reservations, and ticket purchases. It includes entities such as Customer, Branch, Employee, Functions, Movie, Seats, Rooms, and Ticket.",
+    "meta": {
+      "repository": "https://github.com/aalvaropc/db-cinema",
+      "platform": "Windows/macOS/Linux/",
+      "stack": "Transact-SQL/SQL Server/Database Design"
+    },
+    "sections": {
+      "design": {
+        "title": "Database Design",
+        "items": [
+          {
+            "tech": "Conceptual Model",
+            "description": "Design of main entities and relationships"
+          },
+          {
+            "tech": "Logical Model",
+            "description": "Normalization and table structure"
+          },
+          {
+            "tech": "Physical Model",
+            "description": "Implementation in SQL Server"
+          }
+        ]
+      },
+      "images": [
+        {
+          "src": "/images/works/cineflix/conceptual-model.png",
+          "alt": "conceptual-model",
+          "title": "Conceptual design"
+        },
+        {
+          "src": "/images/works/cineflix/logical-model.png",
+          "alt": "logical-model",
+          "title": "Logical design"
+        },
+        {
+          "src": "/images/works/cineflix/physical-model.jpg",
+          "alt": "physical-model",
+          "title": "Physical design"
+        }
+      ]
+    }
+  },
+  "covid": {
+    "title": "COVID-19 Data Analysis - CovidAnalytics",
+    "year": "2023",
+    "description": "Web page that presents a database model related to COVID-19. Includes context about the disease and its impact on healthcare, highlighting the importance of predicting patients' medical resource needs. Using a COVID-19 dataset, business questions were formulated and answers provided through SQL queries.",
+    "meta": {
+      "website": "https://sqlcovid-aalvaropc.netlify.app/",
+      "repository": "https://github.com/aalvaropc/sql-covid",
+      "platform": "Windows/macOS/Linux/iOS/Android/",
+      "stack": "React/Transact-SQL/Tailwind CSS"
+    },
+    "sections": {
+      "features": {
+        "title": "Features",
+        "items": [
+          {
+            "tech": "SQL Analysis",
+            "description": "Complex queries for COVID-19 data analysis"
+          },
+          {
+            "tech": "Visualization",
+            "description": "Interactive web interface to display results"
+          },
+          {
+            "tech": "Documentation",
+            "description": "Complete data model and its implementation"
+          }
+        ]
+      },
+      "images": [
+        {
+          "src": "/images/works/covid.png",
+          "alt": "covid",
+          "title": ""
+        }
+      ]
+    }
+  },
+  "numzzle": {
+    "title": "Numeric Puzzle Game - Numzzle",
+    "year": "2024",
+    "description": "Numzzle is an exciting puzzle game that challenges players to arrange numbers from 1 to 15 in a 4x4 grid. With an intuitive interface and smooth gameplay mechanics, players can slide numbers to solve the puzzle, with time and move tracking to add competitiveness.",
+    "meta": {
+      "repository": "https://github.com/aalvaropc/numzzle",
+      "platform": "Windows/macOS/Linux/",
+      "stack": "Unity/C#/Game Development"
+    },
+    "sections": {
+      "gameplay": {
+        "title": "Game Features",
+        "items": [
+          {
+            "tech": "Intuitive Interface",
+            "description": "Easy-to-use controls for all ages"
+          },
+          {
+            "tech": "Scoring System",
+            "description": "Time and move tracking"
+          },
+          {
+            "tech": "Multiple Levels",
+            "description": "Different difficulty configurations"
+          }
+        ]
+      },
+      "images": [
+        {
+          "src": "/images/works/numzzle/numzzle_home.png",
+          "alt": "numzzle-home",
+          "title": "Home screen"
+        },
+        {
+          "src": "/images/works/numzzle/numzzle_game.png",
+          "alt": "numzzle-game",
+          "title": "Game screen"
+        },
+        {
+          "src": "/images/works/numzzle/numzzle_win.png",
+          "alt": "numzzle-win",
+          "title": "Victory screen"
+        }
+      ]
+    }
+  },
+  "analisisWD": {
+    "title": "WorldCup Database Analysis",
+    "year": "2023",
+    "description": "Project for creating and managing a database called 'worldcup' from the 'FIFA World Cups' dataset available on Kaggle. Efficiently transformed 5886 World Cup player statistics into an organized structure to facilitate data storage and querying. Includes an interactive Power BI dashboard to visualize obtained insights.",
+    "meta": {
+      "repository": "https://github.com/aalvaropc/analisis-worldcup-database",
+      "scripts": "https://github.com/aalvaropc/analisis-worldcup-database/blob/main/ProjectFinalWorldCup.sql",
+      "platform": "Windows/macOS/Linux/",
+      "stack": "Transact-SQL/Power BI/Data Analysis"
+    },
+    "sections": {
+      "features": {
+        "title": "Analysis Features",
+        "items": [
+          {
+            "tech": "Data Ingestion",
+            "description": "Transformation of 5886 player statistics"
+          },
+          {
+            "tech": "Normalization",
+            "description": "Organized structure for efficient queries"
+          },
+          {
+            "tech": "Interactive Dashboard",
+            "description": "Power BI visualization of key insights"
+          }
+        ]
+      },
+      "images": [
+        {
+          "src": "/images/works/analisisWD/analisisWD_dashboard.jpg",
+          "alt": "analisisWD-dashboard",
+          "title": ""
+        },
+        {
+          "src": "/images/works/analisisWD/analisisWD_modelo.png",
+          "alt": "analisisWD-modelo",
+          "title": ""
+        }
+      ]
+    }
+  },
+  "webDevfest": {
+    "title": "DevFest Ica 2023 Website",
+    "year": "2023",
+    "description": "Website created especially for the DevFest Ica 2023 event, the largest technology festival in the region. The site includes essential information about the event, session details, speaker profiles, and everything needed to make the most of this unique experience.",
+    "meta": {
+      "website": "https://devfestica2023.vercel.app/",
+      "repository": "https://github.com/aalvaropc/DevFestIcaW",
+      "platform": "Windows/macOS/Linux/Android/",
+      "stack": "React/Web Development"
+    },
+    "sections": {
+      "features": {
+        "title": "Event Features",
+        "items": [
+          {
+            "tech": "Event Information",
+            "description": "Complete details about DevFest Ica 2023"
+          },
+          {
+            "tech": "Speaker Profiles",
+            "description": "Detailed information about speakers"
+          },
+          {
+            "tech": "Schedule",
+            "description": "Event timetables and sessions"
+          }
+        ]
+      },
+      "images": [
+        {
+          "src": "/images/works/webdevfest.png",
+          "alt": "webdevfest",
+          "title": ""
+        },
+        {
+          "src": "/images/works/gdg.jpg",
+          "alt": "gdg-event",
+          "title": ""
+        }
+      ]
+    }
+  },
+  "appDevfest": {
+    "title": "DevFest Ica 2023 Mobile App",
+    "year": "2023",
+    "description": "Mobile application created especially for the DevFest Ica 2023 event, the largest technology festival in the region. The app includes essential information about the event, session details, speaker profiles, and everything needed to make the most of this unique experience.",
+    "meta": {
+      "repository": "https://github.com/aalvaropc/app-gdg-ica",
+      "platform": "Android/",
+      "stack": "Flutter/Firebase/Mobile Development"
+    },
+    "sections": {
+      "features": {
+        "title": "App Features",
+        "items": [
+          {
+            "tech": "Intuitive Navigation",
+            "description": "Mobile interface optimized for the event"
+          },
+          {
+            "tech": "Real-time Information",
+            "description": "Dynamic event updates"
+          },
+          {
+            "tech": "Firebase Integration",
+            "description": "Robust backend for event data"
+          }
+        ]
+      },
+      "images": [
+        {
+          "src": "/images/works/appdevfest.png",
+          "alt": "appdevfest",
+          "title": ""
+        }
+      ]
+    }
+  },
+  "lexer": {
+    "title": "Lexical Analyzer - Lexer",
+    "year": "2023",
+    "description": "Lexer is a source code analysis tool that excels at scanning and decomposing code, allowing precise identification and classification of each of its lexical components, such as keywords, identifiers, operators, and constants.",
+    "meta": {
+      "website": "https://lexerapp.vercel.app/",
+      "repository": "https://github.com/aalvaropc/lexer",
+      "platform": "Windows/macOS/Linux/",
+      "stack": "React/Next.js/Compiler Design"
+    },
+    "sections": {
+      "features": {
+        "title": "Analyzer Capabilities",
+        "items": [
+          {
+            "tech": "Lexical Analysis",
+            "description": "Precise identification of tokens and components"
+          },
+          {
+            "tech": "Automatic Classification",
+            "description": "Categorization of keywords, operators, and constants"
+          },
+          {
+            "tech": "Web Interface",
+            "description": "Browser-accessible tool"
+          }
+        ]
+      },
+      "images": [
+        {
+          "src": "/images/works/lexer.png",
+          "alt": "lexer",
+          "title": ""
+        }
+      ]
+    }
+  }
+}

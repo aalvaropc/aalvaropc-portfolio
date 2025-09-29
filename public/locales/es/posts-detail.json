@@ -1,0 +1,98 @@
+{
+  "ArqBasadaEventos": {
+    "title": "Arquitectura Basada en Eventos",
+    "year": "2024",
+    "description": "Participé como ponente en el evento Weekend Learning Path organizado por la Facultad de Ingeniería de Sistemas de la Universidad Nacional San Luis Gonzaga, donde compartí conocimientos sobre la innovadora Arquitectura Basada en Eventos en la construcción de sistemas.",
+    "meta": {
+      "slides": "https://acortar.link/KtTr0Y",
+      "presentation": "https://www.youtube.com/watch?v=Q7ZIF0fzN_0",
+      "event": "https://www.facebook.com/WeekendLearningPath",
+      "tags": "Software/Arquitectura/AWS/Serverless/"
+    },
+    "sections": {
+      "topics": {
+        "title": "Temas Cubiertos",
+        "items": [
+          {
+            "topic": "Arquitectura Basada en Eventos",
+            "description": "Conceptos fundamentales y patrones de diseño"
+          },
+          {
+            "topic": "Sistemas Distribuidos",
+            "description": "Comunicación asíncrona entre servicios"
+          },
+          {
+            "topic": "Serverless Architecture",
+            "description": "Implementación con AWS Lambda y Event-driven patterns"
+          }
+        ]
+      },
+      "images": [
+        {
+          "src": "/images/posts/wlp/EdaWlpFB.jpg",
+          "alt": "EdaWlpFB",
+          "title": ""
+        },
+        {
+          "src": "/images/posts/wlp/EdaWlp.png",
+          "alt": "EdaWlp",
+          "title": ""
+        }
+      ],
+      "video": {
+        "url": "https://www.youtube.com/embed/Q7ZIF0fzN_0",
+        "title": "Arquitectura Basada en Eventos - Presentación"
+      }
+    }
+  },
+  "GrupoEstadistica": {
+    "title": "Estadística Práctica Para Ciencia de Datos",
+    "year": "2024",
+    "description": "Formé parte del Grupo 2 en el estudio del libro 'Estadística Práctica para Ciencia de Datos con R y Python', donde tuvimos la responsabilidad de exponer el capítulo 1 sobre conceptos fundamentales de estadística aplicada.",
+    "meta": {
+      "slides": "https://acortar.link/hQV2eR",
+      "presentation": "https://www.youtube.com/watch?v=h9INxH6kcjc",
+      "tags": "Estadística/Ciencia de Datos/R/Python/"
+    },
+    "sections": {
+      "chapters": {
+        "title": "Subcapítulos Presentados",
+        "items": [
+          {
+            "topic": "Estimación de la Variabilidad",
+            "description": "Métodos para medir y entender la dispersión de datos"
+          },
+          {
+            "topic": "Exploración de la Distribución de Datos",
+            "description": "Técnicas para analizar patrones y tendencias estadísticas"
+          },
+          {
+            "topic": "Exploración de Datos Binarios y Categóricos",
+            "description": "Análisis específico para variables cualitativas"
+          }
+        ]
+      },
+      "images": [
+        {
+          "src": "/images/posts/estadistica/libro-portada.jpg",
+          "alt": "EstLibroPort",
+          "title": ""
+        },
+        {
+          "src": "/images/posts/estadistica/grupo-estadistica.png",
+          "alt": "EstGrupoEst",
+          "title": ""
+        },
+        {
+          "src": "/images/posts/estadistica/portada-diapo.png",
+          "alt": "EstPortadaDiapo",
+          "title": ""
+        }
+      ],
+      "video": {
+        "url": "https://www.youtube.com/embed/h9INxH6kcjc",
+        "title": "Estadística Práctica - Capítulo 1"
+      }
+    }
+  }
+}

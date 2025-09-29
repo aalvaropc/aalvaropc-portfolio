@@ -1,0 +1,98 @@
+{
+  "ArqBasadaEventos": {
+    "title": "Event-Driven Architecture",
+    "year": "2024",
+    "description": "I participated as a speaker at the Weekend Learning Path event organized by the Faculty of Systems Engineering at Universidad Nacional San Luis Gonzaga, where I shared knowledge about the innovative Event-Driven Architecture in system construction.",
+    "meta": {
+      "slides": "https://acortar.link/KtTr0Y",
+      "presentation": "https://www.youtube.com/watch?v=Q7ZIF0fzN_0",
+      "event": "https://www.facebook.com/WeekendLearningPath",
+      "tags": "Software/Architecture/AWS/Serverless/"
+    },
+    "sections": {
+      "topics": {
+        "title": "Covered Topics",
+        "items": [
+          {
+            "topic": "Event-Driven Architecture",
+            "description": "Fundamental concepts and design patterns"
+          },
+          {
+            "topic": "Distributed Systems",
+            "description": "Asynchronous communication between services"
+          },
+          {
+            "topic": "Serverless Architecture",
+            "description": "Implementation with AWS Lambda and Event-driven patterns"
+          }
+        ]
+      },
+      "images": [
+        {
+          "src": "/images/posts/wlp/EdaWlpFB.jpg",
+          "alt": "EdaWlpFB",
+          "title": ""
+        },
+        {
+          "src": "/images/posts/wlp/EdaWlp.png",
+          "alt": "EdaWlp",
+          "title": ""
+        }
+      ],
+      "video": {
+        "url": "https://www.youtube.com/embed/Q7ZIF0fzN_0",
+        "title": "Event-Driven Architecture - Presentation"
+      }
+    }
+  },
+  "GrupoEstadistica": {
+    "title": "Practical Statistics for Data Science",
+    "year": "2024",
+    "description": "I was part of Group 2 in the study of the book 'Practical Statistics for Data Science with R and Python', where we had the responsibility of presenting Chapter 1 on fundamental concepts of applied statistics.",
+    "meta": {
+      "slides": "https://acortar.link/hQV2eR",
+      "presentation": "https://www.youtube.com/watch?v=h9INxH6kcjc",
+      "tags": "Statistics/Data Science/R/Python/"
+    },
+    "sections": {
+      "chapters": {
+        "title": "Presented Subchapters",
+        "items": [
+          {
+            "topic": "Variability Estimation",
+            "description": "Methods to measure and understand data dispersion"
+          },
+          {
+            "topic": "Data Distribution Exploration",
+            "description": "Techniques to analyze statistical patterns and trends"
+          },
+          {
+            "topic": "Binary and Categorical Data Exploration",
+            "description": "Specific analysis for qualitative variables"
+          }
+        ]
+      },
+      "images": [
+        {
+          "src": "/images/posts/estadistica/libro-portada.jpg",
+          "alt": "EstLibroPort",
+          "title": ""
+        },
+        {
+          "src": "/images/posts/estadistica/grupo-estadistica.png",
+          "alt": "EstGrupoEst",
+          "title": ""
+        },
+        {
+          "src": "/images/posts/estadistica/portada-diapo.png",
+          "alt": "EstPortadaDiapo",
+          "title": ""
+        }
+      ],
+      "video": {
+        "url": "https://www.youtube.com/embed/h9INxH6kcjc",
+        "title": "Practical Statistics - Chapter 1"
+      }
+    }
+  }
+}

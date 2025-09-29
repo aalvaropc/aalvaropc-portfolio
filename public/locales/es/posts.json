@@ -1,0 +1,26 @@
+{
+  "posts": {
+    "title": "Blog",
+    "subtitle": "Artículos y recursos",
+    "articles": [
+      {
+        "id": "ArqBasadaEventos",
+        "title": "Arquitectura Basada en Eventos", 
+        "description": "Exploración completa de la arquitectura basada en eventos, patrones de diseño y mejores prácticas para sistemas distribuidos.",
+        "tags": ["Arquitectura", "Eventos", "Sistemas Distribuidos", "Microservicios"],
+        "date": "2024-01-15",
+        "readTime": "12 min",
+        "category": "Architecture"
+      },
+      {
+        "id": "GrupoEstadistica",
+        "title": "Análisis Estadístico con Python",
+        "description": "Guía práctica para análisis estadístico utilizando Python, pandas y visualizaciones interactivas para proyectos de ciencia de datos.",
+        "tags": ["Python", "Estadística", "Data Science", "Pandas", "Matplotlib"],
+        "date": "2023-11-20",
+        "readTime": "15 min",
+        "category": "Data Science"
+      }
+    ]
+  }
+}
