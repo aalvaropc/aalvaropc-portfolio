@@ -1,10 +1,10 @@
 # Portfolio - Alvaro Peña
 
-[![CI/CD](https://github.com/aalvaropc/portafolio/actions/workflows/ci.yml/badge.svg)](https://github.com/aalvaropc/portafolio/actions)
-[![Test Coverage](https://img.shields.io/badge/coverage-70%25-brightgreen)](https://github.com/aalvaropc/portafolio)
+[![CI/CD](https://github.com/aalvaropc/aalvaropc-portfolio/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/aalvaropc/aalvaropc-portfolio/actions)
+[![Test Coverage](https://img.shields.io/badge/coverage-70%25-brightgreen)](https://github.com/aalvaropc/aalvaropc-portfolio)
 [![Next.js](https://img.shields.io/badge/Next.js-15.5.4-black)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19.1.1-blue)](https://reactjs.org/)
-[![i18n](https://img.shields.io/badge/i18n-ES%20%7C%20EN-success)](https://github.com/aalvaropc/portafolio)
+[![i18n](https://img.shields.io/badge/i18n-ES%20%7C%20EN-success)](https://github.com/aalvaropc/aalvaropc-portfolio)
 
 > Portafolio personal de Alvaro Peña - Backend Developer especializado en Go, Python y arquitecturas escalables. Con sistema completo de internacionalización y diseño minimalista.
 
@@ -85,7 +85,7 @@
 
 ```bash
 git clone https://github.com/aalvaropc/aalvaropc-portfolio
-cd portafolio
+cd aalvaropc-portfolio
 pnpm install
 ```
 
