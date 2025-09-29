@@ -1,6 +1,6 @@
 # Portfolio - Alvaro Peña
 
-[![CI/CD](https://github.com/aalvaropc/aalvaropc-portfolio/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/aalvaropc/aalvaropc-portfolio/actions)
+[![CI Pipeline](https://github.com/aalvaropc/aalvaropc-portfolio/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/aalvaropc/aalvaropc-portfolio/actions)
 [![Test Coverage](https://img.shields.io/badge/coverage-88.4%25-brightgreen)](https://github.com/aalvaropc/aalvaropc-portfolio)
 [![Next.js](https://img.shields.io/badge/Next.js-15.5.4-black)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19.1.1-blue)](https://reactjs.org/)
