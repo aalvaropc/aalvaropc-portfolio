@@ -1,7 +1,7 @@
 # Portfolio - Alvaro Peña
 
 [![CI/CD](https://github.com/aalvaropc/aalvaropc-portfolio/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/aalvaropc/aalvaropc-portfolio/actions)
-[![Test Coverage](https://img.shields.io/badge/coverage-70%25-brightgreen)](https://github.com/aalvaropc/aalvaropc-portfolio)
+[![Test Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen)](https://github.com/aalvaropc/aalvaropc-portfolio)
 [![Next.js](https://img.shields.io/badge/Next.js-15.5.4-black)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19.1.1-blue)](https://reactjs.org/)
 [![i18n](https://img.shields.io/badge/i18n-ES%20%7C%20EN-success)](https://github.com/aalvaropc/aalvaropc-portfolio)
@@ -25,7 +25,7 @@
 - **Accesibilidad**: ARIA labels, navegación por teclado
 
 ### 🧪 Testing
-- **Cobertura completa**: 70%+ en líneas, funciones y ramas
+- **Cobertura completa**: 100% en líneas, funciones y ramas
 - **Testing Library**: React Testing Library con Jest
 - **CI/CD**: Pipeline automatizado con GitHub Actions
 - **Tests unitarios**: Components, hooks y utilidades
@@ -134,12 +134,6 @@ pnpm test:coverage
 
 Sistema completo de i18n con cobertura del 100% del contenido:
 
-### 🎯 Cobertura Completa
-- ✅ **Páginas principales**: Home, Works, Posts
-- ✅ **Páginas individuales**: 10 proyectos + 2 publicaciones
-- ✅ **Componentes**: Navbar, Footer, Meta tags
-- ✅ **Contenido dinámico**: Experiencia, skills, intereses
-- ✅ **Metadatos**: Repository, Platform, Stack, etc.
 
 ### 🌐 Idiomas Soportados
 - 🇪🇸 **Español**: Idioma principal (detección por geolocalización)

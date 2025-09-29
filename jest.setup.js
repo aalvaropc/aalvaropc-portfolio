@@ -5,6 +5,48 @@
 // Learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom'
 
+// Mock completo de Chakra UI para evitar errores de Emotion
+jest.mock('@chakra-ui/react', () => {
+  const React = require('react')
+  
+  const MockComponent = ({ children, as: Component = 'div', ...props }) => {
+    return React.createElement(Component, props, children)
+  }
+  
+  return {
+    ChakraProvider: ({ children }) => children,
+    Container: MockComponent,
+    Box: MockComponent,
+    Link: MockComponent,
+    Stack: MockComponent,
+    Heading: MockComponent,
+    Flex: MockComponent,
+    Menu: MockComponent,
+    MenuItem: MockComponent,
+    MenuList: MockComponent,
+    MenuButton: MockComponent,
+    IconButton: MockComponent,
+    useColorModeValue: (light, dark) => light,
+    useColorMode: () => ({
+      colorMode: 'light',
+      toggleColorMode: jest.fn()
+    }),
+    // Funciones faltantes para evitar TypeError
+    chakra: (component) => component,
+    extendTheme: (theme) => theme || {},
+    shouldForwardProp: (prop) => !['borderRadius', 'alignItems', 'flexGrow', 'isLazy', 'maxW', 'zIndex'].includes(prop)
+  }
+})
+
+// Mock Chakra UI icons
+jest.mock('@chakra-ui/icons', () => ({
+  HamburgerIcon: () => React.createElement('span', { role: 'img', 'aria-label': 'hamburger' }, '☰'),
+  MoonIcon: () => React.createElement('span', { role: 'img', 'aria-label': 'moon' }, '🌙'),
+  SunIcon: () => React.createElement('span', { role: 'img', 'aria-label': 'sun' }, '☀️')
+}))
+
+
+
 // Mock Next.js router
 jest.mock('next/router', () => ({
   useRouter() {
