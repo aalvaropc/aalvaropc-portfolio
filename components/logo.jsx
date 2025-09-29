@@ -18,7 +18,7 @@ const LogoBox = styled.span`
 `
 
 const Logo = () => {
-    const owlPrintImg = `/images/owl${useColorModeValue('', '-dark')}.png`
+    const owlPrintImg = `/images/owl.png`
 
     return (
         <Link href="/">

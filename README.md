@@ -79,32 +79,32 @@
 ### Prerrequisitos
 
 - Node.js 18+
-- npm o yarn
+- pnpm 8+ (recomendado)
 
 ### Instalación
 
 ```bash
-git clone https://github.com/aalvaropc/portafolio.git
+git clone https://github.com/aalvaropc/aalvaropc-portfolio
 cd portafolio
-npm install
+pnpm install
 ```
 
 ### Scripts Disponibles
 
 ```bash
 # Desarrollo
-npm run dev              # Servidor de desarrollo
-npm run build           # Build de producción
-npm run start           # Servidor de producción
-npm run lint            # Linting
+pnpm dev                # Servidor de desarrollo
+pnpm build              # Build de producción
+pnpm start              # Servidor de producción
+pnpm lint               # Linting
 
 # Testing
-npm test                # Ejecutar tests
-npm run test:watch      # Tests en modo watch
-npm run test:coverage   # Reporte de cobertura
+pnpm test               # Ejecutar tests
+pnpm test:watch         # Tests en modo watch
+pnpm test:coverage      # Reporte de cobertura
 
 # CI/CD
-npm run ci              # Pipeline completo de CI
+pnpm precommit          # Pipeline completo de CI
 ```
 
 ## 🧪 Testing
@@ -113,15 +113,15 @@ El proyecto incluye una suite completa de tests:
 
 ```bash
 # Ejecutar todos los tests
-npm test
+pnpm test
 
 # Tests específicos
-npm test -- __tests__/components/
-npm test -- __tests__/pages/
-npm test -- __tests__/lib/
+pnpm test -- __tests__/components/
+pnpm test -- __tests__/pages/
+pnpm test -- __tests__/lib/
 
 # Con cobertura
-npm run test:coverage
+pnpm test:coverage
 ```
 
 ### Cobertura Objetivo
@@ -165,7 +165,7 @@ Ver [documentación técnica completa](./docs/i18n-system.md) para implementaci�
 
 ```bash
 # Instalación de Vercel CLI
-npm i -g vercel
+pnpm add -g vercel
 
 # Deploy
 vercel --prod

@@ -8,7 +8,8 @@
     "start": "next start",
     "export": "next export",
     "prettier": "prettier -write .",
-    "lint": "next lint",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "security-audit": "pnpm audit",
     "security-check": "pnpm outdated && pnpm audit",
     "type-check": "next build --no-lint",
@@ -16,37 +17,48 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "test:ci": "jest --ci --coverage --watchAll=false",
-    "analyze": "ANALYZE=true npm run build",
+    "analyze": "ANALYZE=true pnpm run build",
     "lighthouse": "lhci collect --upload.target=filesystem --upload.outputDir=./lighthouse-results",
     "sitemap:generate": "next-sitemap",
     "bundle:analyze": "npx @next/bundle-analyzer",
-    "perf:audit": "npm run build && npm run lighthouse",
+    "perf:audit": "pnpm run build && pnpm run lighthouse",
     "seo:validate": "next-seo-validate",
     "clean": "rimraf .next out",
-    "precommit": "npm run lint && npm run type-check && npm run test:ci"
+    "dev:clean": "pnpm clean && pnpm dev",
+    "dev:fresh": "rimraf .next out node_modules/.cache && pnpm dev",
+    "precommit": "pnpm run lint && pnpm run type-check && pnpm run test:ci"
   },
   "keywords": [],
   "author": "Alvaro Rodrigo Peña Peña<aalvaropc@gmail.com>",
   "license": "MIT",
+  "packageManager": "pnpm@8.15.1",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
   "dependencies": {
     "@chakra-ui/icons": "^2.2.4",
     "@chakra-ui/react": "^2.10.9",
+    "@chakra-ui/theme-tools": "^2.2.6",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "framer-motion": "^12.23.22",
     "next": "^15.5.4",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "react-icons": "^4.12.0"
+    "react-icons": "^5.5.0"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/js": "^9.36.0",
     "@testing-library/jest-dom": "^6.8.0",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^14.6.1",
-    "eslint": "^8.57.1",
-    "eslint-config-next": "^13.5.11",
+    "eslint": "^9.36.0",
+    "eslint-config-next": "^15.5.4",
     "jest": "^30.2.0",
     "jest-environment-jsdom": "^30.2.0",
-    "prettier": "^2.8.8"
+    "prettier": "^3.6.2",
+    "rimraf": "^6.0.1"
   }
 }

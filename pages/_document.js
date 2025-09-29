@@ -13,7 +13,6 @@ export default class Document extends NextDocument {
                     <meta name="author" content="Alvaro Rodrigo Peña Peña" />
                     <meta name="robots" content="index, follow, max-image-preview:large" />
                     <meta name="googlebot" content="index, follow" />
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                     <meta name="language" content="Spanish" />
                     <meta name="geo.region" content="PE" />
                     <meta name="geo.country" content="Peru" />
