@@ -34,6 +34,7 @@ jest.mock('@chakra-ui/react', () => {
 // Mock Next.js Image
 jest.mock('next/image', () => ({
   __esModule: true,
+  // eslint-disable-next-line @next/next/no-img-element
   default: ({ src, alt, ...props }) => <img src={src} alt={alt} data-testid="next-image" {...props} />,
 }))
 
@@ -54,6 +55,7 @@ jest.mock('../../components/grid-items', () => ({
   PostGridItem: ({ id, title, thumbnail, children, ...props }) => (
     <article data-testid="post-item" {...props}>
       <a href={`/posts/${id}`} data-testid="post-link">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={thumbnail} alt={title} data-testid="post-thumbnail" />
         <h3 data-testid="post-title">{title}</h3>
         <div data-testid="post-description">{children}</div>

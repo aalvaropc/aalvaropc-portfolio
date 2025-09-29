@@ -26,7 +26,7 @@ jest.mock('@chakra-ui/react', () => {
     MenuList: MockComponent,
     MenuButton: MockComponent,
     IconButton: MockComponent,
-    useColorModeValue: (light, dark) => light,
+    useColorModeValue: (light, _dark) => light,
     useColorMode: () => ({
       colorMode: 'light',
       toggleColorMode: jest.fn()

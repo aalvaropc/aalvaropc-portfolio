@@ -50,13 +50,19 @@ jest.mock('@chakra-ui/react', () => {
 })
 
 jest.mock('../../components/paragraph', () => {
-  return ({ children }) => React.createElement('p', { 'data-testid': 'paragraph' }, children)
+  function MockParagraph({ children }) {
+    return React.createElement('p', { 'data-testid': 'paragraph' }, children)
+  }
+  MockParagraph.displayName = 'MockParagraph'
+  return MockParagraph
 })
 
 jest.mock('next/link', () => {
-  return ({ children, href, ...props }) => {
+  function MockLink({ children, href, ...props }) {
     return React.createElement('a', { href, ...props }, children)
   }
+  MockLink.displayName = 'MockLink'
+  return MockLink
 })
 
 jest.mock('@chakra-ui/icons', () => ({
@@ -78,11 +84,19 @@ jest.mock('react-icons/md', () => ({
 }))
 
 jest.mock('../../components/layouts/article', () => {
-  return ({ children }) => React.createElement('div', { 'data-testid': 'layout' }, children)
+  function MockArticle({ children }) {
+    return React.createElement('div', { 'data-testid': 'layout' }, children)
+  }
+  MockArticle.displayName = 'MockArticle'
+  return MockArticle
 })
 
 jest.mock('../../components/section', () => {
-  return ({ children }) => React.createElement('div', { 'data-testid': 'section' }, children)
+  function MockSection({ children }) {
+    return React.createElement('div', { 'data-testid': 'section' }, children)
+  }
+  MockSection.displayName = 'MockSection'
+  return MockSection
 })
 
 jest.mock('../../lib/i18nContext', () => ({
