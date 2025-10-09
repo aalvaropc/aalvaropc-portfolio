@@ -4,15 +4,16 @@ import { Box, Center } from '@chakra-ui/react';
 const PureFractalTree = () => {
   const canvasRef = useRef(null);
   const animationRef = useRef(null);
-
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
     const ctx = canvas.getContext('2d');
     let frameCount = 0;
+    let isRunning = true;
 
     const animate = () => {
+      if (!isRunning) return;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
       // Posicionar en la base del canvas
@@ -96,6 +97,7 @@ const PureFractalTree = () => {
     animate();
 
     return () => {
+      isRunning = false;
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }
@@ -125,4 +127,6 @@ const PureFractalTree = () => {
   );
 };
 
-export default PureFractalTree;
+PureFractalTree.displayName = 'PureFractalTree';
+
+export default React.memo(PureFractalTree);

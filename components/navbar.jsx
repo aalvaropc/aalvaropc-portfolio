@@ -1,4 +1,5 @@
 
+import React from 'react'
 import Logo from './logo'
 import NextLink from 'next/link'
 import {
@@ -53,30 +54,32 @@ const LinkItem = ({ href, path, target, children, ...props }) => {
   )
 }
 
-const Navbar = props => {
-  const { path } = props
+const NavbarComponent = ({ path, ...props }) => {
   const { t } = useI18n()
 
   return (
     <Box
       position="fixed"
       as="nav"
-      w="100%"
+      w="100vw"
       bg={useColorModeValue('#ffffff40', '#20202380')}
       css={{ backdropFilter: 'blur(10px)' }}
       zIndex={2}
+      left={0}
+      right={0}
       {...props}
     >
       <Container
         display="flex"
         p={2}
         maxW="container.md"
-        wrap="wrap"
+        wrap="nowrap"
         align="center"
         justify="space-between"
+        mx="auto"
       >
-        <Flex align="center" mr={5}>
-          <Heading as="h1" size="lg" letterSpacing={'tighter'}>
+        <Flex align="center" mr={{ base: 2, md: 5 }} flex="0 0 auto">
+          <Heading as="h1" size={{ base: 'md', md: 'lg' }} letterSpacing={'tighter'}>
             <Logo />
           </Heading>
         </Flex>
@@ -88,6 +91,7 @@ const Navbar = props => {
           alignItems="center"
           flexGrow={1}
           mt={{ base: 4, md: 0 }}
+          spacing={{ base: 2, md: 4 }}
         >
           <LinkItem href="/works" path={path}>
             {t('nav.projects', 'Proyectos')}
@@ -102,7 +106,8 @@ const Navbar = props => {
             {t('nav.certificates', 'Certificados')}
           </LinkItem>
         </Stack>
-        <Flex align="center" gap={2}>
+        
+        <Flex align="center" gap={{ base: 1, md: 2 }} flex="0 0 auto">
           <Box display={{ base: 'none', md: 'block' }}>
             <LanguageSelector />
           </Box>
@@ -114,38 +119,80 @@ const Navbar = props => {
                 as={IconButton}
                 icon={<HamburgerIcon />}
                 variant="outline"
-                aria-label="Options"
+                aria-label="Menu"
+                size="md"
+                w="40px"
+                h="40px"
+                minW="40px"
               />
-              <MenuList>
-                <MenuItem>
-                  <Link as={NextLink} href="/" w="100%">
-                    {t('nav.home', 'Información')}
-                  </Link>
+              <MenuList
+                maxW="250px"
+                w="max-content"
+                zIndex={3}
+                boxShadow="2xl"
+                borderRadius="md"
+                border="1px solid"
+                borderColor={useColorModeValue('gray.200', 'gray.600')}
+              >
+                <MenuItem
+                  as={Link}
+                  href="/"
+                  display="flex"
+                  alignItems="center"
+                  _hover={{ bg: useColorModeValue('gray.100', 'gray.700') }}
+                >
+                  {t('nav.home', 'Información')}
                 </MenuItem>
-                <MenuItem>
-                  <Link as={NextLink} href="/works" w="100%">
-                    {t('nav.projects', 'Proyectos')}
-                  </Link>
+                <MenuItem
+                  as={Link}
+                  href="/works"
+                  display="flex"
+                  alignItems="center"
+                  _hover={{ bg: useColorModeValue('gray.100', 'gray.700') }}
+                >
+                  {t('nav.projects', 'Proyectos')}
                 </MenuItem>
-                <MenuItem>
-                  <Link as={NextLink} href="/posts" w="100%">
-                    {t('nav.posts', 'Publicaciones')}
-                  </Link>
+                <MenuItem
+                  as={Link}
+                  href="/posts"
+                  display="flex"
+                  alignItems="center"
+                  _hover={{ bg: useColorModeValue('gray.100', 'gray.700') }}
+                >
+                  {t('nav.posts', 'Publicaciones')}
                 </MenuItem>
-                <MenuItem>
-                  <Link href="https://acortar.link/lunblB" target="_blank" w="100%">
-                    {t('nav.cv', 'CV')}
-                  </Link>
+                <MenuItem
+                  as={Link}
+                  href="https://acortar.link/lunblB"
+                  target="_blank"
+                  display="flex"
+                  alignItems="center"
+                  _hover={{ bg: useColorModeValue('gray.100', 'gray.700') }}
+                >
+                  {t('nav.cv', 'CV')}
                 </MenuItem>
-                <MenuItem>
-                  <Link href="https://acortar.link/lunblB" w="100%">
-                    {t('nav.certificates', 'Certificados')}
-                  </Link>
+                <MenuItem
+                  as={Link}
+                  href="https://acortar.link/lunblB"
+                  display="flex"
+                  alignItems="center"
+                  _hover={{ bg: useColorModeValue('gray.100', 'gray.700') }}
+                >
+                  {t('nav.certificates', 'Certificados')}
                 </MenuItem>
-                <MenuItem>
-                  <Box w="100%">
-                    <LanguageSelector />
-                  </Box>
+                <MenuItem
+                  display="flex"
+                  alignItems="center"
+                  justifyContent="center"
+                  bg={useColorModeValue('gray.50', 'gray.800')}
+                  _hover={{ bg: useColorModeValue('gray.50', 'gray.800') }}
+                  closeOnSelect={false}
+                  py={4}
+                  borderTop="1px solid"
+                  borderColor={useColorModeValue('gray.200', 'gray.600')}
+                  mt={1}
+                >
+                  <LanguageSelector isMobile={true} />
                 </MenuItem>
               </MenuList>
             </Menu>
@@ -155,5 +202,9 @@ const Navbar = props => {
     </Box>
   )
 }
+
+NavbarComponent.displayName = 'Navbar';
+
+const Navbar = React.memo(NavbarComponent);
 
 export default Navbar

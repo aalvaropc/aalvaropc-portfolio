@@ -21,21 +21,32 @@ const Main = ({ children, router }) => {
     }
 
     return (
-        <Box as="main" pb={8}>
+        <Box 
+            as="main" 
+            pb={8}
+            w="100vw"
+            minH="100vh"
+            overflowX="hidden"
+            position="relative"
+        >
             <Head>
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
                 <title>Alvaro Peña - Backend Developer</title>
                 <meta name="description" content="Backend-focused Full Stack Developer especializado en Go, Python y Java. Experto en microservicios y arquitecturas escalables." />
             </Head>
-            <Navbar path={router.asPath}>
-            </Navbar>
-            <Container maxW="container.md" pt={14}>
+            <Navbar path={router.asPath} />
+            <Container 
+                maxW="container.md" 
+                pt={14}
+                px={{ base: 4, sm: 6, md: 8 }}
+                w="100%"
+                mx="auto"
+            >
                 <LazyFractalTree />
 
                 {children}
                 <Footer />
             </Container>
-
         </Box>
     )
 }

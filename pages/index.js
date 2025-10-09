@@ -66,23 +66,18 @@ const Page = () => {
               {t('hero.subtitle', 'Diseñando arquitecturas escalables y sistemas distribuidos')}
             </Box>
           </Box>
+          
           <Box display={{ md: 'flex' }}>
             <Box flexGrow={1}>
               <Heading as="h2" variant="page-title" mb={2}>
                 {t('common.name', 'Alvaro Peña')}
               </Heading>
               <Box fontSize="md" fontWeight="medium" color={useColorModeValue('gray.600', 'gray.400')}>
-                Backend Developer • Guinea Mobile
+                Software Engineer
               </Box>
             </Box>
-            <Box
-              flexShrink={0}
-              mt={{ base: 4, md: 0 }}
-              ml={{ md: 6 }}
-              textAlign="center"
-            >
-            </Box>
           </Box>
+
           <Section delay={0.1}>
             <Heading as="h3" variant="section-title">
               {t('about.title', 'Sobre mí')}
@@ -106,6 +101,7 @@ const Page = () => {
               </Button>
             </Box>
           </Section>
+
           <Section delay={0.2}>
             <Heading as="h3" variant="section-title">
               {t('experience.title', 'Experiencia')}
@@ -127,6 +123,7 @@ const Page = () => {
               {t('experience.jobs.3.position', 'Miembro')} {t('prepositions.of', 'de')} {t('experience.jobs.3.company', 'Google Developer Group Ica')}
             </BioSection>
           </Section>
+
           <Section delay={0.3}>
             <Heading as="h3" variant="section-title">
               {t('skills.title', 'Stack')}
@@ -135,7 +132,8 @@ const Page = () => {
               {t('skills.technologies', 'Go • Python • Java • FastAPI • Spring Boot • PostgreSQL • Redis • Docker • GCP • AWS • RabbitMQ')}
             </Paragraph>
           </Section>
-          <Section delay={0.3}>
+
+          <Section delay={0.4}>
             <Heading as="h3" variant="section-title">
               {t('interests.title', 'Intereses')}
             </Heading>
@@ -143,13 +141,17 @@ const Page = () => {
               {t('interests.list', 'Arquitecturas escalables • Sistemas distribuidos • Microservicios • Cloud Native')}
             </Paragraph>
           </Section>
-          <Section delay={0.4}>
+
+          <Section delay={0.5}>
             <Heading as="h3" variant="section-title">
               {t('contact.title', 'Contacto')}
             </Heading>
             <List>
               <ListItem>
-                <Link href="https://github.com/aalvaropc" target="_blank">
+                <Link
+                  href="https://github.com/aalvaropc"
+                  target="_blank"
+                >
                   <Button
                     variant="ghost"
                     colorScheme="teal"
@@ -195,4 +197,5 @@ const Page = () => {
     </>
   )
 }
+
 export default Page
