@@ -110,7 +110,7 @@ jest.mock('../../components/theme-toggle-button', () => ({
 // Mock language selector
 jest.mock('../../components/LanguageSelector', () => ({
   __esModule: true,
-  default: ({ isMobile, ...props }) => <select aria-label="language selector" data-testid="language-selector" {...props}><option value="es">ES</option></select>,
+  default: ({ isMobile: _isMobile, ...props }) => <select aria-label="language selector" data-testid="language-selector" {...props}><option value="es">ES</option></select>,
 }))
 
 // Mock i18n hook
