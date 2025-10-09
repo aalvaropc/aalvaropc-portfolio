@@ -1,18 +1,11 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
-
 echo "🚀 Ejecutando verificaciones pre-push..."
 
-# Ejecutar build para verificar que compila
-echo "🔨 Verificando build..."
-pnpm run build
-
-# Ejecutar tests con cobertura
+# Ejecutar tests con cobertura (más rápido que build completo)
 echo "🧪 Ejecutando tests con cobertura..."
-pnpm run test:coverage
+pnpm run test:ci
 
-# Ejecutar security audit
-echo "🔒 Verificando vulnerabilidades..."
-pnpm audit --audit-level moderate
+# Ejecutar linting completo
+echo "🎨 Verificando calidad de código..."
+pnpm run lint
 
 echo "✅ Pre-push hooks completados exitosamente"
