@@ -22,6 +22,7 @@ jest.mock('@chakra-ui/react', () => {
   }
 
   return {
+    useColorModeValue: () => 'gray.200', // Mock hook to return light theme color
     Menu: ({ children, ...allProps }) => {
       const domProps = filterDOMProps(allProps)
       return <div data-testid="language-menu" {...domProps}>{children}</div>

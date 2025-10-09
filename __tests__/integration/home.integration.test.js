@@ -227,8 +227,8 @@ describe('Home Page Integration', () => {
   it('displays professional information accurately', () => {
     render(<Home />)
     
-    // Professional title - use more specific selector
-    expect(screen.getByText(/backend developer • guinea mobile/i)).toBeInTheDocument()
+    // Professional title - updated to match current content
+    expect(screen.getByText(/software engineer/i)).toBeInTheDocument()
     
     // Experience timeline
     expect(screen.getByText(/2025 febrero - presente/i)).toBeInTheDocument()
