@@ -27,7 +27,9 @@
     "clean": "rimraf .next out",
     "dev:clean": "pnpm clean && pnpm dev",
     "dev:fresh": "rimraf .next out node_modules/.cache && pnpm dev",
-    "precommit": "pnpm run lint && pnpm run type-check && pnpm run test:ci"
+    "precommit": "pnpm run lint && pnpm run type-check && pnpm run test:ci",
+    "prepare": "husky",
+    "format": "prettier --write ."
   },
   "keywords": [],
   "author": "Alvaro Rodrigo Peña Peña<aalvaropc@gmail.com>",
@@ -57,9 +59,20 @@
     "@testing-library/user-event": "^14.6.1",
     "eslint": "^9.36.0",
     "eslint-config-next": "^15.5.4",
+    "husky": "^9.1.7",
     "jest": "^30.2.0",
     "jest-environment-jsdom": "^30.2.0",
+    "lint-staged": "^16.2.3",
     "prettier": "^3.6.2",
     "rimraf": "^6.0.1"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,css,scss}": [
+      "prettier --write"
+    ]
   }
 }

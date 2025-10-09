@@ -1,0 +1,13 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Ejecutar lint-staged (lint y format solo en archivos modificados)
+pnpm exec lint-staged
+
+# Ejecutar tests solo si hay cambios en archivos de código
+if git diff --cached --name-only | grep -E '\.(js|jsx|ts|tsx)$' > /dev/null; then
+  echo "🧪 Ejecutando tests..."
+  pnpm test:ci
+fi
+
+echo "✅ Pre-commit hooks completados"

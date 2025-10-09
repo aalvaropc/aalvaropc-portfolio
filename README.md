@@ -11,6 +11,7 @@
 ## 🌟 Características Destacadas
 
 ### 🌐 Internacionalización (i18n) ✨
+
 - **Sistema completo**: Todas las páginas y contenido traducido
 - **Detección automática**: Basada en geolocalización y preferencias del navegador
 - **Idiomas soportados**: Español y Inglés (100% traducido)
@@ -20,19 +21,22 @@
 - **Hooks personalizados**: useI18n, useTranslations, usePostDetail, useWorkDetail
 
 ### 🛡️ Seguridad y Rendimiento
+
 - **Headers de seguridad**: CSP, HSTS, CORS
 - **Optimización**: Lazy loading, compresión de imágenes
 - **SEO**: Meta tags dinámicos, sitemap, robots.txt
 - **Accesibilidad**: ARIA labels, navegación por teclado
 
 ### 🧪 Testing Robusto
-- **Cobertura elevada**: 88.4% statements, 68.7% branches, 75% functions  
+
+- **Cobertura elevada**: 88.4% statements, 68.7% branches, 75% functions
 - **114 tests**: Suite completa con React Testing Library y Jest
 - **CI/CD automatizado**: Pipeline con GitHub Actions
 - **Tests críticos**: Componentes, layouts, hooks y configuraciones
 - **Mocks optimizados**: ChakraUI, Next.js, Framer Motion sin warnings
 
 ### 🎨 Interfaz y Experiencia
+
 - **Diseño responsivo**: Optimizado para móviles y desktop
 - **Modo oscuro**: Tema dinámico con persistencia
 - **Animaciones**: Framer Motion para transiciones suaves
@@ -48,15 +52,6 @@
 - **Desarrollo**: ESLint 9, Prettier, Turbopack, pnpm
 - **CI/CD**: GitHub Actions con pipeline completo
 - **Despliegue**: Vercel con optimizaciones automáticas
-
-## 🆕 Actualizaciones Recientes
-
-### v1.2.0 - Noviembre 2024
-- ✨ **Selector de idiomas móvil rediseñado**: Interfaz tipo "pill toggle" elegante y compacta
-- 🎯 **Botones uniformes**: Hamburguesa y tema con tamaño consistente (40px)
-- ⚡ **Turbopack habilitado**: Mejor rendimiento en desarrollo con Next.js 15
-- 🧹 **Código optimizado**: React.memo, limpieza de componentes obsoletos
-- 📱 **UI responsive mejorada**: Mejor experiencia en dispositivos móviles
 
 ## 📁 Estructura del Proyecto
 
@@ -90,14 +85,20 @@
 ### Prerrequisitos
 
 - Node.js 22+ (requerido por Vercel)
-- pnpm 8+ (recomendado)
+- pnpm 8+ (**obligatorio para desarrollo**)
 
 ### Instalación
 
 ```bash
+# Instalar pnpm globalmente si no lo tienes
+npm install -g pnpm
+
+# Clonar e instalar dependencias
 git clone https://github.com/aalvaropc/aalvaropc-portfolio
 cd aalvaropc-portfolio
 pnpm install
+
+# Los hooks de Git se configurarán automáticamente
 ```
 
 ### Scripts Disponibles
@@ -108,15 +109,60 @@ pnpm dev                # Servidor de desarrollo con Turbopack
 pnpm dev:network        # Desarrollo en red local
 pnpm build              # Build de producción
 pnpm start              # Servidor de producción
+
+# Calidad de código (automáticos con hooks)
 pnpm lint               # Linting
+pnpm lint:fix           # Linting con auto-fix
+pnpm format             # Formatear código con Prettier
 
 # Testing
 pnpm test               # Ejecutar tests
 pnpm test:watch         # Tests en modo watch
 pnpm test:coverage      # Reporte de cobertura
+pnpm test:ci            # Tests para CI/CD
 
 # CI/CD
 pnpm precommit          # Pipeline completo de CI
+```
+
+### 🎣 Hooks de Git Automáticos
+
+El proyecto incluye hooks automáticos que se ejecutan en diferentes momentos:
+
+#### **Pre-commit** (antes de cada commit)
+
+- ✨ **Lint-staged**: Ejecuta ESLint y Prettier solo en archivos modificados
+- 🧪 **Tests**: Ejecuta tests solo si hay cambios en archivos de código
+- ⚡ **Rápido**: Solo procesa archivos que cambiaron
+
+#### **Commit-msg** (valida mensajes de commit)
+
+- 📝 **Conventional Commits**: Valida formato `tipo(scope): descripción`
+- 🏷️ **Tipos válidos**: feat, fix, docs, style, refactor, test, chore, etc.
+
+#### **Pre-push** (antes de cada push)
+
+- 🔨 **Build**: Verifica que el proyecto compile correctamente
+- 🧪 **Tests completos**: Suite completa con cobertura
+- 🔒 **Audit**: Verificación de vulnerabilidades de seguridad
+
+### 💡 Flujo de Desarrollo Recomendado
+
+```bash
+# 1. Crear branch para nueva feature
+git checkout -b feat/nueva-funcionalidad
+
+# 2. Desarrollar con live reload
+pnpm dev
+
+# 3. Commit con formato conventional (hooks automáticos)
+git add .
+git commit -m "feat: add new awesome feature"
+# ✅ Pre-commit ejecutará lint, format y tests automáticamente
+
+# 4. Push al remoto (verificaciones completas)
+git push origin feat/nueva-funcionalidad
+# ✅ Pre-push ejecutará build, tests y audit automáticamente
 ```
 
 ## 🧪 Testing
@@ -139,7 +185,7 @@ pnpm test:coverage
 ### Cobertura Actual
 
 - **Statements**: 88.4% (objetivo: 15%+)
-- **Functions**: 75% (objetivo: 15%+)  
+- **Functions**: 75% (objetivo: 15%+)
 - **Branches**: 68.7% (objetivo: 10%+)
 - **Lines**: 89.6% (objetivo: 15%+)
 
@@ -154,8 +200,8 @@ pnpm test:coverage
 
 Sistema completo de i18n con cobertura del 100% del contenido:
 
-
 ### 🌐 Idiomas Soportados
+
 - 🇪🇸 **Español**: Idioma principal (detección por geolocalización)
 - 🇺🇸 **Inglés**: Traducción completa y profesional
 
@@ -188,29 +234,3 @@ El proyecto incluye GitHub Actions para:
 - ✅ **Deploy**: Despliegue automático en producción
 
 Ver [`.github/workflows/ci.yml`](./.github/workflows/ci.yml) para configuración completa.
-
-## 📊 Métricas y Monitoreo
-
-- **Lighthouse Score**: 95+ en todas las categorías
-- **Core Web Vitals**: Cumple con estándares de Google
-- **Bundle Size**: Optimizado para carga rápida
-- **SEO Score**: 100/100
-
-## 📄 Licencia
-
-Este proyecto está bajo la Licencia MIT. Ver [LICENSE](LICENSE) para más detalles.
-
-## 📞 Contacto
-
-### Alvaro Peña - Backend Developer
-
-- 🌐 **Website**: [aalvaropc.vercel.app](https://aalvaropc.vercel.app)
-- 💼 **LinkedIn**: [aalvarop-pe](https://linkedin.com/in/aalvarop-pe/)
-- 📧 **Email**: [aalvaropc@gmail.com](mailto:aalvaropc@gmail.com)
-- 🐱 **GitHub**: [aalvaropc](https://github.com/aalvaropc)
-
----
-
-⭐ **Si te gusta este proyecto, ¡no olvides darle una estrella!**
-
-🔥 **Stack**: Go • Python • Java • FastAPI • Spring Boot • PostgreSQL • Redis • Docker • AWS • GCP
