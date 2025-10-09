@@ -14,7 +14,8 @@
 - **Sistema completo**: Todas las páginas y contenido traducido
 - **Detección automática**: Basada en geolocalización y preferencias del navegador
 - **Idiomas soportados**: Español y Inglés (100% traducido)
-- **Selector minimalista**: Interfaz limpia con banderas de país
+- **Selector móvil mejorado**: Diseño tipo "pill toggle" moderno y compacto
+- **UI consistente**: Botones de navegación uniformes (hamburguesa/tema)
 - **Contenido dinámico**: JSON estructurado para proyectos y posts
 - **Hooks personalizados**: useI18n, useTranslations, usePostDetail, useWorkDetail
 
@@ -44,9 +45,18 @@
 - **Animaciones**: Framer Motion, p5.js (árbol fractal interactivo)
 - **3D**: Three.js para visualizaciones
 - **Testing**: Jest, React Testing Library (88.4% cobertura)
-- **Desarrollo**: ESLint, Prettier, TypeScript support
+- **Desarrollo**: ESLint 9, Prettier, Turbopack, pnpm
 - **CI/CD**: GitHub Actions con pipeline completo
 - **Despliegue**: Vercel con optimizaciones automáticas
+
+## 🆕 Actualizaciones Recientes
+
+### v1.2.0 - Noviembre 2024
+- ✨ **Selector de idiomas móvil rediseñado**: Interfaz tipo "pill toggle" elegante y compacta
+- 🎯 **Botones uniformes**: Hamburguesa y tema con tamaño consistente (40px)
+- ⚡ **Turbopack habilitado**: Mejor rendimiento en desarrollo con Next.js 15
+- 🧹 **Código optimizado**: React.memo, limpieza de componentes obsoletos
+- 📱 **UI responsive mejorada**: Mejor experiencia en dispositivos móviles
 
 ## 📁 Estructura del Proyecto
 
@@ -94,7 +104,8 @@ pnpm install
 
 ```bash
 # Desarrollo
-pnpm dev                # Servidor de desarrollo
+pnpm dev                # Servidor de desarrollo con Turbopack
+pnpm dev:network        # Desarrollo en red local
 pnpm build              # Build de producción
 pnpm start              # Servidor de producción
 pnpm lint               # Linting
