@@ -148,20 +148,6 @@ Sistema completo de i18n con cobertura del 100% del contenido:
 - 🇪🇸 **Español**: Idioma principal (detección por geolocalización)
 - 🇺🇸 **Inglés**: Traducción completa y profesional
 
-### ⚙️ Arquitectura Técnica
-- **Contexto React**: `useI18n()` para estado global
-- **Hooks personalizados**: `useTranslations()`, `useWorkDetail()`, `usePostDetail()`
-- **JSON estructurado**: Contenido separado por namespaces
-- **Fallback inteligente**: Sistema robusto de respaldo
-- **Persistencia**: LocalStorage para preferencias del usuario
-
-### 🎨 Interfaz Minimalista
-- **Selector compacto**: Solo banderas en desktop
-- **Menú móvil**: Funcionalidad completa en responsive
-- **Transiciones suaves**: Cambio instantáneo de idioma
-
-Ver [documentación técnica completa](./docs/i18n-system.md) para implementación detallada.
-
 ## 🚀 Despliegue
 
 ### Vercel (Recomendado)
@@ -198,22 +184,6 @@ Ver [`.github/workflows/ci.yml`](./.github/workflows/ci.yml) para configuración
 - **Core Web Vitals**: Cumple con estándares de Google
 - **Bundle Size**: Optimizado para carga rápida
 - **SEO Score**: 100/100
-
-## 🤝 Contribuciones
-
-Las contribuciones son bienvenidas! Por favor:
-
-1. Fork el proyecto
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Haz commit de tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
-
-### Convenciones
-
-- **Commits**: Seguir [Conventional Commits](https://conventionalcommits.org/)
-- **Código**: ESLint + Prettier
-- **Tests**: Obligatorios para nuevas funcionalidades
 
 ## 📄 Licencia
 
