@@ -8,7 +8,7 @@
   },
   "navigation": {
     "home": "Inicio",
-    "works": "Trabajos", 
+    "works": "Trabajos",
     "posts": "Posts",
     "contact": "Contacto"
   },
@@ -41,14 +41,14 @@
         "description": "Diseño y desarrollo de microservicios en Go y Python para automatizar activación de líneas móviles"
       },
       {
-        "period": "2024 febrero - 2025 febrero", 
+        "period": "2024 febrero - 2025 febrero",
         "position": "Centers Junior",
         "company": "NTT Data",
         "description": "Desarrollo de mejoras para sistemas críticos de servicios públicos"
       },
       {
         "period": "2023 octubre - 2024 enero",
-        "position": "Full-Stack Junior", 
+        "position": "Full-Stack Junior",
         "company": "Proveedy",
         "description": "Diseño y optimización de bases de datos PostgreSQL con Django ORM"
       },
@@ -65,8 +65,12 @@
     "technologies": "Go • Python • FastAPI • Java • Spring Boot • Typescript • React JS • PostgreSQL • Redis • Docker • GCP • AWS • RabbitMQ"
   },
   "interests": {
-    "title": "Intereses", 
+    "title": "Intereses",
     "list": "Arquitecturas escalables • Sistemas distribuidos • Microservicios • Cloud Native"
+  },
+  "music": {
+    "title": "Actualmente Escuchando",
+    "description": "Música que me acompaña mientras programo"
   },
   "contact": {
     "title": "Contacto",
@@ -78,13 +82,13 @@
         "url": "https://github.com/aalvaropc"
       },
       "linkedin": {
-        "label": "LinkedIn", 
+        "label": "LinkedIn",
         "description": "Red profesional y actualizaciones de carrera",
         "url": "https://www.linkedin.com/in/aalvarop-pe/"
       },
       "email": {
         "label": "Email",
-        "description": "Para oportunidades y colaboraciones", 
+        "description": "Para oportunidades y colaboraciones",
         "url": "mailto:aalvaropc@gmail.com"
       }
     }
@@ -98,7 +102,7 @@
   },
   "metadata": {
     "repository": "Repositorio",
-    "platform": "Plataforma", 
+    "platform": "Plataforma",
     "stack": "Stack",
     "website": "Website",
     "slides": "Diapositivas",

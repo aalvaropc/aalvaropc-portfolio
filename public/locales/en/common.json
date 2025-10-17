@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "Alvaro Peña",
-    "fullName": "Alvaro Rodrigo Peña Peña", 
+    "fullName": "Alvaro Rodrigo Peña Peña",
     "email": "aalvaropc@gmail.com",
     "location": "Ica, Peru",
     "phone": "+51 XXX XXX XXX"
@@ -9,7 +9,7 @@
   "navigation": {
     "home": "Home",
     "works": "Works",
-    "posts": "Posts", 
+    "posts": "Posts",
     "contact": "Contact"
   },
   "nav": {
@@ -34,10 +34,10 @@
   "experience": {
     "title": "Experience",
     "jobs": [
-      {  
+      {
         "period": "February 2025 - present",
         "position": "Backend Developer",
-        "company": "Guinea Mobile", 
+        "company": "Guinea Mobile",
         "description": "Design and development of microservices in Go and Python to automate mobile line activation"
       },
       {
@@ -47,7 +47,7 @@
         "description": "Development of enhancements for critical public service systems"
       },
       {
-        "period": "October 2023 - January 2024", 
+        "period": "October 2023 - January 2024",
         "position": "Full-Stack Junior",
         "company": "Proveedy",
         "description": "Design and optimization of PostgreSQL databases with Django ORM"
@@ -68,6 +68,10 @@
     "title": "Interests",
     "list": "Scalable architectures • Distributed systems • Microservices • Cloud Native"
   },
+  "music": {
+    "title": "Currently Listening",
+    "description": "Music that keeps me company while coding"
+  },
   "contact": {
     "title": "Contact",
     "message": "Have an interesting project? I'd love to meet you!",
@@ -79,7 +83,7 @@
       },
       "linkedin": {
         "label": "LinkedIn",
-        "description": "Professional network and career updates", 
+        "description": "Professional network and career updates",
         "url": "https://www.linkedin.com/in/aalvarop-pe/"
       },
       "email": {
@@ -99,7 +103,7 @@
   "metadata": {
     "repository": "Repository",
     "platform": "Platform",
-    "stack": "Stack", 
+    "stack": "Stack",
     "website": "Website",
     "slides": "Slides",
     "presentation": "Presentation",
