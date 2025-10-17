@@ -45,7 +45,7 @@ const Main = ({ children, router }) => {
                 <LazyFractalTree />
 
                 {children}
-                <Footer />
+                <Footer router={router} />
             </Container>
         </Box>
     )

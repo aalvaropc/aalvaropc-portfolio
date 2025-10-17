@@ -5,7 +5,6 @@ import { render } from '@testing-library/react'
 jest.mock('react-icons/fa', () => ({
   FaGithub: (props) => React.createElement('span', { ...props, 'data-testid': 'github-icon' }, 'GitHub'),
   FaLinkedin: (props) => React.createElement('span', { ...props, 'data-testid': 'linkedin-icon' }, 'LinkedIn'),
-  FaTwitter: (props) => React.createElement('span', { ...props, 'data-testid': 'twitter-icon' }, 'Twitter'),
   FaEnvelope: (props) => React.createElement('span', { ...props, 'data-testid': 'email-icon' }, 'Email')
 }))
 

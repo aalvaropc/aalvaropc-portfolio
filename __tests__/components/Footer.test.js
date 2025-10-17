@@ -43,28 +43,57 @@ jest.mock('@chakra-ui/react', () => {
 jest.mock('react-icons/fa', () => ({
   FaGithub: (props) => <span {...props} data-testid="github-icon">GitHub</span>,
   FaLinkedin: (props) => <span {...props} data-testid="linkedin-icon">LinkedIn</span>,
-  FaTwitter: (props) => <span {...props} data-testid="twitter-icon">Twitter</span>,
   FaEnvelope: (props) => <span {...props} data-testid="email-icon">Email</span>
 }))
 
 describe('Footer', () => {
+  const mockRouter = {
+    asPath: '/works' // Non-home page
+  }
+
+  const mockHomeRouter = {
+    asPath: '/' // Home page
+  }
+
   it('renders footer component', () => {
-    render(<Footer />)
+    render(<Footer router={mockRouter} />)
     
     const footer = screen.getByText(/© 2025 Alvaro Peña/)
     expect(footer).toBeInTheDocument()
   })
 
   it('displays current year in copyright', () => {
-    render(<Footer />)
+    render(<Footer router={mockRouter} />)
     
     const currentYear = new Date().getFullYear()
     const copyrightText = screen.getByText(new RegExp(`© ${currentYear} Alvaro Peña`))
     expect(copyrightText).toBeInTheDocument()
   })
 
-  it('contains GitHub link', () => {
-    render(<Footer />)
+  it('shows social links when NOT on home page', () => {
+    render(<Footer router={mockRouter} />)
+    
+    const links = screen.getAllByRole('link')
+    expect(links.length).toBeGreaterThan(0)
+    
+    const githubLink = links.find(link => link.getAttribute('href') === 'https://github.com/aalvaropc')
+    const linkedinLink = links.find(link => link.getAttribute('href') === 'https://linkedin.com/in/alvaro-pena-carrera')
+    const emailLink = links.find(link => link.getAttribute('href') === 'mailto:alvaro@example.com')
+    
+    expect(githubLink).toBeInTheDocument()
+    expect(linkedinLink).toBeInTheDocument()
+    expect(emailLink).toBeInTheDocument()
+  })
+
+  it('hides social links when on home page', () => {
+    render(<Footer router={mockHomeRouter} />)
+    
+    const links = screen.queryAllByRole('link')
+    expect(links.length).toBe(0)
+  })
+
+  it('contains GitHub link on non-home pages', () => {
+    render(<Footer router={mockRouter} />)
     
     const links = screen.getAllByRole('link')
     const githubLink = links.find(link => link.getAttribute('href') === 'https://github.com/aalvaropc')
@@ -72,8 +101,8 @@ describe('Footer', () => {
     expect(githubLink).toHaveAttribute('href', 'https://github.com/aalvaropc')
   })
 
-  it('contains LinkedIn link', () => {
-    render(<Footer />)
+  it('contains LinkedIn link on non-home pages', () => {
+    render(<Footer router={mockRouter} />)
     
     const links = screen.getAllByRole('link')
     const linkedinLink = links.find(link => link.getAttribute('href') === 'https://linkedin.com/in/alvaro-pena-carrera')
@@ -81,17 +110,8 @@ describe('Footer', () => {
     expect(linkedinLink).toHaveAttribute('href', 'https://linkedin.com/in/alvaro-pena-carrera')
   })
 
-  it('contains Twitter link', () => {
-    render(<Footer />)
-    
-    const links = screen.getAllByRole('link')
-    const twitterLink = links.find(link => link.getAttribute('href') === 'https://twitter.com/aalvaropc')
-    expect(twitterLink).toBeInTheDocument()
-    expect(twitterLink).toHaveAttribute('href', 'https://twitter.com/aalvaropc')
-  })
-
-  it('contains Email link', () => {
-    render(<Footer />)
+  it('contains Email link on non-home pages', () => {
+    render(<Footer router={mockRouter} />)
     
     const links = screen.getAllByRole('link')
     const emailLink = links.find(link => link.getAttribute('href') === 'mailto:alvaro@example.com')
@@ -99,8 +119,8 @@ describe('Footer', () => {
     expect(emailLink).toHaveAttribute('href', 'mailto:alvaro@example.com')
   })
 
-  it('has proper accessibility attributes', () => {
-    render(<Footer />)
+  it('has proper accessibility attributes on non-home pages', () => {
+    render(<Footer router={mockRouter} />)  
     
     const socialLinks = screen.getAllByRole('link')
     socialLinks.forEach(link => {

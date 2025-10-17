@@ -105,5 +105,9 @@
     "presentation": "Presentación",
     "event": "Web Evento",
     "tags": "Tags"
+  },
+  "languages": {
+    "spanish": "Español",
+    "english": "Inglés"
   }
 }

@@ -10,13 +10,15 @@ import {
 } from '@chakra-ui/react'
 import { ChevronDownIcon } from '@chakra-ui/icons'
 import { useI18n } from '../lib/i18nContext'
+import { useTranslations } from '../lib/useTranslations'
 
 const LanguageSelector = ({ isMobile = false }) => {
   const { locale, changeLocale, supportedLocales, isLoading } = useI18n()
+  const { t } = useTranslations(locale, 'common')
 
   const languages = [
-    { code: 'es', name: 'Español', flag: '🇪🇸', shortName: 'ES' },
-    { code: 'en', name: 'English', flag: '🇺🇸', shortName: 'EN' }
+    { code: 'es', name: t('languages.spanish', 'Español'), flag: '🇪🇸', shortName: 'ES' },
+    { code: 'en', name: t('languages.english', 'English'), flag: '🇺🇸', shortName: 'EN' }
   ]
 
   const currentLang = languages.find(lang => lang.code === locale) || languages[0]
