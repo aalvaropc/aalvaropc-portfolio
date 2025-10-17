@@ -5,14 +5,33 @@
 // Learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom'
 
+// Suppress React act() warnings in tests
+const originalError = console.error
+beforeAll(() => {
+  console.error = (...args) => {
+    if (
+      typeof args[0] === 'string' &&
+      args[0].includes('Warning: An update to') &&
+      args[0].includes('was not wrapped in act')
+    ) {
+      return
+    }
+    originalError.call(console, ...args)
+  }
+})
+
+afterAll(() => {
+  console.error = originalError
+})
+
 // Mock completo de Chakra UI para evitar errores de Emotion
 jest.mock('@chakra-ui/react', () => {
   const React = require('react')
-  
+
   const MockComponent = ({ children, as: Component = 'div', ...props }) => {
     return React.createElement(Component, props, children)
   }
-  
+
   return {
     ChakraProvider: ({ children }) => children,
     Container: MockComponent,
@@ -32,20 +51,33 @@ jest.mock('@chakra-ui/react', () => {
       toggleColorMode: jest.fn()
     }),
     // Funciones faltantes para evitar TypeError
-    chakra: (component) => component,
-    extendTheme: (theme) => theme || {},
-    shouldForwardProp: (prop) => !['borderRadius', 'alignItems', 'flexGrow', 'isLazy', 'maxW', 'zIndex'].includes(prop)
+    chakra: component => component,
+    extendTheme: theme => theme || {},
+    shouldForwardProp: prop =>
+      ![
+        'borderRadius',
+        'alignItems',
+        'flexGrow',
+        'isLazy',
+        'maxW',
+        'zIndex'
+      ].includes(prop)
   }
 })
 
 // Mock Chakra UI icons
 jest.mock('@chakra-ui/icons', () => ({
-  HamburgerIcon: () => React.createElement('span', { role: 'img', 'aria-label': 'hamburger' }, '☰'),
-  MoonIcon: () => React.createElement('span', { role: 'img', 'aria-label': 'moon' }, '🌙'),
-  SunIcon: () => React.createElement('span', { role: 'img', 'aria-label': 'sun' }, '☀️')
+  HamburgerIcon: () =>
+    React.createElement(
+      'span',
+      { role: 'img', 'aria-label': 'hamburger' },
+      '☰'
+    ),
+  MoonIcon: () =>
+    React.createElement('span', { role: 'img', 'aria-label': 'moon' }, '🌙'),
+  SunIcon: () =>
+    React.createElement('span', { role: 'img', 'aria-label': 'sun' }, '☀️')
 }))
-
-
 
 // Mock Next.js router
 jest.mock('next/router', () => ({
@@ -64,20 +96,20 @@ jest.mock('next/router', () => ({
       events: {
         on: jest.fn(),
         off: jest.fn(),
-        emit: jest.fn(),
+        emit: jest.fn()
       },
-      isFallback: false,
+      isFallback: false
     }
-  },
+  }
 }))
 
 // Mock Next.js Image component
 jest.mock('next/image', () => ({
   __esModule: true,
-  default: (props) => {
+  default: props => {
     // eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text
     return <img {...props} />
-  },
+  }
 }))
 
 // Mock Next.js Link component
@@ -89,36 +121,38 @@ jest.mock('next/link', () => ({
         {children}
       </a>
     )
-  },
+  }
 }))
 
 // Mock framer-motion for faster tests
 jest.mock('framer-motion', () => ({
   motion: {
     div: ({ children, ...props }) => <div {...props}>{children}</div>,
-    section: ({ children, ...props }) => <section {...props}>{children}</section>,
+    section: ({ children, ...props }) => (
+      <section {...props}>{children}</section>
+    ),
     h1: ({ children, ...props }) => <h1 {...props}>{children}</h1>,
     h2: ({ children, ...props }) => <h2 {...props}>{children}</h2>,
     h3: ({ children, ...props }) => <h3 {...props}>{children}</h3>,
     p: ({ children, ...props }) => <p {...props}>{children}</p>,
     span: ({ children, ...props }) => <span {...props}>{children}</span>,
-    a: ({ children, ...props }) => <a {...props}>{children}</a>,
+    a: ({ children, ...props }) => <a {...props}>{children}</a>
   },
-  AnimatePresence: ({ children }) => children,
+  AnimatePresence: ({ children }) => children
 }))
 
 // Global test utilities
 global.IntersectionObserver = class IntersectionObserver {
   constructor() {}
-  
+
   observe() {
     return null
   }
-  
+
   disconnect() {
     return null
   }
-  
+
   unobserve() {
     return null
   }
@@ -135,23 +169,23 @@ Object.defineProperty(window, 'matchMedia', {
     removeListener: jest.fn(), // deprecated
     addEventListener: jest.fn(),
     removeEventListener: jest.fn(),
-    dispatchEvent: jest.fn(),
-  })),
+    dispatchEvent: jest.fn()
+  }))
 })
 
 // Mock geolocation for i18n tests
 Object.defineProperty(global.navigator, 'geolocation', {
   value: {
-    getCurrentPosition: jest.fn().mockImplementation((success) => {
+    getCurrentPosition: jest.fn().mockImplementation(success => {
       success({
         coords: {
           latitude: -14.0723,
           longitude: -75.7289
         }
       })
-    }),
+    })
   },
-  writable: true,
+  writable: true
 })
 
 // Mock localStorage for i18n tests
@@ -159,6 +193,6 @@ const localStorageMock = {
   getItem: jest.fn(),
   setItem: jest.fn(),
   removeItem: jest.fn(),
-  clear: jest.fn(),
+  clear: jest.fn()
 }
 global.localStorage = localStorageMock

@@ -15,7 +15,8 @@ const eslintConfig = [
       'node_modules/**',
       '.git/**',
       'dist/**',
-      'build/**'
+      'build/**',
+      'coverage/**'
     ]
   },
   ...compat.extends('next/core-web-vitals'),

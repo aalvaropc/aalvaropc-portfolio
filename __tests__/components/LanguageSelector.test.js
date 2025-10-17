@@ -3,18 +3,34 @@
  */
 
 import React from 'react'
-import { render, screen } from '@testing-library/react'
+import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import LanguageSelector from '../../components/LanguageSelector'
 
 // Mock ChakraUI components with prop filtering
 jest.mock('@chakra-ui/react', () => {
   // Helper function to filter props
-  const filterDOMProps = (props) => {
-    const allowedProps = ['className', 'style', 'id', 'role', 'aria-label', 'data-testid', 'onClick', 'href', 'target', 'rel', 'disabled']
+  const filterDOMProps = props => {
+    const allowedProps = [
+      'className',
+      'style',
+      'id',
+      'role',
+      'aria-label',
+      'data-testid',
+      'onClick',
+      'href',
+      'target',
+      'rel',
+      'disabled'
+    ]
     const domProps = {}
     Object.keys(props).forEach(key => {
-      if (allowedProps.includes(key) || key.startsWith('data-') || key.startsWith('aria-')) {
+      if (
+        allowedProps.includes(key) ||
+        key.startsWith('data-') ||
+        key.startsWith('aria-')
+      ) {
         domProps[key] = props[key]
       }
     })
@@ -25,41 +41,73 @@ jest.mock('@chakra-ui/react', () => {
     useColorModeValue: () => 'gray.200', // Mock hook to return light theme color
     Menu: ({ children, ...allProps }) => {
       const domProps = filterDOMProps(allProps)
-      return <div data-testid="language-menu" {...domProps}>{children}</div>
+      return (
+        <div data-testid="language-menu" {...domProps}>
+          {children}
+        </div>
+      )
     },
     MenuButton: ({ children, as: Component, ...allProps }) => {
       const domProps = filterDOMProps(allProps)
       if (Component) {
-        return React.createElement(Component, { 'data-testid': 'language-button', ...domProps }, children)
+        return React.createElement(
+          Component,
+          { 'data-testid': 'language-button', ...domProps },
+          children
+        )
       }
-      return <button data-testid="language-button" {...domProps}>{children}</button>
+      return (
+        <button data-testid="language-button" {...domProps}>
+          {children}
+        </button>
+      )
     },
     MenuList: ({ children, ...allProps }) => {
       const domProps = filterDOMProps(allProps)
-      return <div data-testid="menu-list" {...domProps}>{children}</div>
+      return (
+        <div data-testid="menu-list" {...domProps}>
+          {children}
+        </div>
+      )
     },
     MenuItem: ({ children, onClick, ...allProps }) => {
       const domProps = filterDOMProps({ onClick, ...allProps })
-      return <button data-testid="menu-item" {...domProps}>{children}</button>
+      return (
+        <button data-testid="menu-item" {...domProps}>
+          {children}
+        </button>
+      )
     },
     Button: ({ children, ...allProps }) => {
       const domProps = filterDOMProps(allProps)
-      return <button data-testid="button" {...domProps}>{children}</button>
+      return (
+        <button data-testid="button" {...domProps}>
+          {children}
+        </button>
+      )
     },
     Spinner: ({ ...allProps }) => {
       const domProps = filterDOMProps(allProps)
-      return <div data-testid="spinner" {...domProps}>Loading...</div>
+      return (
+        <div data-testid="spinner" {...domProps}>
+          Loading...
+        </div>
+      )
     },
     Box: ({ children, ...allProps }) => {
       const domProps = filterDOMProps(allProps)
-      return <div data-testid="box" {...domProps}>{children}</div>
-    },
+      return (
+        <div data-testid="box" {...domProps}>
+          {children}
+        </div>
+      )
+    }
   }
 })
 
 // Mock ChakraUI icons
 jest.mock('@chakra-ui/icons', () => ({
-  ChevronDownIcon: () => <span data-testid="chevron-down">▼</span>,
+  ChevronDownIcon: () => <span data-testid="chevron-down">▼</span>
 }))
 
 // Mock i18n context
@@ -68,7 +116,7 @@ jest.mock('../../lib/i18nContext', () => ({
     locale: 'es',
     changeLocale: jest.fn(),
     supportedLocales: ['es', 'en'],
-    isLoading: false,
+    isLoading: false
   })
 }))
 
@@ -94,11 +142,11 @@ describe('Internationalization System', () => {
   beforeEach(() => {
     // Clear localStorage
     localStorage.clear()
-    
+
     // Mock successful fetch responses
-    fetch.mockImplementation((url) => {
+    fetch.mockImplementation(url => {
       const lang = url.includes('/es/') ? 'es' : 'en'
-      
+
       return Promise.resolve({
         ok: true,
         json: () => Promise.resolve(mockTranslations[lang] || {})
@@ -110,11 +158,14 @@ describe('Internationalization System', () => {
     jest.clearAllMocks()
   })
 
-  it('renders language selector with default Spanish flag', () => {
+  it('renders language selector with default Spanish flag', async () => {
     render(<LanguageSelector />)
 
-    // The Spanish flag should be displayed in the button (use testid to be specific)
-    expect(screen.getByTestId('language-button')).toBeInTheDocument()
+    // Wait for component to finish loading
+    await waitFor(() => {
+      expect(screen.getByTestId('language-button')).toBeInTheDocument()
+    })
+
     // Verify Spanish flag appears in button
     const allFlags = screen.getAllByText(/🇪🇸/)
     expect(allFlags.length).toBeGreaterThan(0)
@@ -122,43 +173,53 @@ describe('Internationalization System', () => {
 
   it('shows language menu when clicked', async () => {
     const user = userEvent.setup()
-    
+
     render(<LanguageSelector />)
 
-    // Click on language selector button
+    // Wait for component to load, then click
+    await waitFor(() => {
+      expect(screen.getByTestId('language-button')).toBeInTheDocument()
+    })
+
     await user.click(screen.getByTestId('language-button'))
-    
+
     // Verify menu items are displayed using getAllByText to handle multiple instances
     expect(screen.getByText(/🇪🇸 Español/)).toBeInTheDocument()
     expect(screen.getByText(/🇺🇸 English/)).toBeInTheDocument()
   })
 
-  it('renders menu items correctly', () => {
+  it('renders menu items correctly', async () => {
     render(<LanguageSelector />)
 
-    // Language menu should render
-    expect(screen.getByTestId('language-menu')).toBeInTheDocument()
-    expect(screen.getByTestId('language-button')).toBeInTheDocument()
-    
+    // Wait for component to load
+    await waitFor(() => {
+      expect(screen.getByTestId('language-menu')).toBeInTheDocument()
+      expect(screen.getByTestId('language-button')).toBeInTheDocument()
+    })
+
     // Menu items should be available
     const menuItems = screen.getAllByTestId('menu-item')
     expect(menuItems).toHaveLength(2)
   })
 
-  it('shows correct structure', () => {
+  it('shows correct structure', async () => {
     render(<LanguageSelector />)
 
-    // Verify the selector components are functional
-    expect(screen.getByTestId('language-button')).toBeInTheDocument()
-    expect(screen.getByTestId('language-menu')).toBeInTheDocument()
-    expect(screen.getByTestId('menu-list')).toBeInTheDocument()
+    // Wait for component to load and verify structure
+    await waitFor(() => {
+      expect(screen.getByTestId('language-button')).toBeInTheDocument()
+      expect(screen.getByTestId('language-menu')).toBeInTheDocument()
+      expect(screen.getByTestId('menu-list')).toBeInTheDocument()
+    })
   })
 
-  it('contains language options', () => {
+  it('contains language options', async () => {
     render(<LanguageSelector />)
 
-    // Should show both language options in the menu
-    expect(screen.getByText(/Español/)).toBeInTheDocument()
-    expect(screen.getByText(/English/)).toBeInTheDocument()
+    // Wait for component to load and check language options
+    await waitFor(() => {
+      expect(screen.getByText(/Español/)).toBeInTheDocument()
+      expect(screen.getByText(/English/)).toBeInTheDocument()
+    })
   })
 })
