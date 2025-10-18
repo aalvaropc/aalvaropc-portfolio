@@ -210,6 +210,10 @@ describe('ContactForm', () => {
     const { addDoc } = require('firebase/firestore')
     addDoc.mockRejectedValueOnce(new Error('Firebase error'))
 
+    // Silence console.error for this test
+    const originalConsoleError = console.error
+    console.error = jest.fn()
+
     const user = userEvent.setup()
     render(<ContactForm />)
 
@@ -222,6 +226,9 @@ describe('ContactForm', () => {
     await waitFor(() => {
       expect(screen.getByTestId('alert-error')).toBeInTheDocument()
     })
+
+    // Restore console.error
+    console.error = originalConsoleError
   })
 
   it('enforces 500 character limit on message', async () => {
