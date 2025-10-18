@@ -17,6 +17,7 @@ import { MdEmail } from 'react-icons/md'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import SpotifyPlaylist from '../components/SpotifyPlaylist'
+import ContactForm from '../components/ContactForm'
 import { useI18n } from '../lib/i18nContext'
 
 const Page = () => {
@@ -181,17 +182,30 @@ const Page = () => {
 
           <Section delay={0.5}>
             <Heading as="h3" variant="section-title">
+              {t('contactMe.title', 'Contáctame')}
+            </Heading>
+            <Paragraph>
+              {t(
+                'contactMe.description',
+                '¿Tienes un proyecto interesante? ¡Hablemos!'
+              )}
+            </Paragraph>
+            <Box mt={4} />
+            <ContactForm />
+          </Section>
+          <Section delay={0.7}>
+            <Heading as="h3" variant="section-title">
               {t('music.title', 'Actualmente Escuchando')}
             </Heading>
-            <Paragraph mb={4}>
+            <Paragraph mb={8}>
               {t(
                 'music.description',
                 'Música que me acompaña mientras programo'
               )}
             </Paragraph>
+            <Box mt={4} />
             <SpotifyPlaylist />
           </Section>
-
           <Section delay={0.6}>
             <Heading as="h3" variant="section-title">
               {t('contact.title', 'Contacto')}

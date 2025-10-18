@@ -83,15 +83,34 @@
       },
       "linkedin": {
         "label": "LinkedIn",
-        "description": "Professional network and career updates",
+        "description": "My professional profile and experience",
         "url": "https://www.linkedin.com/in/aalvarop-pe/"
       },
       "email": {
         "label": "Email",
-        "description": "For opportunities and collaborations",
+        "description": "Send me a direct message",
         "url": "mailto:aalvaropc@gmail.com"
       }
     }
+  },
+  "contactMe": {
+    "title": "Contact Me",
+    "description": "Have an interesting project? Let's talk!"
+  },
+  "contactForm": {
+    "email": {
+      "label": "Email",
+      "optional": "optional",
+      "placeholder": "your@email.com"
+    },
+    "message": {
+      "label": "Message",
+      "placeholder": "Tell me about your project or idea..."
+    },
+    "submit": "Send Message",
+    "sending": "Sending...",
+    "success": "Message sent! I'll get back to you soon.",
+    "error": "Error sending message. Please try again."
   },
   "footer": {
     "copyright": "© {year} Alvaro Peña"

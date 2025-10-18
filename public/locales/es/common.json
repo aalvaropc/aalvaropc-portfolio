@@ -83,15 +83,34 @@
       },
       "linkedin": {
         "label": "LinkedIn",
-        "description": "Red profesional y actualizaciones de carrera",
+        "description": "Mi perfil profesional y experiencia",
         "url": "https://www.linkedin.com/in/aalvarop-pe/"
       },
       "email": {
         "label": "Email",
-        "description": "Para oportunidades y colaboraciones",
+        "description": "Envíame un mensaje directo",
         "url": "mailto:aalvaropc@gmail.com"
       }
     }
+  },
+  "contactMe": {
+    "title": "Contáctame",
+    "description": "¿Tienes un proyecto interesante? ¡Hablemos!"
+  },
+  "contactForm": {
+    "email": {
+      "label": "Email",
+      "optional": "opcional",
+      "placeholder": "tu@email.com"
+    },
+    "message": {
+      "label": "Mensaje",
+      "placeholder": "Cuéntame sobre tu proyecto o idea..."
+    },
+    "submit": "Enviar Mensaje",
+    "sending": "Enviando...",
+    "success": "¡Mensaje enviado! Te responderé pronto.",
+    "error": "Error al enviar. Por favor, intenta de nuevo."
   },
   "prepositions": {
     "at": "en",
