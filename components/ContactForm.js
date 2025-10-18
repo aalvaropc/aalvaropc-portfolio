@@ -12,7 +12,7 @@ import {
   AlertIcon,
   useColorModeValue
 } from '@chakra-ui/react'
-import { collection, addDoc, serverTimestamp } from 'firebase/firestore'
+import { collection, addDoc } from 'firebase/firestore'
 import { db } from '../lib/firebase'
 import { useI18n } from '../lib/i18nContext'
 
@@ -47,15 +47,23 @@ const ContactForm = () => {
     setSubmitStatus(null)
 
     try {
-      await addDoc(collection(db, 'contacts'), {
-        email: formData.email || null,
-        message: formData.message.trim(),
-        timestamp: serverTimestamp(),
-        userAgent:
-          typeof window !== 'undefined' ? window.navigator.userAgent : null,
-        referrer:
-          typeof window !== 'undefined' ? window.document.referrer : null
-      })
+      // Crear fecha en zona horaria de Perú (UTC-5)
+      const now = new Date()
+      const peruTime = new Date(now.getTime() - 5 * 60 * 60 * 1000) // UTC-5
+      const fechaEnvioLocal =
+        peruTime.toISOString().replace('T', ' ').substring(0, 19) + ' (UTC-5)'
+
+      const docData = {
+        texto: formData.message.trim(),
+        fechaEnvio: fechaEnvioLocal
+      }
+
+      // Solo agregar email si no está vacío
+      if (formData.email && formData.email.trim()) {
+        docData.email = formData.email.trim()
+      }
+
+      await addDoc(collection(db, 'mensajes'), docData)
 
       setSubmitStatus('success')
       setFormData({ email: '', message: '' })

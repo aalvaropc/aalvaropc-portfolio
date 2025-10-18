@@ -46,6 +46,9 @@ lerna-debug.log*
 .env.test.local
 .env.production.local
 
+# Firebase service account
+firebase-service-account.json
+
 # Editor directories and files
 .vscode/
 .idea/

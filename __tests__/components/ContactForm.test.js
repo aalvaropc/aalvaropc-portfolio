@@ -14,8 +14,7 @@ jest.mock('../../lib/firebase', () => ({
 
 jest.mock('firebase/firestore', () => ({
   collection: jest.fn(),
-  addDoc: jest.fn(),
-  serverTimestamp: jest.fn(() => ({ serverTimestamp: true }))
+  addDoc: jest.fn()
 }))
 
 // Mock ChakraUI components
