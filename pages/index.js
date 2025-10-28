@@ -124,7 +124,10 @@ const Page = () => {
             </Heading>
             <BioSection>
               <BioYear>
-                {t('experience.jobs.0.period', '2025 febrero - presente')}
+                {t(
+                  'experience.jobs.0.period',
+                  '2025 febrero - 2025 septiembre'
+                )}
               </BioYear>
               {t('experience.jobs.0.position', 'Backend Developer')}{' '}
               {t('prepositions.at', 'en')}{' '}

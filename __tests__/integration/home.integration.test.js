@@ -218,7 +218,7 @@ jest.mock('../../lib/i18nContext', () => ({
           {
             position: 'Backend Developer',
             company: 'Guinea Mobile',
-            period: '2025 febrero - presente',
+            period: '2025 febrero - 2025 septiembre',
             location: 'Lima, Perú'
           },
           {
@@ -341,7 +341,9 @@ describe('Home Page Integration', () => {
     expect(screen.getByText(/software engineer/i)).toBeInTheDocument()
 
     // Experience timeline
-    expect(screen.getByText(/2025 febrero - presente/i)).toBeInTheDocument()
+    expect(
+      screen.getByText(/2025 febrero - 2025 septiembre/i)
+    ).toBeInTheDocument()
     expect(screen.getByText(/2024 febrero - 2025 febrero/i)).toBeInTheDocument()
     expect(screen.getByText(/2023 octubre - 2024 enero/i)).toBeInTheDocument()
 
