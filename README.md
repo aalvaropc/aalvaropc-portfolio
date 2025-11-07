@@ -55,7 +55,3 @@ pnpm lint       # Code linting
 │   └── locales/    # Translation files
 └── __tests__/      # Test suites
 ```
-
-## License
-
-MIT

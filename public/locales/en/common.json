@@ -33,6 +33,7 @@
   },
   "experience": {
     "title": "Experience",
+    "current": "Current",
     "jobs": [
       {
         "period": "February 2025 - September 2025",
@@ -53,7 +54,7 @@
         "description": "Design and optimization of PostgreSQL databases with Django ORM"
       },
       {
-        "period": "July 2023 - present",
+        "period": "July 2023 - Present",
         "position": "Member",
         "company": "Google Developer Group Ica",
         "description": "Contributing to local tech community growth"

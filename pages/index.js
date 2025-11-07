@@ -6,12 +6,13 @@ import {
   Link,
   Button,
   List,
-  ListItem
+  ListItem,
+  VStack
 } from '@chakra-ui/react'
 import Paragraph from '../components/paragraph'
 import NextLink from 'next/link'
 import { ChevronRightIcon } from '@chakra-ui/icons'
-import { BioSection, BioYear } from '../components/bio'
+import ExperienceCard from '../components/ExperienceCard'
 import { IoLogoLinkedin, IoLogoGithub } from 'react-icons/io5'
 import { MdEmail } from 'react-icons/md'
 import Layout from '../components/layouts/article'
@@ -119,44 +120,48 @@ const Page = () => {
           </Section>
 
           <Section delay={0.2}>
-            <Heading as="h3" variant="section-title">
+            <Heading as="h3" variant="section-title" mb={6}>
               {t('experience.title', 'Experiencia')}
             </Heading>
-            <BioSection>
-              <BioYear>
-                {t(
+            <VStack spacing={4} align="stretch">
+              <ExperienceCard
+                period={t(
                   'experience.jobs.0.period',
                   '2025 febrero - 2025 septiembre'
                 )}
-              </BioYear>
-              {t('experience.jobs.0.position', 'Backend Developer')}{' '}
-              {t('prepositions.at', 'en')}{' '}
-              {t('experience.jobs.0.company', 'Guinea Mobile')}
-            </BioSection>
-            <BioSection>
-              <BioYear>
-                {t('experience.jobs.1.period', '2024 febrero - 2025 febrero')}
-              </BioYear>
-              {t('experience.jobs.1.position', 'Centers Junior')}{' '}
-              {t('prepositions.at', 'en')}{' '}
-              {t('experience.jobs.1.company', 'NTT Data')}
-            </BioSection>
-            <BioSection>
-              <BioYear>
-                {t('experience.jobs.2.period', '2023 octubre - 2024 enero')}
-              </BioYear>
-              {t('experience.jobs.2.position', 'Full-Stack Junior')}{' '}
-              {t('prepositions.at', 'en')}{' '}
-              {t('experience.jobs.2.company', 'Proveedy')}
-            </BioSection>
-            <BioSection>
-              <BioYear>
-                {t('experience.jobs.3.period', '2023 julio - presente')}
-              </BioYear>
-              {t('experience.jobs.3.position', 'Miembro')}{' '}
-              {t('prepositions.of', 'de')}{' '}
-              {t('experience.jobs.3.company', 'Google Developer Group Ica')}
-            </BioSection>
+                position={t('experience.jobs.0.position', 'Backend Developer')}
+                company={t('experience.jobs.0.company', 'Guinea Mobile')}
+                delay={0.1}
+              />
+              <ExperienceCard
+                period={t(
+                  'experience.jobs.1.period',
+                  '2024 febrero - 2025 febrero'
+                )}
+                position={t('experience.jobs.1.position', 'Centers Junior')}
+                company={t('experience.jobs.1.company', 'NTT Data')}
+                delay={0.2}
+              />
+              <ExperienceCard
+                period={t(
+                  'experience.jobs.2.period',
+                  '2023 octubre - 2024 enero'
+                )}
+                position={t('experience.jobs.2.position', 'Full-Stack Junior')}
+                company={t('experience.jobs.2.company', 'Proveedy')}
+                delay={0.3}
+              />
+              <ExperienceCard
+                period={t('experience.jobs.3.period', '2023 julio - presente')}
+                position={t('experience.jobs.3.position', 'Miembro')}
+                company={t(
+                  'experience.jobs.3.company',
+                  'Google Developer Group Ica'
+                )}
+                isActive={true}
+                delay={0.4}
+              />
+            </VStack>
           </Section>
 
           <Section delay={0.3}>

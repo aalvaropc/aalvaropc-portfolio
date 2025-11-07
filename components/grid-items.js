@@ -24,12 +24,17 @@ export const GridItem = ({ children, href, title, thumbnail }) => (
           quality={85}
           style={{
             width: '100%',
-            height: 'auto',
+            height: 'auto'
           }}
         />
       </Box>
       <LinkOverlay href={href} target="_blank" rel="noopener noreferrer">
-        <Text mt={2} fontSize="lg" fontWeight="medium" _groupHover={{ color: 'teal.500' }}>
+        <Text
+          mt={2}
+          fontSize="lg"
+          fontWeight="medium"
+          _groupHover={{ color: 'teal.500' }}
+        >
           {title}
         </Text>
       </LinkOverlay>
@@ -61,14 +66,14 @@ export const WorkGridItem = ({ children, id, title, thumbnail }) => (
           quality={85}
           style={{
             width: '100%',
-            height: 'auto',
+            height: 'auto'
           }}
         />
       </Box>
       <LinkOverlay as={NextLink} href={`/works/${id}`}>
-        <Text 
-          mt={3} 
-          fontSize="xl" 
+        <Text
+          mt={3}
+          fontSize="xl"
           fontWeight="semibold"
           _groupHover={{ color: 'teal.500' }}
           transition="color 0.2s ease-in-out"
@@ -104,14 +109,14 @@ export const PostGridItem = ({ children, id, title, thumbnail }) => (
           quality={85}
           style={{
             width: '100%',
-            height: 'auto',
+            height: 'auto'
           }}
         />
       </Box>
       <LinkOverlay as={NextLink} href={`/posts/${id}`}>
-        <Text 
-          mt={3} 
-          fontSize="xl" 
+        <Text
+          mt={3}
+          fontSize="xl"
           fontWeight="semibold"
           _groupHover={{ color: 'teal.500' }}
           transition="color 0.2s ease-in-out"
@@ -135,8 +140,8 @@ export const GridItemStyle = () => (
       }
       
       .card-effect {
-        height: 700px;
-        width: 1100px;
+        height: 600px;
+        width: 700px;
         transition: all 0.3s ease-in-out;
         background: url(https://bit.ly/3ZbNdfW) no-repeat center;
         background-size: cover;

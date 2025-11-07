@@ -1,111 +1,97 @@
-import React, { useEffect, useRef } from 'react';
-import { Box, Center } from '@chakra-ui/react';
+import React, { useEffect, useRef } from 'react'
+import { Box, Center } from '@chakra-ui/react'
 
 const PureFractalTree = () => {
-  const canvasRef = useRef(null);
-  const animationRef = useRef(null);
+  const canvasRef = useRef(null)
+  const animationRef = useRef(null)
   useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
+    const canvas = canvasRef.current
+    if (!canvas) return
 
-    const ctx = canvas.getContext('2d');
-    let frameCount = 0;
-    let isRunning = true;
+    const ctx = canvas.getContext('2d')
+    let frameCount = 0
+    let isRunning = true
 
     const animate = () => {
-      if (!isRunning) return;
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
-      // Posicionar en la base del canvas
-      ctx.save();
-      ctx.translate(canvas.width / 2, canvas.height - 20);
-      
-      // Ángulos más sutiles para elegancia
-      const baseAngle = Math.sin(frameCount * 0.005) * 0.1 + Math.PI / 6; // Menos movimiento, ángulo más cerrado
-      const windEffect = Math.sin(frameCount * 0.002) * 0.05; // Viento muy sutil
-      
-      // Función recursiva mejorada para dibujar ramas
+      if (!isRunning) return
+      ctx.clearRect(0, 0, canvas.width, canvas.height)
+
+      ctx.save()
+      ctx.translate(canvas.width / 2, canvas.height - 20)
+
+      const baseAngle = Math.sin(frameCount * 0.005) * 0.1 + Math.PI / 6
+      const windEffect = Math.sin(frameCount * 0.002) * 0.05
+
       const drawBranch = (length, depth, thickness) => {
         if (depth === 0 || length < 3) {
-          // Sin hojas, solo las ramas elegantes
-          return;
+          return
         }
-        
-        // Configurar grosor de línea basado en la profundidad
-        ctx.lineWidth = Math.max(0.5, thickness);
-        
-        // Color dorado/marrón elegante que varía con la profundidad
-        const hue = 35 + Math.sin(frameCount * 0.005 + depth) * 5; // Entre 30-40 (dorado/marrón)
-        const saturation = 60 + depth * 2; // Más saturado
-        const lightness = 40 + depth * 4; // Varía de oscuro a claro
-        ctx.strokeStyle = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
-        
-        // Añadir ligera curvatura natural
-        const curve = Math.sin(frameCount * 0.005 + depth) * 0.02;
-        
-        ctx.lineCap = 'round';
-        ctx.lineJoin = 'round';
-        
-        // Dibujar la rama con curvatura
-        ctx.beginPath();
-        ctx.moveTo(0, 0);
-        
-        const segments = Math.max(3, Math.floor(length / 8));
-        for (let i = 1; i <= segments; i++) {
-          const t = i / segments;
-          const x = Math.sin(curve * length * t) * (t * 2);
-          const y = -length * t;
-          ctx.lineTo(x, y);
-        }
-        ctx.stroke();
-        
-        // Mover al final de la rama
-        ctx.translate(Math.sin(curve * length) * 2, -length);
-        
-        // Crear dos ramas simétricas como en la imagen de referencia
-        const numBranches = 2;
-        const angleVariation = baseAngle + windEffect * 0.9; // Menos movimiento para más elegancia
-        
-        for (let i = 0; i < numBranches; i++) {
-          ctx.save();
-          
-          // Ángulos simétricos para ramas izquierda y derecha
-          const branchAngle = i === 0 ? -angleVariation : angleVariation;
-          
-          ctx.rotate(branchAngle);
-          
-          // Escalado consistente y elegante
-          const scaleReduction = 0.80; // Más consistente
-          const newLength = length * scaleReduction;
-          const newThickness = thickness * 0.8;
-          
-          drawBranch(newLength, depth - 1, newThickness);
-          ctx.restore();
-        }
-      };
-      
-      // Dibujar el árbol elegante y minimalista
-      drawBranch(85, 9, 4); // Más alto, profundidad media, líneas más finas
-      
-      ctx.restore();
-      
-      frameCount++;
-      animationRef.current = requestAnimationFrame(animate);
-    };
 
-    // Iniciar animación
-    animate();
+        ctx.lineWidth = Math.max(0.5, thickness)
+
+        const hue = 35 + Math.sin(frameCount * 0.005 + depth) * 5
+        const saturation = 60 + depth * 2
+        const lightness = 40 + depth * 4
+        ctx.strokeStyle = `hsl(${hue}, ${saturation}%, ${lightness}%)`
+
+        const curve = Math.sin(frameCount * 0.005 + depth) * 0.02
+
+        ctx.lineCap = 'round'
+        ctx.lineJoin = 'round'
+
+        ctx.beginPath()
+        ctx.moveTo(0, 0)
+
+        const segments = Math.max(3, Math.floor(length / 8))
+        for (let i = 1; i <= segments; i++) {
+          const t = i / segments
+          const x = Math.sin(curve * length * t) * (t * 2)
+          const y = -length * t
+          ctx.lineTo(x, y)
+        }
+        ctx.stroke()
+
+        ctx.translate(Math.sin(curve * length) * 2, -length)
+
+        const numBranches = 2
+        const angleVariation = baseAngle + windEffect * 0.9
+
+        for (let i = 0; i < numBranches; i++) {
+          ctx.save()
+
+          const branchAngle = i === 0 ? -angleVariation : angleVariation
+
+          ctx.rotate(branchAngle)
+
+          const scaleReduction = 0.8
+          const newLength = length * scaleReduction
+          const newThickness = thickness * 0.8
+
+          drawBranch(newLength, depth - 1, newThickness)
+          ctx.restore()
+        }
+      }
+
+      drawBranch(85, 9, 4)
+
+      ctx.restore()
+
+      frameCount++
+      animationRef.current = requestAnimationFrame(animate)
+    }
+
+    animate()
 
     return () => {
-      isRunning = false;
+      isRunning = false
       if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
+        cancelAnimationFrame(animationRef.current)
       }
-    };
-  }, []);
+    }
+  }, [])
 
   return (
-    <Center height="50vh">
+    <Center height="44vh">
       <Box position="relative">
         <canvas
           ref={canvasRef}
@@ -113,20 +99,20 @@ const PureFractalTree = () => {
           height={400}
           style={{
             background: 'transparent',
-            transition: 'all 0.3s ease',
+            transition: 'all 0.3s ease'
           }}
-          onMouseEnter={(e) => {
-            e.target.style.transform = 'scale(1.05)';
+          onMouseEnter={e => {
+            e.target.style.transform = 'scale(1.05)'
           }}
-          onMouseLeave={(e) => {
-            e.target.style.transform = 'scale(1)';
+          onMouseLeave={e => {
+            e.target.style.transform = 'scale(1)'
           }}
         />
       </Box>
     </Center>
-  );
-};
+  )
+}
 
-PureFractalTree.displayName = 'PureFractalTree';
+PureFractalTree.displayName = 'PureFractalTree'
 
-export default React.memo(PureFractalTree);
+export default React.memo(PureFractalTree)
