@@ -2,7 +2,7 @@ const nextJest = require('next/jest')
 
 const createJestConfig = nextJest({
   // Provide the path to your Next.js app to load next.config.js and .env files
-  dir: './',
+  dir: './'
 })
 
 // Add any custom config to be passed to Jest
@@ -27,28 +27,24 @@ const customJestConfig = {
     '!lib/usePostDetail.js',
     '!lib/useWorkDetail.js',
     '!lib/i18nContext.js',
-    '!**/*.d.ts',
+    '!**/*.d.ts'
   ],
   coverageThreshold: {
     global: {
       branches: 10,
       functions: 15,
       lines: 15,
-      statements: 15,
-    },
+      statements: 15
+    }
   },
   moduleNameMapper: {
     '^@/components/(.*)$': '<rootDir>/components/$1',
     '^@/pages/(.*)$': '<rootDir>/pages/$1',
-    '^@/lib/(.*)$': '<rootDir>/lib/$1',
-  },
-  // Configuración específica para Emotion y ChakraUI
-  transform: {
-    '^.+\\.(js|jsx|ts|tsx)$': ['babel-jest', { presets: ['next/babel'] }]
+    '^@/lib/(.*)$': '<rootDir>/lib/$1'
   },
   transformIgnorePatterns: [
     'node_modules/(?!(@chakra-ui|@emotion|framer-motion)/)'
-  ],
+  ]
 }
 
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
