@@ -24,6 +24,8 @@ describe('Home Page Integration', () => {
     expect(
       screen.getByRole('heading', { name: /experiencia/i })
     ).toBeInTheDocument()
+    const shinkansenElements = screen.getAllByText(/shinkansen/i)
+    expect(shinkansenElements.length).toBeGreaterThan(0)
     const guineaMobileElements = screen.getAllByText(/guinea mobile/i)
     expect(guineaMobileElements.length).toBeGreaterThan(0)
 
@@ -87,6 +89,7 @@ describe('Home Page Integration', () => {
     expect(screen.getByText(/software engineer/i)).toBeInTheDocument()
 
     // Experience timeline
+    expect(screen.getByText(/2026 enero - presente/i)).toBeInTheDocument()
     expect(
       screen.getByText(/2025 febrero - 2025 septiembre/i)
     ).toBeInTheDocument()

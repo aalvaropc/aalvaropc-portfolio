@@ -71,6 +71,7 @@ describe('Home Page', () => {
     const experienceSection = screen
       .getByRole('heading', { name: /experiencia/i })
       .closest('[data-testid="section"]')
+    expect(experienceSection).toHaveTextContent('Shinkansen')
     expect(experienceSection).toHaveTextContent('Guinea Mobile')
     expect(experienceSection).toHaveTextContent('NTT Data')
     expect(experienceSection).toHaveTextContent('Proveedy')

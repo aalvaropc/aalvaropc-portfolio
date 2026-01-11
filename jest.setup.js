@@ -1,12 +1,6 @@
-// Optional: configure or set up a testing framework before each test.
-// If you delete this file, remove `setupFilesAfterEnv` from `jest.config.js`
-
-// Used for __tests__/testing-library.js
-// Learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom'
 import React from 'react'
 
-// Suppress React act() warnings in tests
 const originalError = console.error
 beforeAll(() => {
   console.error = (...args) => {
@@ -42,7 +36,6 @@ Object.defineProperty(window, 'matchMedia', {
 // Mock ChakraUI components with proper prop filtering
 const createChakraMock = (componentName, allowedProps = []) => {
   const Component = React.forwardRef(({ children, ...props }, ref) => {
-    // Filter out Chakra-specific props to avoid DOM warnings
     const filteredProps = {}
     const standardProps = [
       'id',
@@ -78,7 +71,6 @@ const createChakraMock = (componentName, allowedProps = []) => {
       }
     })
 
-    // Add data-testid for specific components
     if (componentName.toLowerCase() === 'heading') {
       filteredProps['data-testid'] = 'heading'
     }
@@ -86,7 +78,6 @@ const createChakraMock = (componentName, allowedProps = []) => {
       filteredProps['data-testid'] = 'list'
     }
 
-    // Special handling for buttons inside elements with href - make them links
     const hasHrefParent = props.href
     const shouldBeLink =
       (componentName.toLowerCase() === 'button' && hasHrefParent) ||
@@ -254,6 +245,9 @@ jest.mock('framer-motion', () => {
     motion[element] = motion(element)
   })
 
+  // Add create method as an alias for backward compatibility
+  motion.create = motion
+
   return {
     motion,
     AnimatePresence: ({ children }) => children
@@ -301,7 +295,6 @@ jest.mock('react-icons/fi', () => ({
     React.createElement('span', { 'data-testid': 'calendar-icon' }, 'Calendar')
 }))
 
-// Mock components that use complex Chakra + Framer Motion combinations
 jest.mock('./components/section.js', () => {
   return function MockSection({ children, delay }) {
     return React.createElement(
@@ -311,8 +304,6 @@ jest.mock('./components/section.js', () => {
     )
   }
 })
-
-// Solo mockear componentes que no existen o que necesitan mocking específico
 
 // Mock i18nContext
 jest.mock('./lib/i18nContext', () => ({

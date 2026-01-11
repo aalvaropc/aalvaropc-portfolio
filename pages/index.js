@@ -125,41 +125,47 @@ const Page = () => {
             </Heading>
             <VStack spacing={4} align="stretch">
               <ExperienceCard
-                period={t(
-                  'experience.jobs.0.period',
-                  '2025 febrero - 2025 septiembre'
-                )}
-                position={t('experience.jobs.0.position', 'Backend Developer')}
-                company={t('experience.jobs.0.company', 'Guinea Mobile')}
+                period={t('experience.jobs.0.period', '2026 enero - Presente')}
+                position={t('experience.jobs.0.position', 'Support Engineer')}
+                company={t('experience.jobs.0.company', 'Shinkansen')}
+                isActive={true}
                 delay={0.1}
               />
               <ExperienceCard
                 period={t(
                   'experience.jobs.1.period',
-                  '2024 febrero - 2025 febrero'
+                  '2025 febrero - 2025 septiembre'
                 )}
-                position={t('experience.jobs.1.position', 'Centers Junior')}
-                company={t('experience.jobs.1.company', 'NTT Data')}
+                position={t('experience.jobs.1.position', 'Backend Developer')}
+                company={t('experience.jobs.1.company', 'Guinea Mobile')}
                 delay={0.2}
               />
               <ExperienceCard
                 period={t(
                   'experience.jobs.2.period',
-                  '2023 octubre - 2024 enero'
+                  '2024 febrero - 2025 febrero'
                 )}
-                position={t('experience.jobs.2.position', 'Full-Stack Junior')}
-                company={t('experience.jobs.2.company', 'Proveedy')}
+                position={t('experience.jobs.2.position', 'Centers Junior')}
+                company={t('experience.jobs.2.company', 'NTT Data')}
                 delay={0.3}
               />
               <ExperienceCard
-                period={t('experience.jobs.3.period', '2023 julio - presente')}
-                position={t('experience.jobs.3.position', 'Miembro')}
+                period={t(
+                  'experience.jobs.3.period',
+                  '2023 octubre - 2024 enero'
+                )}
+                position={t('experience.jobs.3.position', 'Full-Stack Junior')}
+                company={t('experience.jobs.3.company', 'Proveedy')}
+                delay={0.4}
+              />
+              <ExperienceCard
+                period={t('experience.jobs.4.period', '2023 julio - presente')}
+                position={t('experience.jobs.4.position', 'Miembro')}
                 company={t(
-                  'experience.jobs.3.company',
+                  'experience.jobs.4.company',
                   'Google Developer Group Ica'
                 )}
-                isActive={true}
-                delay={0.4}
+                delay={0.5}
               />
             </VStack>
           </Section>

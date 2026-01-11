@@ -10,7 +10,7 @@ import { motion } from 'framer-motion'
 import { FiBriefcase, FiCalendar } from 'react-icons/fi'
 import { useI18n } from '../lib/i18nContext'
 
-const MotionBox = motion(Box)
+const MotionBox = (motion.create ? motion.create : motion)(Box)
 
 const ExperienceCard = ({
   period,

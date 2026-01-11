@@ -36,6 +36,12 @@
     "current": "Current",
     "jobs": [
       {
+        "period": "January 2026 - present",
+        "position": "Support Engineer",
+        "company": "Shinkansen",
+        "description": "Technical support and solution engineering for critical systems"
+      },
+      {
         "period": "February 2025 - September 2025",
         "position": "Backend Developer",
         "company": "Guinea Mobile",
