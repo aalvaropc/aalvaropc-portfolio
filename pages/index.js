@@ -226,7 +226,11 @@ const Page = () => {
             </Heading>
             <List>
               <ListItem>
-                <Link href="https://github.com/aalvaropc" target="_blank">
+                <Link
+                  href="https://github.com/aalvaropc"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Button
                     variant="ghost"
                     colorScheme="teal"
@@ -241,6 +245,7 @@ const Page = () => {
                 <Link
                   href="https://www.linkedin.com/in/aalvarop-pe/"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <Button
                     variant="ghost"

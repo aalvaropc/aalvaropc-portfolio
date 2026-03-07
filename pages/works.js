@@ -35,13 +35,13 @@ const Works = () => {
   return (
     <Layout>
       <Container>
-        <Heading as="h3" fontSize={20} mb={4}>
+        <Heading as="h2" fontSize={20} mb={4}>
           {worksData?.title || 'Proyectos'}
         </Heading>
 
         <SimpleGrid columns={[1, 1, 2]} gap={6}>
           {worksData?.projects?.map((project, index) => (
-            <Section key={project.id} delay={0.1 + (index * 0.1)}>
+            <Section key={project.id} delay={0.1 + index * 0.1}>
               <WorkGridItem
                 id={project.id}
                 title={project.title}
