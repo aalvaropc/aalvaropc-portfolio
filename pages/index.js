@@ -3,7 +3,6 @@ import {
   Box,
   Heading,
   useColorModeValue,
-  Link,
   Button,
   List,
   ListItem,
@@ -66,7 +65,7 @@ const Page = () => {
             >
               {t('hero.title', 'Backend-focused Full Stack Developer')}
             </Box>
-            <Box fontSize="sm" mt={2} opacity={0.7}>
+            <Box fontSize="sm" mt={2} opacity={0.8}>
               {t(
                 'hero.subtitle',
                 'Diseñando arquitecturas escalables y sistemas distribuidos'
@@ -226,47 +225,43 @@ const Page = () => {
             </Heading>
             <List>
               <ListItem>
-                <Link
+                <Button
+                  as="a"
                   href="https://github.com/aalvaropc"
                   target="_blank"
                   rel="noopener noreferrer"
+                  variant="ghost"
+                  colorScheme="teal"
+                  leftIcon={<IoLogoGithub />}
                 >
-                  <Button
-                    variant="ghost"
-                    colorScheme="teal"
-                    leftIcon={<IoLogoGithub />}
-                  >
-                    {t('contact.social.github.label', 'GitHub')}
-                  </Button>
-                </Link>
+                  {t('contact.social.github.label', 'GitHub')}
+                </Button>
               </ListItem>
 
               <ListItem>
-                <Link
+                <Button
+                  as="a"
                   href="https://www.linkedin.com/in/aalvarop-pe/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  variant="ghost"
+                  colorScheme="teal"
+                  leftIcon={<IoLogoLinkedin />}
                 >
-                  <Button
-                    variant="ghost"
-                    colorScheme="teal"
-                    leftIcon={<IoLogoLinkedin />}
-                  >
-                    {t('contact.social.linkedin.label', 'LinkedIn')}
-                  </Button>
-                </Link>
+                  {t('contact.social.linkedin.label', 'LinkedIn')}
+                </Button>
               </ListItem>
 
               <ListItem>
-                <Link href="mailto:aalvaropc@gmail.com">
-                  <Button
-                    variant="ghost"
-                    colorScheme="teal"
-                    leftIcon={<MdEmail />}
-                  >
-                    {t('contact.social.email.label', 'Email')}
-                  </Button>
-                </Link>
+                <Button
+                  as="a"
+                  href="mailto:aalvaropc@gmail.com"
+                  variant="ghost"
+                  colorScheme="teal"
+                  leftIcon={<MdEmail />}
+                >
+                  {t('contact.social.email.label', 'Email')}
+                </Button>
               </ListItem>
             </List>
           </Section>

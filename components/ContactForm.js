@@ -107,7 +107,7 @@ const ContactForm = () => {
             <Text
               as="span"
               fontSize="xs"
-              opacity={0.7}
+              opacity={0.8}
               ml={2}
               fontWeight="normal"
             >

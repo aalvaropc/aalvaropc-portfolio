@@ -39,7 +39,7 @@ const Footer = ({ router }) => {
       )}
 
       {/* Copyright simple */}
-      <Text fontSize="sm" opacity={0.6}>
+      <Text fontSize="sm" opacity={0.8}>
         &copy; {new Date().getFullYear()} Alvaro Peña
       </Text>
     </Box>
