@@ -143,7 +143,7 @@ export const GridItemStyle = () => (
         height: 600px;
         width: 700px;
         transition: all 0.3s ease-in-out;
-        background: url(https://bit.ly/3ZbNdfW) no-repeat center;
+        background: url(/images/card-bg.jpg) no-repeat center;
         background-size: cover;
         border-radius: 16px;
       }
