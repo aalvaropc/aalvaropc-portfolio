@@ -19,13 +19,13 @@ const Posts = () => {
   return (
     <Layout>
       <Container>
-        <Heading as="h3" fontSize={20} mb={4}>
+        <Heading as="h2" fontSize={20} mb={4}>
           {postsData?.title || 'Publicaciones'}
         </Heading>
 
         <SimpleGrid columns={[1, 1, 2]} gap={6}>
           {postsData?.articles?.map((article, index) => (
-            <Section key={article.id} delay={0.1 + (index * 0.1)}>
+            <Section key={article.id} delay={0.1 + index * 0.1}>
               <PostGridItem
                 id={article.id}
                 title={article.title}

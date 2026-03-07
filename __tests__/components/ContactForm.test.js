@@ -7,15 +7,9 @@ import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import ContactForm from '../../components/ContactForm'
 
-// Mock Firebase
-jest.mock('../../lib/firebase', () => ({
-  db: {}
-}))
-
-jest.mock('firebase/firestore', () => ({
-  collection: jest.fn(),
-  addDoc: jest.fn()
-}))
+// Mock fetch for API route
+const mockFetch = jest.fn()
+global.fetch = mockFetch
 
 // Mock ChakraUI components
 jest.mock('@chakra-ui/react', () => {
@@ -146,6 +140,10 @@ jest.mock('../../lib/i18nContext', () => ({
 describe('ContactForm', () => {
   beforeEach(() => {
     jest.clearAllMocks()
+    mockFetch.mockResolvedValue({
+      ok: true,
+      json: async () => ({ success: true })
+    })
   })
 
   it('renders contact form with all fields', () => {
@@ -182,9 +180,6 @@ describe('ContactForm', () => {
   })
 
   it('handles form submission successfully', async () => {
-    const { addDoc } = require('firebase/firestore')
-    addDoc.mockResolvedValueOnce({ id: 'test-doc-id' })
-
     const user = userEvent.setup()
     render(<ContactForm />)
 
@@ -197,7 +192,13 @@ describe('ContactForm', () => {
     await user.click(submitButton)
 
     await waitFor(() => {
-      expect(addDoc).toHaveBeenCalled()
+      expect(mockFetch).toHaveBeenCalledWith(
+        '/api/contact',
+        expect.objectContaining({
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' }
+        })
+      )
     })
 
     await waitFor(() => {
@@ -206,8 +207,7 @@ describe('ContactForm', () => {
   })
 
   it('handles form submission error', async () => {
-    const { addDoc } = require('firebase/firestore')
-    addDoc.mockRejectedValueOnce(new Error('Firebase error'))
+    mockFetch.mockResolvedValueOnce({ ok: false, status: 500 })
 
     // Silence console.error for this test
     const originalConsoleError = console.error
@@ -244,9 +244,6 @@ describe('ContactForm', () => {
   })
 
   it('clears form after successful submission', async () => {
-    const { addDoc } = require('firebase/firestore')
-    addDoc.mockResolvedValueOnce({ id: 'test-doc-id' })
-
     const user = userEvent.setup()
     render(<ContactForm />)
 

@@ -2,33 +2,26 @@ import NextLink from 'next/link'
 import { Heading, Box, Image, Link, Badge } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 export const Title = ({ children }) => (
-    <Box>
-        <Link as={NextLink} href="/posts">
-            Publicaciones
-        </Link>
-        <span>
-            {' '}
-            <ChevronRightIcon />{' '}
-        </span>
-        <Heading display="inline-block" as="h3" fontSize={20} mb={4}>
-            {children}
-        </Heading>
-    </Box>
+  <Box>
+    <Link as={NextLink} href="/posts">
+      Publicaciones
+    </Link>
+    <span>
+      {' '}
+      <ChevronRightIcon />{' '}
+    </span>
+    <Heading display="inline-block" as="h2" fontSize={20} mb={4}>
+      {children}
+    </Heading>
+  </Box>
 )
 
 export const PostImage = ({ src, alt }) => (
-    <Image
-        borderRadius="lg"
-        w="60"
-        src={src}
-        alt={alt}
-        mb={4}
-        mx="auto"
-    />
+  <Image borderRadius="lg" w="60" src={src} alt={alt} mb={4} mx="auto" />
 )
 
 export const Meta = ({ children }) => (
-    <Badge colorScheme="green" mr={2}>
-        {children}
-    </Badge>
+  <Badge colorScheme="green" mr={2}>
+    {children}
+  </Badge>
 )

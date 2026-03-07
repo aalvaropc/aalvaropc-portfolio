@@ -1,4 +1,3 @@
-
 import React from 'react'
 import Logo from './logo'
 import NextLink from 'next/link'
@@ -25,7 +24,7 @@ const LinkItem = ({ href, path, target, children, ...props }) => {
   const active = path === href
   const inactiveColor = useColorModeValue('gray.800', 'whiteAlpha.900')
   const hoverBg = useColorModeValue('gray.100', 'whiteAlpha.200')
-  
+
   return (
     <Link
       as={NextLink}
@@ -41,10 +40,10 @@ const LinkItem = ({ href, path, target, children, ...props }) => {
       _hover={{
         bg: active ? 'grassTeal' : hoverBg,
         textDecoration: 'none',
-        transform: 'translateY(-1px)',
+        transform: 'translateY(-1px)'
       }}
       _focus={{
-        boxShadow: '0 0 0 3px rgba(136, 204, 202, 0.3)',
+        boxShadow: '0 0 0 3px rgba(136, 204, 202, 0.3)'
       }}
       aria-current={active ? 'page' : undefined}
       {...props}
@@ -79,7 +78,11 @@ const NavbarComponent = ({ path, ...props }) => {
         mx="auto"
       >
         <Flex align="center" mr={{ base: 2, md: 5 }} flex="0 0 auto">
-          <Heading as="h1" size={{ base: 'md', md: 'lg' }} letterSpacing={'tighter'}>
+          <Heading
+            as="h1"
+            size={{ base: 'md', md: 'lg' }}
+            letterSpacing={'tighter'}
+          >
             <Logo />
           </Heading>
         </Flex>
@@ -99,14 +102,22 @@ const NavbarComponent = ({ path, ...props }) => {
           <LinkItem href="/posts" path={path}>
             {t('nav.posts', 'Publicaciones')}
           </LinkItem>
-          <LinkItem href="https://acortar.link/lunblB" target="_blank">
+          <LinkItem
+            href="https://acortar.link/lunblB"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {t('nav.cv', 'Curriculum vitae')}
           </LinkItem>
-          <LinkItem href="https://acortar.link/lunblB">
+          <LinkItem
+            href="https://acortar.link/lunblB"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {t('nav.certificates', 'Certificados')}
           </LinkItem>
         </Stack>
-        
+
         <Flex align="center" gap={{ base: 1, md: 2 }} flex="0 0 auto">
           <Box display={{ base: 'none', md: 'block' }}>
             <LanguageSelector />
@@ -165,6 +176,7 @@ const NavbarComponent = ({ path, ...props }) => {
                   as={Link}
                   href="https://acortar.link/lunblB"
                   target="_blank"
+                  rel="noopener noreferrer"
                   display="flex"
                   alignItems="center"
                   _hover={{ bg: useColorModeValue('gray.100', 'gray.700') }}
@@ -174,6 +186,8 @@ const NavbarComponent = ({ path, ...props }) => {
                 <MenuItem
                   as={Link}
                   href="https://acortar.link/lunblB"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   display="flex"
                   alignItems="center"
                   _hover={{ bg: useColorModeValue('gray.100', 'gray.700') }}
@@ -203,8 +217,8 @@ const NavbarComponent = ({ path, ...props }) => {
   )
 }
 
-NavbarComponent.displayName = 'Navbar';
+NavbarComponent.displayName = 'Navbar'
 
-const Navbar = React.memo(NavbarComponent);
+const Navbar = React.memo(NavbarComponent)
 
 export default Navbar

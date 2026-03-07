@@ -1,10 +1,10 @@
-import { 
-  Menu, 
-  MenuButton, 
-  MenuList, 
-  MenuItem, 
-  Button, 
-  Spinner, 
+import {
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  Button,
+  Spinner,
   Box,
   useColorModeValue
 } from '@chakra-ui/react'
@@ -17,11 +17,22 @@ const LanguageSelector = ({ isMobile = false }) => {
   const { t } = useTranslations(locale, 'common')
 
   const languages = [
-    { code: 'es', name: t('languages.spanish', 'Español'), flag: '🇪🇸', shortName: 'ES' },
-    { code: 'en', name: t('languages.english', 'English'), flag: '🇺🇸', shortName: 'EN' }
+    {
+      code: 'es',
+      name: t('languages.spanish', 'Español'),
+      flag: '🇪🇸',
+      shortName: 'ES'
+    },
+    {
+      code: 'en',
+      name: t('languages.english', 'English'),
+      flag: '🇺🇸',
+      shortName: 'EN'
+    }
   ]
 
-  const currentLang = languages.find(lang => lang.code === locale) || languages[0]
+  const currentLang =
+    languages.find(lang => lang.code === locale) || languages[0]
 
   // Colores para el tema - definir todos aquí para evitar hooks condicionales
   const toggleBg = useColorModeValue('gray.200', 'gray.600')
@@ -60,7 +71,7 @@ const LanguageSelector = ({ isMobile = false }) => {
         >
           {languages
             .filter(language => supportedLocales.includes(language.code))
-            .map((language) => {
+            .map(language => {
               const isActive = locale === language.code
               return (
                 <Button
@@ -77,10 +88,10 @@ const LanguageSelector = ({ isMobile = false }) => {
                   fontSize="xs"
                   boxShadow={isActive ? 'sm' : 'none'}
                   _hover={{
-                    bg: isActive ? activeBg : hoverBg,
+                    bg: isActive ? activeBg : hoverBg
                   }}
                   _active={{
-                    transform: 'scale(0.98)',
+                    transform: 'scale(0.98)'
                   }}
                   transition="all 0.2s cubic-bezier(0.4, 0, 0.2, 1)"
                 >
@@ -95,13 +106,14 @@ const LanguageSelector = ({ isMobile = false }) => {
 
   return (
     <Menu>
-      <MenuButton 
-        as={Button} 
-        rightIcon={<ChevronDownIcon />} 
-        size="sm" 
+      <MenuButton
+        as={Button}
+        rightIcon={<ChevronDownIcon />}
+        size="sm"
         variant="ghost"
         minW="auto"
         px={2}
+        aria-label={t('languages.selector', 'Cambiar idioma')}
         _hover={{
           bg: 'gray.100',
           _dark: {
@@ -114,7 +126,7 @@ const LanguageSelector = ({ isMobile = false }) => {
       <MenuList zIndex={4}>
         {languages
           .filter(language => supportedLocales.includes(language.code))
-          .map((language) => (
+          .map(language => (
             <MenuItem
               key={language.code}
               onClick={() => changeLocale(language.code)}

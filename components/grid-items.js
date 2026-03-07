@@ -139,20 +139,6 @@ export const GridItemStyle = () => (
         transition: all 0.3s ease-in-out;
       }
       
-      .card-effect {
-        height: 600px;
-        width: 700px;
-        transition: all 0.3s ease-in-out;
-        background: url(https://bit.ly/3ZbNdfW) no-repeat center;
-        background-size: cover;
-        border-radius: 16px;
-      }
-
-      .card-effect:hover {
-        box-shadow: 0px 20px 60px rgba(0,0,0,0.3);
-        transform: translateY(-5px);
-      }
-      
       /* Smooth scroll behavior */
       html {
         scroll-behavior: smooth;

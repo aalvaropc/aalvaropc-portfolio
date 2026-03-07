@@ -138,6 +138,7 @@
   },
   "languages": {
     "spanish": "Español",
-    "english": "Inglés"
+    "english": "Inglés",
+    "selector": "Cambiar idioma"
   }
 }

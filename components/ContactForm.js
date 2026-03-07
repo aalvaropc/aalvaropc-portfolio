@@ -12,8 +12,6 @@ import {
   AlertIcon,
   useColorModeValue
 } from '@chakra-ui/react'
-import { collection, addDoc } from 'firebase/firestore'
-import { db } from '../lib/firebase'
 import { useI18n } from '../lib/i18nContext'
 
 const ContactForm = () => {
@@ -35,6 +33,8 @@ const ContactForm = () => {
     }))
   }
 
+  const [honeypot, setHoneypot] = useState('')
+
   const handleSubmit = async e => {
     e.preventDefault()
 
@@ -47,23 +47,19 @@ const ContactForm = () => {
     setSubmitStatus(null)
 
     try {
-      // Crear fecha en zona horaria de Perú (UTC-5)
-      const now = new Date()
-      const peruTime = new Date(now.getTime() - 5 * 60 * 60 * 1000) // UTC-5
-      const fechaEnvioLocal =
-        peruTime.toISOString().replace('T', ' ').substring(0, 19) + ' (UTC-5)'
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: formData.email,
+          message: formData.message,
+          _honeypot: honeypot
+        })
+      })
 
-      const docData = {
-        texto: formData.message.trim(),
-        fechaEnvio: fechaEnvioLocal
+      if (!response.ok) {
+        throw new Error('Failed to send message')
       }
-
-      // Solo agregar email si no está vacío
-      if (formData.email && formData.email.trim()) {
-        docData.email = formData.email.trim()
-      }
-
-      await addDoc(collection(db, 'mensajes'), docData)
 
       setSubmitStatus('success')
       setFormData({ email: '', message: '' })
@@ -89,6 +85,17 @@ const ContactForm = () => {
       css={{ backdropFilter: 'blur(10px)' }}
     >
       <VStack spacing={6}>
+        {/* Honeypot field - hidden from users, bots will fill it */}
+        <input
+          type="text"
+          name="_honeypot"
+          value={honeypot}
+          onChange={e => setHoneypot(e.target.value)}
+          style={{ display: 'none' }}
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+        />
         <FormControl>
           <FormLabel
             fontSize="sm"
@@ -100,7 +107,7 @@ const ContactForm = () => {
             <Text
               as="span"
               fontSize="xs"
-              opacity={0.7}
+              opacity={0.8}
               ml={2}
               fontWeight="normal"
             >
@@ -113,6 +120,7 @@ const ContactForm = () => {
             value={formData.email}
             onChange={handleInputChange}
             placeholder={t('contactForm.email.placeholder', 'tu@email.com')}
+            maxLength={254}
             size="md"
             borderRadius="md"
             bg="transparent"
