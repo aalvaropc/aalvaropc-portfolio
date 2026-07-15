@@ -7,19 +7,21 @@ export default function CertificateCard({ certificate, viewLabel }) {
 
   const body = (
     <div className="flex items-center gap-4">
-      <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-border bg-background">
-        {image ? (
+      {image ? (
+        <div className="flex h-16 w-16 shrink-0 items-center justify-center">
           <Image
             src={image}
             alt={title}
-            width={48}
-            height={48}
+            width={64}
+            height={64}
             className="h-full w-full object-contain"
           />
-        ) : (
+        </div>
+      ) : (
+        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg border border-border bg-background">
           <Award className="h-5 w-5 text-brand" />
-        )}
-      </div>
+        </div>
+      )}
 
       <div className="min-w-0 flex-1">
         <h3 className="font-medium leading-tight">{title}</h3>
