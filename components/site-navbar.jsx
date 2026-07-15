@@ -62,9 +62,8 @@ export default function SiteNavbar({ path }) {
       external: true
     },
     {
-      href: 'https://acortar.link/lunblB',
-      label: t('nav.certificates', 'Certificados'),
-      external: true
+      href: '/certificates',
+      label: t('nav.certificates', 'Certificados')
     }
   ]
 

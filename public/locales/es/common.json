@@ -143,5 +143,11 @@
     "spanish": "Español",
     "english": "Inglés",
     "selector": "Cambiar idioma"
+  },
+  "certificates": {
+    "title": "Certificados",
+    "subtitle": "Certificaciones y credenciales que he obtenido.",
+    "viewBadge": "Ver credencial",
+    "empty": "Pronto añadiré certificaciones aquí."
   }
 }
