@@ -113,3 +113,7 @@ temp/
 home-*.png
 hero-*.png
 *-check.png
+
+# Lighthouse CI local artifacts
+.lighthouseci/
+lighthouse-results/
