@@ -1,9 +1,9 @@
-import styled from '@emotion/styled'
+import { cn } from '@/lib/utils'
 
-const Paragraph = styled.p`
-  text-align: justify;
-  text-indent: 1em;
-
-`
+const Paragraph = ({ children, className }) => (
+  <p className={cn('my-3 text-justify leading-relaxed text-foreground/80', className)}>
+    {children}
+  </p>
+)
 
 export default Paragraph

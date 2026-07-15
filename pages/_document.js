@@ -1,6 +1,4 @@
-import { ColorModeScript } from '@chakra-ui/react';
 import NextDocument, { Html, Head, Main, NextScript } from 'next/document';
-import theme from '../lib/theme';
 
 export default class Document extends NextDocument {
     render() {
@@ -46,10 +44,9 @@ export default class Document extends NextDocument {
                     <meta property="linkedin:owner" content="aalvarop-pe" />
                     
                     {/* Favicon and Icons */}
+                    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
                     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-                    <link rel="apple-touch-icon" sizes="180x180" href="/images/owl.png" />
-                    <link rel="icon" type="image/png" sizes="32x32" href="/images/owl.png" />
-                    <link rel="icon" type="image/png" sizes="16x16" href="/images/owl.png" />
+                    <link rel="apple-touch-icon" href="/favicon.svg" />
                     
                     {/* PWA Manifest */}
                     <link rel="manifest" href="/manifest.json" />
@@ -62,16 +59,11 @@ export default class Document extends NextDocument {
                     <link rel="alternate" href="https://aalvaropc.vercel.app" hrefLang="en" />
                     <link rel="alternate" href="https://aalvaropc.vercel.app" hrefLang="x-default" />
                     
-                    {/* Fonts - Optimized for Performance */}
-                    <link rel="preconnect" href="https://fonts.googleapis.com" />
-                    <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-                    <link
-                        href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500;700&display=swap"
-                        rel="stylesheet"
-                    />
-                    
+                    {/* Fonts self-hosted via next/font (Geist) — no external requests */}
+
                     {/* Theme and PWA */}
-                    <meta name="theme-color" content="#88ccca" />
+                    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+                    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
                     <meta name="application-name" content="Alvaro Peña Portfolio" />
                     
                     {/* JSON-LD Structured Data */}
@@ -116,7 +108,6 @@ export default class Document extends NextDocument {
                     />
                 </Head>
                 <body>
-                    <ColorModeScript initialColorMode={theme.config.initialColorMode} />
                     <Main />
                     <NextScript />
                 </body>

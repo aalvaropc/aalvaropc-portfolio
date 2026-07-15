@@ -1,4 +1,3 @@
-import { Container, Heading, SimpleGrid } from '@chakra-ui/react'
 import Section from '../components/section'
 import { WorkGridItem } from '../components/grid-items'
 import thumbRmap from '../public/images/works/rmap.png'
@@ -33,13 +32,12 @@ const Works = () => {
   }
 
   return (
-    <Layout>
-      <Container>
-        <Heading as="h2" fontSize={20} mb={4}>
-          {worksData?.title || 'Proyectos'}
-        </Heading>
+    <Layout title="Proyectos">
+      <h1 className="mb-6 text-2xl font-semibold tracking-tight">
+        {worksData?.title || 'Proyectos'}
+      </h1>
 
-        <SimpleGrid columns={[1, 1, 2]} gap={6}>
+      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
           {worksData?.projects?.map((project, index) => (
             <Section key={project.id} delay={0.1 + index * 0.1}>
               <WorkGridItem
@@ -121,8 +119,7 @@ const Works = () => {
               </Section>
             </>
           )}
-        </SimpleGrid>
-      </Container>
+      </div>
     </Layout>
   )
 }

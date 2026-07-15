@@ -1,12 +1,9 @@
-import { Box } from '@chakra-ui/react'
-import styled from '@emotion/styled'
+import { cn } from '@/lib/utils'
 
-export const BioSection = styled(Box)`
-  padding-left: 3.4em;
-  text-indent: -3.4em;
-`
+export const BioSection = ({ children, className }) => (
+  <div className={cn('pl-[3.4em] -indent-[3.4em]', className)}>{children}</div>
+)
 
-export const BioYear = styled.span`
-  font-weight: bold;
-  margin-right: 1em;
-`
+export const BioYear = ({ children }) => (
+  <span className="mr-4 font-bold">{children}</span>
+)

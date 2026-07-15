@@ -1,90 +1,44 @@
-import React from 'react'
 import { render, screen } from '@testing-library/react'
+import React from 'react'
 import Home from '../../pages/index'
 
-describe('Home Page', () => {
-  it('renders main heading', () => {
+describe('Home page', () => {
+  it('renders the name and role', () => {
     render(<Home />)
-
-    const heading = screen.getByRole('heading', { name: /Alvaro peña/i })
-    expect(heading).toBeInTheDocument()
-  })
-
-  it('displays professional title', () => {
-    render(<Home />)
-
-    // Buscamos el texto directamente en lugar de por testid para evitar múltiples matches
     expect(
-      screen.getByText('Backend-focused Full Stack Developer')
+      screen.getByRole('heading', { name: /alvaro peña/i })
     ).toBeInTheDocument()
+    expect(screen.getByText('Systems Engineer')).toBeInTheDocument()
   })
 
-  it('shows about section', () => {
+  it('links the primary CTA to /works', () => {
     render(<Home />)
-
-    const aboutHeading = screen.getByRole('heading', { name: /sobre mí/i })
-    expect(aboutHeading).toBeInTheDocument()
+    const worksLink = screen
+      .getAllByRole('link')
+      .find(l => l.getAttribute('href') === '/works')
+    expect(worksLink).toBeTruthy()
   })
 
-  it('displays technology stack', () => {
+  it('lists the experience companies', () => {
     render(<Home />)
-
-    const stackHeading = screen.getByRole('heading', { name: /stack/i })
-    expect(stackHeading).toBeInTheDocument()
-
-    // Buscamos en la sección específica del stack
-    const stackSection = stackHeading.closest('[data-testid="section"]')
-    expect(stackSection).toHaveTextContent('Go • Python • Java')
-    expect(stackSection).toHaveTextContent('FastAPI')
-    expect(stackSection).toHaveTextContent('Spring Boot')
+    expect(screen.getByText('Shinkansen')).toBeInTheDocument()
+    expect(screen.getByText('Guinea Mobile')).toBeInTheDocument()
+    expect(screen.getByText('NTT Data')).toBeInTheDocument()
   })
 
-  it('shows experience section', () => {
+  it('shows the technology stack', () => {
     render(<Home />)
-
-    const experienceHeading = screen.getByRole('heading', {
-      name: /experiencia/i
-    })
-    expect(experienceHeading).toBeInTheDocument()
+    expect(screen.getByText('Go')).toBeInTheDocument()
+    expect(screen.getByText('FastAPI')).toBeInTheDocument()
+    expect(screen.getByText('PostgreSQL')).toBeInTheDocument()
   })
 
-  it('displays contact information', () => {
+  it('exposes a contact email link', () => {
     render(<Home />)
-
-    const contactHeading = screen.getByRole('heading', { name: /contacto/i })
-    expect(contactHeading).toBeInTheDocument()
-  })
-
-  it('has link to projects', () => {
-    render(<Home />)
-
-    const projectsLink = screen.getByRole('link', {
-      name: /ver proyectos/i
-    })
-    expect(projectsLink).toBeInTheDocument()
-    expect(projectsLink).toHaveAttribute('href', '/works')
-  })
-
-  it('shows professional experience timeline', () => {
-    render(<Home />)
-
-    const experienceSection = screen
-      .getByRole('heading', { name: /experiencia/i })
-      .closest('[data-testid="section"]')
-    expect(experienceSection).toHaveTextContent('Shinkansen')
-    expect(experienceSection).toHaveTextContent('Guinea Mobile')
-    expect(experienceSection).toHaveTextContent('NTT Data')
-    expect(experienceSection).toHaveTextContent('Proveedy')
-  })
-
-  it('displays interests section', () => {
-    render(<Home />)
-
-    const interestsHeading = screen.getByRole('heading', { name: /intereses/i })
-    expect(interestsHeading).toBeInTheDocument()
-
-    const interestsSection = interestsHeading.closest('[data-testid="section"]')
-    expect(interestsSection).toHaveTextContent('Arquitecturas escalables')
-    expect(interestsSection).toHaveTextContent('Sistemas distribuidos')
+    const mailtos = screen
+      .getAllByRole('link')
+      .filter(l => (l.getAttribute('href') || '').startsWith('mailto:'))
+    expect(mailtos.length).toBeGreaterThan(0)
+    expect(mailtos[0]).toHaveAttribute('href', 'mailto:aalvaropc@gmail.com')
   })
 })

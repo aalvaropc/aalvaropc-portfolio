@@ -43,7 +43,7 @@ const customJestConfig = {
     '^@/lib/(.*)$': '<rootDir>/lib/$1'
   },
   transformIgnorePatterns: [
-    'node_modules/(?!(@chakra-ui|@emotion|framer-motion)/)'
+    'node_modules/(?!(lucide-react|geist|framer-motion)/)'
   ]
 }
 

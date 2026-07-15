@@ -107,3 +107,9 @@ temp/
 *.bak
 *.tmp
 *.swp
+
+# Playwright MCP / redesign validation screenshots
+.playwright-mcp/
+home-*.png
+hero-*.png
+*-check.png

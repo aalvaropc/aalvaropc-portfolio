@@ -1,4 +1,3 @@
-import { Container, Heading, SimpleGrid } from '@chakra-ui/react'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import { PostGridItem } from '../components/grid-items'
@@ -17,13 +16,12 @@ const Posts = () => {
   }
 
   return (
-    <Layout>
-      <Container>
-        <Heading as="h2" fontSize={20} mb={4}>
-          {postsData?.title || 'Publicaciones'}
-        </Heading>
+    <Layout title="Publicaciones">
+      <h1 className="mb-6 text-2xl font-semibold tracking-tight">
+        {postsData?.title || 'Publicaciones'}
+      </h1>
 
-        <SimpleGrid columns={[1, 1, 2]} gap={6}>
+      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
           {postsData?.articles?.map((article, index) => (
             <Section key={article.id} delay={0.1 + index * 0.1}>
               <PostGridItem
@@ -60,8 +58,7 @@ const Posts = () => {
               </Section>
             </>
           )}
-        </SimpleGrid>
-      </Container>
+      </div>
     </Layout>
   )
 }
