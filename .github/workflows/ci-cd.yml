@@ -36,6 +36,9 @@ jobs:
       run: pnpm run lint
       
     - name: Run security audit
+      # Non-blocking: the legacy npm audit endpoint used by pnpm 8 was retired
+      # (responds 410), so this step is informational and must not fail CI.
+      continue-on-error: true
       run: pnpm run security-audit
       
     - name: Run tests
