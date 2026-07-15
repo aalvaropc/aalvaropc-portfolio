@@ -5,9 +5,9 @@ import {
     List,
     ListItem,
     AspectRatio
-} from '@chakra-ui/react'
+} from '../../components/content'
 import Layout from '../../components/layouts/article'
-import { ExternalLinkIcon } from '@chakra-ui/icons'
+import { ExternalLinkIcon } from '../../components/content'
 import { Title, PostImage, Meta } from '../../components/post'
 import { usePostDetail } from '../../lib/usePostDetail'
 import { useI18n } from '../../lib/i18nContext'

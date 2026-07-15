@@ -36,6 +36,9 @@ jobs:
       run: pnpm run lint
       
     - name: Run security audit
+      # Non-blocking: the legacy npm audit endpoint used by pnpm 8 was retired
+      # (responds 410), so this step is informational and must not fail CI.
+      continue-on-error: true
       run: pnpm run security-audit
       
     - name: Run tests
@@ -89,7 +92,7 @@ jobs:
       
     - name: Run Lighthouse CI
       run: |
-        npm install -g @lhci/cli@0.12.0
+        npm install -g @lhci/cli@0.14.0
         lhci autorun
       env:
         LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}

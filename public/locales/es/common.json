@@ -21,14 +21,15 @@
   },
   "hero": {
     "greeting": "¡Hola! Soy Alvaro 👋",
-    "title": "Backend-focused Full Stack Developer",
+    "title": "Systems Engineer",
     "subtitle": "Diseñando arquitecturas escalables y sistemas distribuidos",
-    "description": "Backend Developer especializado en Go, Python y Java. Experto en microservicios y arquitecturas escalables."
+    "description": "Backend Developer especializado en Go, Python y Java. Experto en microservicios y arquitecturas escalables.",
+    "available": "Disponible para proyectos"
   },
   "about": {
     "title": "Sobre mí",
-    "description1": "Backend-focused Full Stack Developer especializado en diseñar arquitecturas escalables con Go, Python y Java. Experiencia construyendo servicios REST, sistemas en tiempo real y microservicios distribuidos.",
-    "description2": "Miembro del Google Developer Group Ica, contribuyendo al crecimiento de la comunidad tech local mediante eventos y mentoría.",
+    "description1": "Ingeniero de software enfocado en construir sistemas backend confiables y servicios que escalan. Me interesan las arquitecturas simples, el buen tooling y enviar cosas que de verdad funcionan.",
+    "description2": "Me gusta profundizar en los problemas, trabajar con buenos equipos y aportar a la comunidad tech local.",
     "cta": "Ver proyectos"
   },
   "experience": {
@@ -102,7 +103,9 @@
   },
   "contactMe": {
     "title": "Contáctame",
-    "description": "¿Tienes un proyecto interesante? ¡Hablemos!"
+    "description": "Hablemos. Suelo responder rápido.",
+    "heading": "¿Tienes un proyecto en mente?",
+    "cta": "Contáctame"
   },
   "contactForm": {
     "email": {

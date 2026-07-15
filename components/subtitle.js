@@ -1,11 +1,5 @@
-import styled from '@emotion/styled';
+const Subtitle = ({ children }) => (
+  <p className="mb-2 mt-6 text-lg font-semibold">{children}</p>
+)
 
-const Subtitle = styled.p`
-  text-align: justify;
-  font-size: 1.2em;
-  font-weight: bold;
-  margin-bottom: 0.5em;
-  margin-top: 1em;
-`;
-
-export default Subtitle;
+export default Subtitle

@@ -1,21 +1,14 @@
 import { motion } from 'framer-motion'
-import { chakra, shouldForwardProp } from '@chakra-ui/react'
 
-const StyledDiv = chakra(motion.div, {
-  shouldForwardProp: prop => {
-    return shouldForwardProp(prop) || prop === 'transition'
-  }
-})
-
+// Mount-based fade-up used by the works/posts list grids.
 const Section = ({ children, delay = 0 }) => (
-  <StyledDiv
-    initial={{ y: 10, opacity: 0 }}
-    animate={{ y: 0, opacity: 1 }}
-    transition={{ duration: 0.8, delay }}
-    mb={6}
+  <motion.div
+    initial={{ opacity: 0, y: 10 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
   >
     {children}
-  </StyledDiv>
+  </motion.div>
 )
 
-export default Section  
+export default Section

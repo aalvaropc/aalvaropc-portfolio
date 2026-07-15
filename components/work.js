@@ -1,28 +1,33 @@
 import NextLink from 'next/link'
-import { Heading, Box, Image, Link, Badge } from '@chakra-ui/react'
-import { ChevronRightIcon } from '@chakra-ui/icons'
+import { ChevronRight } from 'lucide-react'
 
 export const Title = ({ children }) => (
-  <Box>
-    <Link as={NextLink} href="/works">
-      Proyectos
-    </Link>
-    <span>
-      {' '}
-      <ChevronRightIcon />{' '}
-    </span>
-    <Heading display="inline-block" as="h2" fontSize={20} mb={4}>
-      {children}
-    </Heading>
-  </Box>
+  <div className="mb-6">
+    <div className="mb-3 flex items-center gap-1 text-sm text-muted-foreground">
+      <NextLink
+        href="/works"
+        className="transition-colors hover:text-foreground"
+      >
+        Proyectos
+      </NextLink>
+      <ChevronRight className="h-3.5 w-3.5" />
+    </div>
+    <h1 className="text-2xl font-semibold tracking-tight">{children}</h1>
+  </div>
 )
 
 export const WorkImage = ({ src, alt }) => (
-  <Image borderRadius="lg" w="full" src={src} alt={alt} mb={4} />
+  // eslint-disable-next-line @next/next/no-img-element
+  <img
+    src={src}
+    alt={alt}
+    loading="lazy"
+    className="my-4 w-full rounded-lg border border-border"
+  />
 )
 
 export const Meta = ({ children }) => (
-  <Badge colorScheme="green" mr={2}>
+  <span className="mr-2 inline-flex items-center rounded bg-secondary px-1.5 py-0.5 text-[11px] font-medium uppercase tracking-wide text-muted-foreground">
     {children}
-  </Badge>
+  </span>
 )

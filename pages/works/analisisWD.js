@@ -4,9 +4,9 @@ import {
     Link,
     List,
     ListItem,
-} from '@chakra-ui/react'
+} from '../../components/content'
 import Layout from '../../components/layouts/article'
-import { ExternalLinkIcon } from '@chakra-ui/icons'
+import { ExternalLinkIcon } from '../../components/content'
 import { Title, WorkImage, Meta } from '../../components/work'
 import { useWorkDetail } from '../../lib/useWorkDetail'
 
