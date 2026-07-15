@@ -1,6 +1,13 @@
 import { render, screen } from '@testing-library/react'
 import React from 'react'
 
+// Force projects visible for this suite (the real flag hides them all).
+jest.mock('../../lib/works-visibility', () => ({
+  isProjectVisible: () => true,
+  HIDE_ALL_PROJECTS: false,
+  HIDDEN_PROJECT_IDS: []
+}))
+
 jest.mock('../../lib/i18nContext', () => ({
   useI18n: () => ({
     t: (key, fallback) => fallback || key,
@@ -16,7 +23,7 @@ jest.mock('../../lib/i18nContext', () => ({
 
 import Works from '../../pages/works'
 
-describe('Works page', () => {
+describe('Works page (projects visible)', () => {
   it('renders the heading and project cards', () => {
     render(<Works />)
     expect(

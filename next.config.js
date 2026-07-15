@@ -1,7 +1,21 @@
+const { HIDE_ALL_PROJECTS } = require('./lib/works-visibility')
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   devIndicators: false,
+  async redirects() {
+    // While all projects are hidden, send any direct /works/<id> visit back to
+    // the /works "coming soon" page instead of exposing an old project.
+    if (!HIDE_ALL_PROJECTS) return []
+    return [
+      {
+        source: '/works/:slug',
+        destination: '/works',
+        permanent: false
+      }
+    ]
+  },
   async headers() {
     return [
       {
