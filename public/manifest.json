@@ -4,31 +4,35 @@
   "description": "Backend-focused Full Stack Developer especializado en Go, Python, Java y arquitecturas escalables",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#202023",
-  "theme_color": "#88ccca",
+  "background_color": "#0a0a0a",
+  "theme_color": "#1177e7",
   "orientation": "portrait-primary",
   "lang": "es",
   "icons": [
     {
-      "src": "/images/owl.png",
+      "src": "/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "maskable any"
+      "purpose": "any"
     },
     {
-      "src": "/images/owl.png",
+      "src": "/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "maskable any"
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-192-maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ],
-  "categories": ["business", "productivity", "developer"],
-  "screenshots": [
-    {
-      "src": "/images/alvaro.jpeg",
-      "sizes": "1280x720",
-      "type": "image/jpeg",
-      "form_factor": "wide"
-    }
-  ]
+  "categories": ["business", "productivity", "developer"]
 }
