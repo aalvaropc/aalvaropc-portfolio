@@ -90,15 +90,6 @@ const Page = () => {
         </Reveal>
 
         <Reveal delay={0.15}>
-          <p className="mt-6 max-w-xl text-balance text-xl font-medium leading-snug tracking-tight text-foreground/90 sm:text-2xl">
-            {t(
-              'hero.subtitle',
-              'Diseñando arquitecturas escalables y sistemas distribuidos'
-            )}
-          </p>
-        </Reveal>
-
-        <Reveal delay={0.2}>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <a
               href="mailto:aalvaropc@gmail.com"

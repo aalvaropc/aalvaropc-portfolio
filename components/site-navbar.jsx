@@ -53,15 +53,13 @@ export default function SiteNavbar({ path }) {
   const { t } = useI18n()
   const [open, setOpen] = useState(false)
 
-  // /works queda fuera de la navegación mientras los proyectos estén ocultos
-  // (lib/works-visibility.js): enlazarlo llevaría a un estado vacío.
-  //
-  // El CV también está fuera: el PDF que se enlazaba describía a un
+  // El CV está fuera de la navegación: el PDF que se enlazaba describía a un
   // "estudiante de IX ciclo" en NTT Data "presente", y contradecía el resto
   // del sitio. Para devolverlo, añadir aquí { href: '/cv', label: 'CV' } y
   // servir el PDF nuevo desde public/ (ojo: lleva teléfono, y el repo es
   // público).
   const links = [
+    { href: '/works', label: t('nav.projects', 'Proyectos') },
     { href: '/posts', label: t('nav.posts', 'Publicaciones') },
     {
       href: '/certificates',

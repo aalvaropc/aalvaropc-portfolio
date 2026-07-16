@@ -11,23 +11,6 @@ describe('Home page', () => {
     expect(screen.getByText('Software Engineer')).toBeInTheDocument()
   })
 
-  it('leads the hero with the value proposition, not just the role', () => {
-    render(<Home />)
-    expect(
-      screen.getByText(/arquitecturas escalables y sistemas distribuidos/i)
-    ).toBeInTheDocument()
-  })
-
-  it('does not link to /works while projects are hidden', () => {
-    // Los proyectos están ocultos (lib/works-visibility.js), así que /works
-    // muestra un estado vacío: enlazarlo desde el hero era un callejón sin salida.
-    render(<Home />)
-    const worksLink = screen
-      .getAllByRole('link')
-      .find(l => l.getAttribute('href') === '/works')
-    expect(worksLink).toBeUndefined()
-  })
-
   it('uses contact as the primary CTA', () => {
     render(<Home />)
     const ctas = screen.getAllByRole('link')

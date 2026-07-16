@@ -16,11 +16,11 @@ describe('Home page integration', () => {
     expect(screen.getByText('AWS')).toBeInTheDocument()
   })
 
-  it('does not send visitors to the empty projects page', () => {
+  it('exposes contact as the primary conversion path', () => {
     render(<Home />)
-    const worksLink = screen
+    const mailto = screen
       .getAllByRole('link')
-      .find(l => l.getAttribute('href') === '/works')
-    expect(worksLink).toBeUndefined()
+      .find(l => (l.getAttribute('href') || '').startsWith('mailto:'))
+    expect(mailto).toBeTruthy()
   })
 })
