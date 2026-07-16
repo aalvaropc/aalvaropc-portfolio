@@ -53,17 +53,20 @@ export default function SiteNavbar({ path }) {
   const { t } = useI18n()
   const [open, setOpen] = useState(false)
 
+  // /works queda fuera de la navegación mientras los proyectos estén ocultos
+  // (lib/works-visibility.js): enlazarlo llevaría a un estado vacío.
   const links = [
-    { href: '/works', label: t('nav.projects', 'Proyectos') },
     { href: '/posts', label: t('nav.posts', 'Publicaciones') },
-    {
-      href: 'https://acortar.link/lunblB',
-      label: 'CV',
-      external: true
-    },
     {
       href: '/certificates',
       label: t('nav.certificates', 'Certificados')
+    },
+    // Enlace directo: antes pasaba por un acortador (acortar.link), que oculta
+    // el destino y añade un tercero del que depende el CV.
+    {
+      href: 'https://drive.google.com/file/d/1MQQGCNFTuKcpCKGBwb6j48TuKngJ-kGI/view',
+      label: 'CV',
+      external: true
     }
   ]
 

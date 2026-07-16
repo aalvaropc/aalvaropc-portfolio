@@ -11,16 +11,16 @@ describe('Home page integration', () => {
     expect(
       screen.getByRole('heading', { name: /alvaro peña/i })
     ).toBeInTheDocument()
-    expect(screen.getByText('Systems Engineer')).toBeInTheDocument()
+    expect(screen.getByText('Software Engineer')).toBeInTheDocument()
     expect(screen.getByText('Google Developer Group Ica')).toBeInTheDocument()
     expect(screen.getByText('AWS')).toBeInTheDocument()
   })
 
-  it('provides a working projects navigation link', () => {
+  it('does not send visitors to the empty projects page', () => {
     render(<Home />)
     const worksLink = screen
       .getAllByRole('link')
       .find(l => l.getAttribute('href') === '/works')
-    expect(worksLink).toBeTruthy()
+    expect(worksLink).toBeUndefined()
   })
 })

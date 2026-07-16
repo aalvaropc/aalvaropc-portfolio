@@ -57,7 +57,7 @@ const socials = [
 ]
 
 function SectionLabel({ children }) {
-  return <p className="label-mono mb-5">{children}</p>
+  return <h2 className="label-mono mb-5">{children}</h2>
 }
 
 const Page = () => {
@@ -85,25 +85,34 @@ const Page = () => {
 
         <Reveal delay={0.1}>
           <p className="mt-3 text-lg text-muted-foreground">
-            {t('hero.title', 'Systems Engineer')}
+            {t('hero.title', 'Software Engineer')}
           </p>
         </Reveal>
 
         <Reveal delay={0.15}>
+          <p className="mt-6 max-w-xl text-balance text-xl font-medium leading-snug tracking-tight text-foreground/90 sm:text-2xl">
+            {t(
+              'hero.subtitle',
+              'Diseñando arquitecturas escalables y sistemas distribuidos'
+            )}
+          </p>
+        </Reveal>
+
+        <Reveal delay={0.2}>
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <Link
-              href="/works"
-              className="inline-flex items-center gap-1.5 rounded-md bg-foreground px-4 py-2 text-sm font-medium text-background transition-opacity hover:opacity-90"
-            >
-              {t('nav.projects', 'Ver proyectos')}
-              <ArrowUpRight className="h-4 w-4" />
-            </Link>
             <a
               href="mailto:aalvaropc@gmail.com"
-              className="inline-flex items-center gap-1.5 rounded-md border border-border px-4 py-2 text-sm font-medium transition-colors hover:bg-accent"
+              className="inline-flex items-center gap-1.5 rounded-md bg-foreground px-4 py-2 text-sm font-medium text-background transition-opacity hover:opacity-90"
             >
               {t('contactMe.cta', 'Contáctame')}
+              <ArrowUpRight className="h-4 w-4" />
             </a>
+            <Link
+              href="/posts"
+              className="inline-flex items-center gap-1.5 rounded-md border border-border px-4 py-2 text-sm font-medium transition-colors hover:bg-accent"
+            >
+              {t('nav.posts', 'Publicaciones')}
+            </Link>
             <div className="ml-1 flex items-center gap-1">
               {socials.map(({ href, label, Icon }) => (
                 <a
