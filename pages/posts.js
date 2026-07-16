@@ -6,7 +6,7 @@ import thumbEstGrupo from '../public/images/posts/estadistica/portada-diapo.png'
 import { useI18n } from '../lib/i18nContext'
 
 const Posts = () => {
-  const { getPosts } = useI18n()
+  const { getPosts, locale } = useI18n()
   const postsData = getPosts()
 
   // Mapping de thumbnails para cada post
@@ -28,7 +28,9 @@ const Posts = () => {
                 id={article.id}
                 title={article.title}
                 thumbnail={thumbnailMap[article.id] || article.thumbnail}
-                _hover={{ cursor: 'pointer' }}
+                date={article.date}
+                readTime={article.readTime}
+                locale={locale}
               >
                 {article.description}
               </PostGridItem>

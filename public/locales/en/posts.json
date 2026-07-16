@@ -1,13 +1,18 @@
 {
   "posts": {
-    "title": "Blog",
+    "title": "Posts",
     "subtitle": "Articles and resources",
     "articles": [
       {
-        "id": "ArqBasadaEventos", 
+        "id": "ArqBasadaEventos",
         "title": "Event-Driven Architecture",
         "description": "Complete exploration of event-driven architecture, design patterns and best practices for distributed systems.",
-        "tags": ["Architecture", "Events", "Distributed Systems", "Microservices"],
+        "tags": [
+          "Architecture",
+          "Events",
+          "Distributed Systems",
+          "Microservices"
+        ],
         "date": "2024-01-15",
         "readTime": "12 min",
         "category": "Architecture"
@@ -16,8 +21,14 @@
         "id": "GrupoEstadistica",
         "title": "Statistical Analysis with Python",
         "description": "Practical guide for statistical analysis using Python, pandas and interactive visualizations for data science projects.",
-        "tags": ["Python", "Statistics", "Data Science", "Pandas", "Matplotlib"],
-        "date": "2023-11-20", 
+        "tags": [
+          "Python",
+          "Statistics",
+          "Data Science",
+          "Pandas",
+          "Matplotlib"
+        ],
+        "date": "2023-11-20",
         "readTime": "15 min",
         "category": "Data Science"
       }
