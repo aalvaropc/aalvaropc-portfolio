@@ -19,10 +19,10 @@ export default function Shell({ children, router }) {
     <div className="relative min-h-screen bg-background">
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Alvaro Peña — Backend Engineer</title>
+        <title>Alvaro Peña — Software Engineer</title>
         <meta
           name="description"
-          content="Backend-focused Full Stack Developer especializado en Go, Python y Java. Arquitecturas escalables y sistemas distribuidos."
+          content="Software Engineer especializado en backend con Go, Python y Java. Construyo servicios que escalan y sistemas distribuidos."
         />
       </Head>
 

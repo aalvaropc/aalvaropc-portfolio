@@ -21,10 +21,10 @@
   },
   "hero": {
     "greeting": "Hi! I'm Alvaro 👋",
-    "title": "Systems Engineer",
+    "title": "Software Engineer",
     "subtitle": "Designing scalable architectures and distributed systems",
     "description": "Backend Developer specialized in Go, Python and Java. Expert in microservices and scalable architectures.",
-    "available": "Available for work"
+    "available": "Available for projects"
   },
   "about": {
     "title": "About me",

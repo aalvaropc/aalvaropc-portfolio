@@ -6,8 +6,8 @@ export default class Document extends NextDocument {
             <Html lang="es">
                 <Head>
                     {/* Basic Meta Tags */}
-                    <meta name="description" content="Alvaro Peña - Backend-focused Full Stack Developer especializado en Go, Python, Java y arquitecturas escalables. Especialista en microservicios y sistemas distribuidos." />
-                    <meta name="keywords" content="Alvaro Peña, Backend Developer, Full Stack, Go, Python, Java, FastAPI, Spring Boot, Microservices, Guinea Mobile, NTT Data, Perú" />
+                    <meta name="description" content="Alvaro Peña - Software Engineer especializado en backend con Go, Python y Java. Construyo servicios que escalan y sistemas distribuidos." />
+                    <meta name="keywords" content="Alvaro Peña, Software Engineer, Backend, Go, Python, Java, FastAPI, Spring Boot, Microservices, Shinkansen, Perú" />
                     <meta name="author" content="Alvaro Rodrigo Peña Peña" />
                     <meta name="robots" content="index, follow, max-image-preview:large" />
                     <meta name="googlebot" content="index, follow" />
@@ -18,16 +18,16 @@ export default class Document extends NextDocument {
                     
                     {/* Open Graph Tags */}
                     <meta property="og:type" content="profile" />
-                    <meta property="og:title" content="Alvaro Peña - Backend-focused Full Stack Developer" />
-                    <meta property="og:description" content="Backend Developer especializado en Go, Python y Java. Experto en microservicios, arquitecturas escalables y sistemas distribuidos." />
+                    <meta property="og:title" content="Alvaro Peña - Software Engineer" />
+                    <meta property="og:description" content="Software Engineer especializado en backend con Go, Python y Java. Construyo servicios que escalan y sistemas distribuidos." />
                     <meta property="og:url" content="https://aalvaropc.vercel.app" />
                     <meta property="og:image" content="https://aalvaropc.vercel.app/og.png" />
                     <meta property="og:image:width" content="1200" />
                     <meta property="og:image:height" content="630" />
                     <meta property="og:image:type" content="image/png" />
-                    <meta property="og:image:alt" content="Alvaro Peña - Backend-focused Full Stack Developer" />
+                    <meta property="og:image:alt" content="Alvaro Peña - Software Engineer" />
                     <meta property="og:locale" content="es_PE" />
-                    <meta property="og:site_name" content="Alvaro Peña - Portfolio Profesional" />
+                    <meta property="og:site_name" content="Alvaro Peña - Software Engineer" />
                     <meta property="profile:first_name" content="Alvaro" />
                     <meta property="profile:last_name" content="Peña" />
                     <meta property="profile:username" content="aalvaropc" />
@@ -36,10 +36,10 @@ export default class Document extends NextDocument {
                     <meta name="twitter:card" content="summary_large_image" />
                     <meta name="twitter:site" content="@aalvaropc" />
                     <meta name="twitter:creator" content="@aalvaropc" />
-                    <meta name="twitter:title" content="Alvaro Peña - Backend Developer" />
-                    <meta name="twitter:description" content="Backend-focused Full Stack Developer especializado en Go, Python y Java. Experto en microservicios y arquitecturas escalables." />
+                    <meta name="twitter:title" content="Alvaro Peña - Software Engineer" />
+                    <meta name="twitter:description" content="Software Engineer especializado en backend con Go, Python y Java. Construyo servicios que escalan y sistemas distribuidos." />
                     <meta name="twitter:image" content="https://aalvaropc.vercel.app/og.png" />
-                    <meta name="twitter:image:alt" content="Alvaro Peña - Backend-focused Full Stack Developer" />
+                    <meta name="twitter:image:alt" content="Alvaro Peña - Software Engineer" />
                     
                     {/* LinkedIn Tags */}
                     <meta property="linkedin:owner" content="aalvarop-pe" />
@@ -76,7 +76,7 @@ export default class Document extends NextDocument {
                                 "@type": "Person",
                                 "name": "Alvaro Rodrigo Peña Peña",
                                 "alternateName": "Alvaro Peña",
-                                "description": "Backend-focused Full Stack Developer especializado en Go, Python, Java y arquitecturas escalables",
+                                "description": "Software Engineer especializado en backend con Go, Python y Java",
                                 "url": "https://aalvaropc.vercel.app",
                                 "image": "https://aalvaropc.vercel.app/og.png",
                                 "sameAs": [
@@ -84,10 +84,10 @@ export default class Document extends NextDocument {
                                     "https://linkedin.com/in/aalvarop-pe",
                                     "mailto:aalvaropc@gmail.com"
                                 ],
-                                "jobTitle": "Backend Developer",
+                                "jobTitle": "Software Engineer",
                                 "worksFor": {
                                     "@type": "Organization",
-                                    "name": "Guinea Mobile"
+                                    "name": "Shinkansen"
                                 },
                                 "address": {
                                     "@type": "PostalAddress",
