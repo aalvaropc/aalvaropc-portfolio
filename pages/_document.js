@@ -21,10 +21,11 @@ export default class Document extends NextDocument {
                     <meta property="og:title" content="Alvaro Peña - Backend-focused Full Stack Developer" />
                     <meta property="og:description" content="Backend Developer especializado en Go, Python y Java. Experto en microservicios, arquitecturas escalables y sistemas distribuidos." />
                     <meta property="og:url" content="https://aalvaropc.vercel.app" />
-                    <meta property="og:image" content="https://aalvaropc.vercel.app/images/alvaro.jpeg" />
+                    <meta property="og:image" content="https://aalvaropc.vercel.app/og.png" />
                     <meta property="og:image:width" content="1200" />
                     <meta property="og:image:height" content="630" />
-                    <meta property="og:image:alt" content="Alvaro Peña - Backend Developer & Data Engineer" />
+                    <meta property="og:image:type" content="image/png" />
+                    <meta property="og:image:alt" content="Alvaro Peña - Backend-focused Full Stack Developer" />
                     <meta property="og:locale" content="es_PE" />
                     <meta property="og:site_name" content="Alvaro Peña - Portfolio Profesional" />
                     <meta property="profile:first_name" content="Alvaro" />
@@ -37,8 +38,8 @@ export default class Document extends NextDocument {
                     <meta name="twitter:creator" content="@aalvaropc" />
                     <meta name="twitter:title" content="Alvaro Peña - Backend Developer" />
                     <meta name="twitter:description" content="Backend-focused Full Stack Developer especializado en Go, Python y Java. Experto en microservicios y arquitecturas escalables." />
-                    <meta name="twitter:image" content="https://aalvaropc.vercel.app/images/alvaro.jpeg" />
-                    <meta name="twitter:image:alt" content="Alvaro Peña - Backend Developer & Data Engineer" />
+                    <meta name="twitter:image" content="https://aalvaropc.vercel.app/og.png" />
+                    <meta name="twitter:image:alt" content="Alvaro Peña - Backend-focused Full Stack Developer" />
                     
                     {/* LinkedIn Tags */}
                     <meta property="linkedin:owner" content="aalvarop-pe" />
@@ -46,7 +47,7 @@ export default class Document extends NextDocument {
                     {/* Favicon and Icons */}
                     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
                     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-                    <link rel="apple-touch-icon" href="/favicon.svg" />
+                    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
                     
                     {/* PWA Manifest */}
                     <link rel="manifest" href="/manifest.json" />
@@ -77,7 +78,7 @@ export default class Document extends NextDocument {
                                 "alternateName": "Alvaro Peña",
                                 "description": "Backend-focused Full Stack Developer especializado en Go, Python, Java y arquitecturas escalables",
                                 "url": "https://aalvaropc.vercel.app",
-                                "image": "https://aalvaropc.vercel.app/images/alvaro.jpeg",
+                                "image": "https://aalvaropc.vercel.app/og.png",
                                 "sameAs": [
                                     "https://github.com/aalvaropc",
                                     "https://linkedin.com/in/aalvarop-pe",
