@@ -4,7 +4,6 @@
     "year": "2024",
     "description": "Participé como ponente en el evento Weekend Learning Path organizado por la Facultad de Ingeniería de Sistemas de la Universidad Nacional San Luis Gonzaga, donde compartí conocimientos sobre la innovadora Arquitectura Basada en Eventos en la construcción de sistemas.",
     "meta": {
-      "slides": "https://acortar.link/KtTr0Y",
       "presentation": "https://www.youtube.com/watch?v=Q7ZIF0fzN_0",
       "event": "https://www.facebook.com/WeekendLearningPath",
       "tags": "Software/Arquitectura/AWS/Serverless/"
@@ -50,7 +49,6 @@
     "year": "2024",
     "description": "Formé parte del Grupo 2 en el estudio del libro 'Estadística Práctica para Ciencia de Datos con R y Python', donde tuvimos la responsabilidad de exponer el capítulo 1 sobre conceptos fundamentales de estadística aplicada.",
     "meta": {
-      "slides": "https://acortar.link/hQV2eR",
       "presentation": "https://www.youtube.com/watch?v=h9INxH6kcjc",
       "tags": "Estadística/Ciencia de Datos/R/Python/"
     },

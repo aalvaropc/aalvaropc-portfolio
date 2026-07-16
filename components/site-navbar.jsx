@@ -55,18 +55,17 @@ export default function SiteNavbar({ path }) {
 
   // /works queda fuera de la navegación mientras los proyectos estén ocultos
   // (lib/works-visibility.js): enlazarlo llevaría a un estado vacío.
+  //
+  // El CV también está fuera: el PDF que se enlazaba describía a un
+  // "estudiante de IX ciclo" en NTT Data "presente", y contradecía el resto
+  // del sitio. Para devolverlo, añadir aquí { href: '/cv', label: 'CV' } y
+  // servir el PDF nuevo desde public/ (ojo: lleva teléfono, y el repo es
+  // público).
   const links = [
     { href: '/posts', label: t('nav.posts', 'Publicaciones') },
     {
       href: '/certificates',
       label: t('nav.certificates', 'Certificados')
-    },
-    // Enlace directo: antes pasaba por un acortador (acortar.link), que oculta
-    // el destino y añade un tercero del que depende el CV.
-    {
-      href: 'https://drive.google.com/file/d/1MQQGCNFTuKcpCKGBwb6j48TuKngJ-kGI/view',
-      label: 'CV',
-      external: true
     }
   ]
 
