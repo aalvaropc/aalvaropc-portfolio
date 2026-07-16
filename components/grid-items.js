@@ -40,10 +40,32 @@ export const WorkGridItem = ({ children, id, title, thumbnail }) => (
   </NextLink>
 )
 
-export const PostGridItem = ({ children, id, title, thumbnail }) => (
+export const PostGridItem = ({
+  children,
+  id,
+  title,
+  thumbnail,
+  date,
+  readTime,
+  locale
+}) => (
   <NextLink href={`/posts/${id}`} className="group block">
     <CardImage thumbnail={thumbnail} alt={`Publicación: ${title}`} />
-    <h3 className="mt-3 text-lg font-semibold tracking-tight transition-colors group-hover:text-brand">
+    {(date || readTime) && (
+      <p className="mt-3 font-mono text-xs text-muted-foreground">
+        {date && (
+          <time dateTime={date}>
+            {new Date(`${date}T00:00:00`).toLocaleDateString(
+              locale === 'en' ? 'en-US' : 'es-ES',
+              { year: 'numeric', month: 'short' }
+            )}
+          </time>
+        )}
+        {date && readTime && <span aria-hidden="true"> · </span>}
+        {readTime}
+      </p>
+    )}
+    <h3 className="mt-1 text-lg font-semibold tracking-tight transition-colors group-hover:text-brand">
       {title}
     </h3>
     <p className="mt-1 text-sm text-muted-foreground">{children}</p>

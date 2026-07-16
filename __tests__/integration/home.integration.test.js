@@ -11,16 +11,16 @@ describe('Home page integration', () => {
     expect(
       screen.getByRole('heading', { name: /alvaro peña/i })
     ).toBeInTheDocument()
-    expect(screen.getByText('Systems Engineer')).toBeInTheDocument()
+    expect(screen.getByText('Software Engineer')).toBeInTheDocument()
     expect(screen.getByText('Google Developer Group Ica')).toBeInTheDocument()
     expect(screen.getByText('AWS')).toBeInTheDocument()
   })
 
-  it('provides a working projects navigation link', () => {
+  it('exposes contact as the primary conversion path', () => {
     render(<Home />)
-    const worksLink = screen
+    const mailto = screen
       .getAllByRole('link')
-      .find(l => l.getAttribute('href') === '/works')
-    expect(worksLink).toBeTruthy()
+      .find(l => (l.getAttribute('href') || '').startsWith('mailto:'))
+    expect(mailto).toBeTruthy()
   })
 })

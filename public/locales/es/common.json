@@ -21,7 +21,7 @@
   },
   "hero": {
     "greeting": "¡Hola! Soy Alvaro 👋",
-    "title": "Systems Engineer",
+    "title": "Software Engineer",
     "subtitle": "Diseñando arquitecturas escalables y sistemas distribuidos",
     "description": "Backend Developer especializado en Go, Python y Java. Experto en microservicios y arquitecturas escalables.",
     "available": "Disponible para proyectos"

@@ -17,7 +17,7 @@ export default function SiteFooter() {
         <p className="font-mono text-xs text-muted-foreground">
           © {new Date().getFullYear()} Alvaro Peña
         </p>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-1">
           {socials.map(({ href, label, Icon }) => (
             <a
               key={label}
@@ -25,7 +25,7 @@ export default function SiteFooter() {
               target={href.startsWith('mailto:') ? undefined : '_blank'}
               rel={href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
               aria-label={label}
-              className="text-muted-foreground transition-colors hover:text-foreground"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-accent hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
               <Icon className="h-[18px] w-[18px]" />
             </a>

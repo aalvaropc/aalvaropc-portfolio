@@ -24,7 +24,10 @@
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
+  /* 0.556 daba 4.74:1 sobre blanco: pasaba AA justo y fallaba AAA, y el texto
+     mono de 12px en mayúsculas con tracking amplio era el peor caso. 0.455
+     mide 7.25:1 (AAA). En dark el token ya daba 7.5:1 y se deja igual. */
+  --muted-foreground: oklch(0.455 0 0);
   --accent: oklch(0.97 0 0);
   --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.577 0.245 27.325);

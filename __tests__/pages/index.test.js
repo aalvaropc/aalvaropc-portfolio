@@ -8,15 +8,23 @@ describe('Home page', () => {
     expect(
       screen.getByRole('heading', { name: /alvaro peña/i })
     ).toBeInTheDocument()
-    expect(screen.getByText('Systems Engineer')).toBeInTheDocument()
+    expect(screen.getByText('Software Engineer')).toBeInTheDocument()
   })
 
-  it('links the primary CTA to /works', () => {
+  it('uses contact as the primary CTA', () => {
     render(<Home />)
-    const worksLink = screen
-      .getAllByRole('link')
-      .find(l => l.getAttribute('href') === '/works')
-    expect(worksLink).toBeTruthy()
+    const ctas = screen.getAllByRole('link')
+    const primary = ctas.find(l =>
+      (l.getAttribute('href') || '').startsWith('mailto:')
+    )
+    expect(primary).toBeTruthy()
+    expect(primary.className).toMatch(/bg-foreground/)
+  })
+
+  it('sections are real headings, not styled paragraphs', () => {
+    render(<Home />)
+    const h2s = screen.getAllByRole('heading', { level: 2 })
+    expect(h2s.length).toBeGreaterThanOrEqual(4)
   })
 
   it('lists the experience companies', () => {

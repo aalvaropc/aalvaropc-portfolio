@@ -4,7 +4,6 @@
     "year": "2024",
     "description": "I participated as a speaker at the Weekend Learning Path event organized by the Faculty of Systems Engineering at Universidad Nacional San Luis Gonzaga, where I shared knowledge about the innovative Event-Driven Architecture in system construction.",
     "meta": {
-      "slides": "https://acortar.link/KtTr0Y",
       "presentation": "https://www.youtube.com/watch?v=Q7ZIF0fzN_0",
       "event": "https://www.facebook.com/WeekendLearningPath",
       "tags": "Software/Architecture/AWS/Serverless/"
@@ -50,7 +49,6 @@
     "year": "2024",
     "description": "I was part of Group 2 in the study of the book 'Practical Statistics for Data Science with R and Python', where we had the responsibility of presenting Chapter 1 on fundamental concepts of applied statistics.",
     "meta": {
-      "slides": "https://acortar.link/hQV2eR",
       "presentation": "https://www.youtube.com/watch?v=h9INxH6kcjc",
       "tags": "Statistics/Data Science/R/Python/"
     },

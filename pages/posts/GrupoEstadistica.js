@@ -31,12 +31,14 @@ const GrupoEstadistica = () => {
                 </p>
 
                 <List ml={4} my={4}>
-                    <ListItem>
-                        <Meta>{t('metadata.slides')}</Meta>
-                        <Link href={postDetail.meta.slides}>
-                            {postDetail.meta.slides} <ExternalLinkIcon mx="2px" />
-                        </Link>
-                    </ListItem>
+                    {postDetail.meta.slides && (
+                        <ListItem>
+                            <Meta>{t('metadata.slides')}</Meta>
+                            <Link href={postDetail.meta.slides}>
+                                {postDetail.meta.slides} <ExternalLinkIcon mx="2px" />
+                            </Link>
+                        </ListItem>
+                    )}
                     <ListItem>
                         <Meta>{t('metadata.presentation')}</Meta>
                         <Link href={postDetail.meta.presentation}>
