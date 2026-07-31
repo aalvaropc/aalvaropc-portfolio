@@ -6,8 +6,8 @@ export default class Document extends NextDocument {
             <Html lang="es">
                 <Head>
                     {/* Basic Meta Tags */}
-                    <meta name="description" content="Alvaro Peña - Software Engineer especializado en backend con Go, Python y Java. Construyo servicios que escalan y sistemas distribuidos." />
-                    <meta name="keywords" content="Alvaro Peña, Software Engineer, Backend, Go, Python, Java, FastAPI, Spring Boot, Microservices, Shinkansen, Perú" />
+                    <meta name="description" content="Alvaro Peña - Software Engineer especializado en backend con Go, Python y Elixir. Construyo servicios que escalan y sistemas distribuidos." />
+                    <meta name="keywords" content="Alvaro Peña, Software Engineer, Backend, Go, Python, TypeScript, Elixir, FastAPI, Terraform, Microservices, Shinkansen, Perú" />
                     <meta name="author" content="Alvaro Rodrigo Peña Peña" />
                     <meta name="robots" content="index, follow, max-image-preview:large" />
                     <meta name="googlebot" content="index, follow" />
@@ -19,7 +19,7 @@ export default class Document extends NextDocument {
                     {/* Open Graph Tags */}
                     <meta property="og:type" content="profile" />
                     <meta property="og:title" content="Alvaro Peña - Software Engineer" />
-                    <meta property="og:description" content="Software Engineer especializado en backend con Go, Python y Java. Construyo servicios que escalan y sistemas distribuidos." />
+                    <meta property="og:description" content="Software Engineer especializado en backend con Go, Python y Elixir. Construyo servicios que escalan y sistemas distribuidos." />
                     <meta property="og:url" content="https://aalvaropc.vercel.app" />
                     <meta property="og:image" content="https://aalvaropc.vercel.app/og.png" />
                     <meta property="og:image:width" content="1200" />
@@ -37,7 +37,7 @@ export default class Document extends NextDocument {
                     <meta name="twitter:site" content="@aalvaropc" />
                     <meta name="twitter:creator" content="@aalvaropc" />
                     <meta name="twitter:title" content="Alvaro Peña - Software Engineer" />
-                    <meta name="twitter:description" content="Software Engineer especializado en backend con Go, Python y Java. Construyo servicios que escalan y sistemas distribuidos." />
+                    <meta name="twitter:description" content="Software Engineer especializado en backend con Go, Python y Elixir. Construyo servicios que escalan y sistemas distribuidos." />
                     <meta name="twitter:image" content="https://aalvaropc.vercel.app/og.png" />
                     <meta name="twitter:image:alt" content="Alvaro Peña - Software Engineer" />
                     
@@ -76,7 +76,7 @@ export default class Document extends NextDocument {
                                 "@type": "Person",
                                 "name": "Alvaro Rodrigo Peña Peña",
                                 "alternateName": "Alvaro Peña",
-                                "description": "Software Engineer especializado en backend con Go, Python y Java",
+                                "description": "Software Engineer especializado en backend con Go, Python y Elixir",
                                 "url": "https://aalvaropc.vercel.app",
                                 "image": "https://aalvaropc.vercel.app/og.png",
                                 "sameAs": [
@@ -97,9 +97,10 @@ export default class Document extends NextDocument {
                                 "knowsAbout": [
                                     "Go",
                                     "Python",
-                                    "Java",
+                                    "TypeScript",
+                                    "Elixir",
                                     "FastAPI",
-                                    "Spring Boot",
+                                    "Terraform",
                                     "Microservices",
                                     "Backend Development",
                                     "Software Architecture"

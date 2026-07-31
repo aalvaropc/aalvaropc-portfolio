@@ -22,7 +22,7 @@ export default function Shell({ children, router }) {
         <title>Alvaro Peña — Software Engineer</title>
         <meta
           name="description"
-          content="Software Engineer especializado en backend con Go, Python y Java. Construyo servicios que escalan y sistemas distribuidos."
+          content="Software Engineer especializado en backend con Go, Python y Elixir. Construyo servicios que escalan y sistemas distribuidos."
         />
       </Head>
 

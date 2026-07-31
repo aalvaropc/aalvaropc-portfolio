@@ -30,20 +30,14 @@ const experience = [
     position: 'Full-Stack Junior',
     company: 'Proveedy',
     i18n: 3
-  },
-  {
-    period: '2023 — Presente',
-    position: 'Miembro',
-    company: 'Google Developer Group Ica',
-    i18n: 4
   }
 ]
 
 const stack = [
-  { label: 'Languages', items: ['Go', 'Python', 'Java'] },
-  { label: 'Backend', items: ['FastAPI', 'Spring Boot', 'RabbitMQ'] },
+  { label: 'Languages', items: ['Go', 'Python', 'TypeScript', 'Elixir'] },
+  { label: 'Backend', items: ['FastAPI', 'RabbitMQ'] },
   { label: 'Data', items: ['PostgreSQL', 'Redis'] },
-  { label: 'Cloud / DevOps', items: ['Docker', 'GCP', 'AWS'] }
+  { label: 'Cloud / DevOps', items: ['Docker', 'Terraform', 'GCP', 'AWS'] }
 ]
 
 const socials = [
@@ -136,13 +130,13 @@ const Page = () => {
             <p>
               {t(
                 'about.description1',
-                'Backend-focused Full Stack Developer especializado en diseñar arquitecturas escalables con Go, Python y Java. Experiencia construyendo servicios REST, sistemas en tiempo real y microservicios distribuidos.'
+                'Backend-focused Full Stack Developer especializado en diseñar arquitecturas escalables con Go, Python y Elixir. Experiencia construyendo servicios REST, sistemas en tiempo real y microservicios distribuidos.'
               )}
             </p>
             <p>
               {t(
                 'about.description2',
-                'Miembro del Google Developer Group Ica, contribuyendo al crecimiento de la comunidad tech local mediante eventos y mentoría.'
+                'Me gusta profundizar en los problemas, trabajar con buenos equipos y aportar a la comunidad tech local.'
               )}
             </p>
           </div>

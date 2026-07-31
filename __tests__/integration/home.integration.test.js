@@ -12,7 +12,7 @@ describe('Home page integration', () => {
       screen.getByRole('heading', { name: /alvaro peña/i })
     ).toBeInTheDocument()
     expect(screen.getByText('Software Engineer')).toBeInTheDocument()
-    expect(screen.getByText('Google Developer Group Ica')).toBeInTheDocument()
+    expect(screen.getByText('Shinkansen')).toBeInTheDocument()
     expect(screen.getByText('AWS')).toBeInTheDocument()
   })
 
