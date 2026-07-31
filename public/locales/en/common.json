@@ -23,7 +23,7 @@
     "greeting": "Hi! I'm Alvaro 👋",
     "title": "Software Engineer",
     "subtitle": "Designing scalable architectures and distributed systems",
-    "description": "Backend Developer specialized in Go, Python and Java. Expert in microservices and scalable architectures.",
+    "description": "Backend Developer specialized in Go, Python and Elixir. Expert in microservices and scalable architectures.",
     "available": "Available for projects"
   },
   "about": {
@@ -59,18 +59,12 @@
         "position": "Full-Stack Junior",
         "company": "Proveedy",
         "description": "Design and optimization of PostgreSQL databases with Django ORM"
-      },
-      {
-        "period": "July 2023 - Present",
-        "position": "Member",
-        "company": "Google Developer Group Ica",
-        "description": "Contributing to local tech community growth"
       }
     ]
   },
   "skills": {
     "title": "Stack",
-    "technologies": "Go • Python • FastAPI • Java • Spring Boot • Typescript • React JS • PostgreSQL • Redis • Docker • GCP • AWS • RabbitMQ"
+    "technologies": "Go • Python • TypeScript • Elixir • FastAPI • React JS • PostgreSQL • Redis • Docker • Terraform • GCP • AWS • RabbitMQ"
   },
   "interests": {
     "title": "Interests",
