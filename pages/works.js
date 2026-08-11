@@ -1,31 +1,13 @@
 import Section from '../components/section'
 import { WorkGridItem } from '../components/grid-items'
 import ProjectsComingSoon from '../components/projects-coming-soon'
-import thumbRmap from '../public/images/works/rmap.png'
-import thumbCovid from '../public/images/works/covid.png'
-import thumbLexer from '../public/images/works/lexer.png'
-import thumbFarmaLuren from '../public/images/works/farmaLuren.png'
-import thumbWebDevfest from '../public/images/works/webdevfest.png'
-import thumbAppDevfest from '../public/images/works/appdevfest.png'
-import thumbNumzzle from '../public/images/works/numzzle/numzzle_game.png'
-import thumbAnalisisWD from '../public/images/works/analisisWD/analisisWD_dashboard.jpg'
-import thumbCineflix from '../public/images/works/database.jpg'
-import thumbUserBehaviorPipeline from '../public/images/works/userBehaviorPipeline/pipeline.png'
+import thumbLynix from '../public/images/works/lynix/lynix_run.png'
 import Layout from '../components/layouts/article'
 import { useI18n } from '../lib/i18nContext'
 import { isProjectVisible } from '../lib/works-visibility'
 
 const thumbnailMap = {
-  userBehaviorPipeline: thumbUserBehaviorPipeline,
-  farmaLuren: thumbFarmaLuren,
-  rmap: thumbRmap,
-  cineflix: thumbCineflix,
-  covid: thumbCovid,
-  numzzle: thumbNumzzle,
-  analisisWD: thumbAnalisisWD,
-  webDevfest: thumbWebDevfest,
-  appDevfest: thumbAppDevfest,
-  lexer: thumbLexer
+  lynix: thumbLynix
 }
 
 const Works = () => {
