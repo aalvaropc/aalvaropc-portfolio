@@ -11,7 +11,7 @@ import { Title, WorkImage, Meta } from '../../components/work'
 import { useWorkDetail } from '../../lib/useWorkDetail'
 
 const Work = () => {
-  const { workDetail, loading, error } = useWorkDetail('covid')
+  const { workDetail, loading, error } = useWorkDetail('lynix')
 
   if (loading) return <Layout title="Loading..."><Container>Loading...</Container></Layout>
   if (error) return <Layout title="Error"><Container>Error loading content</Container></Layout>
@@ -28,14 +28,6 @@ const Work = () => {
         </p>
 
         <List ml={4} my={4}>
-          {workDetail.meta.website && (
-            <ListItem>
-              <Meta>Website</Meta>
-              <Link href={workDetail.meta.website}>
-                {workDetail.meta.website} <ExternalLinkIcon mx="2px" />
-              </Link>
-            </ListItem>
-          )}
           <ListItem>
             <Meta>Repositorio</Meta>
             <Link href={workDetail.meta.repository}>
