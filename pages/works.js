@@ -2,12 +2,14 @@ import Section from '../components/section'
 import { WorkGridItem } from '../components/grid-items'
 import ProjectsComingSoon from '../components/projects-coming-soon'
 import thumbLynix from '../public/images/works/lynix/lynix_run.png'
+import thumbOnesqlx from '../public/images/works/onesqlx/onesqlx_editor.png'
 import Layout from '../components/layouts/article'
 import { useI18n } from '../lib/i18nContext'
 import { isProjectVisible } from '../lib/works-visibility'
 
 const thumbnailMap = {
-  lynix: thumbLynix
+  lynix: thumbLynix,
+  onesqlx: thumbOnesqlx
 }
 
 const Works = () => {

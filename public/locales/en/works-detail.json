@@ -1,4 +1,71 @@
 {
+  "onesqlx": {
+    "title": "OneSQLx — SQL-First Analytics Platform",
+    "year": "2026",
+    "description": "OneSQLx is an open source analytics platform built with Elixir and Phoenix LiveView, aimed at teams who would rather write SQL than fight a visual query builder. It connects external PostgreSQL databases with encrypted credentials (AES-256-GCM), syncs the catalog through pg_catalog to power autocomplete, and executes queries with read-only enforced at the session level. On top of that sit saved query collections, dashboards with cross-filtering and public sharing, scheduled reports with alerts, data lineage, an audit trail and a versioned REST API with scoped tokens.",
+    "meta": {
+      "repository": "https://github.com/aalvaropc/onesqlx",
+      "platform": "Web (self-hosted, Docker)",
+      "stack": "Elixir/Phoenix LiveView/PostgreSQL/Oban/Chart.js"
+    },
+    "sections": {
+      "features": {
+        "title": "Features",
+        "items": [
+          {
+            "tech": "Data sources",
+            "description": "Connect external PostgreSQL with encrypted credentials (AES-256-GCM), SSL support and read-only enforced per session"
+          },
+          {
+            "tech": "Catalog Explorer",
+            "description": "Automatic schema, table and column introspection via pg_catalog, synced in the background with Oban"
+          },
+          {
+            "tech": "SQL Editor",
+            "description": "CodeMirror 6 with catalog-driven autocomplete, a guard that blocks writes, named parameters, EXPLAIN ANALYZE and query cancellation"
+          },
+          {
+            "tech": "Dashboards",
+            "description": "KPI, table, bar, line, pie, area and scatter cards with Chart.js, cross-filtering, presentation mode and revocable public links"
+          },
+          {
+            "tech": "Scheduled reports",
+            "description": "5-field cron on top of Oban, conditional alerts on results and notification via email or webhook"
+          },
+          {
+            "tech": "Governance",
+            "description": "Workspaces with roles, dashboard → query → table lineage, audit trail and usage analytics"
+          },
+          {
+            "tech": "REST API",
+            "description": "Versioned under /api/v1 with scoped tokens (read/execute/manage), rate limiting, OpenAPI 3 spec and Swagger UI"
+          }
+        ]
+      },
+      "images": [
+        {
+          "src": "/images/works/onesqlx/onesqlx_editor.png",
+          "alt": "onesqlx-sql-editor",
+          "title": "SQL Editor — catalog-driven autocomplete, results and history with execution times"
+        },
+        {
+          "src": "/images/works/onesqlx/onesqlx_dashboard.png",
+          "alt": "onesqlx-dashboard",
+          "title": "Dashboard — KPIs, time series, channel breakdown and an exportable table"
+        },
+        {
+          "src": "/images/works/onesqlx/onesqlx_catalog.png",
+          "alt": "onesqlx-catalog",
+          "title": "Catalog Explorer — schema, table and column introspection via pg_catalog"
+        },
+        {
+          "src": "/images/works/onesqlx/onesqlx_schedules.png",
+          "alt": "onesqlx-schedules",
+          "title": "Scheduled Queries — recurring runs with email and webhook alerts"
+        }
+      ]
+    }
+  },
   "lynix": {
     "title": "Lynix — API Testing CLI for CI/CD",
     "year": "2026",
