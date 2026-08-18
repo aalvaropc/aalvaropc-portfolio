@@ -1,4 +1,71 @@
 {
+  "onesqlx": {
+    "title": "OneSQLx — Plataforma de Analítica SQL-First",
+    "year": "2026",
+    "description": "OneSQLx es una plataforma de analítica open source construida con Elixir y Phoenix LiveView, pensada para equipos que prefieren escribir SQL antes que pelear con un constructor visual de queries. Conecta bases PostgreSQL externas con credenciales cifradas (AES-256-GCM), sincroniza el catálogo vía pg_catalog para alimentar el autocompletado, y ejecuta consultas forzando modo de solo lectura a nivel de sesión. Sobre esa base se apilan colecciones de queries guardadas, dashboards con cross-filtering y compartición pública, reportes programados con alertas, linaje de datos, bitácora de auditoría y una API REST versionada con tokens por scope.",
+    "meta": {
+      "repository": "https://github.com/aalvaropc/onesqlx",
+      "platform": "Web (self-hosted, Docker)",
+      "stack": "Elixir/Phoenix LiveView/PostgreSQL/Oban/Chart.js"
+    },
+    "sections": {
+      "features": {
+        "title": "Características",
+        "items": [
+          {
+            "tech": "Fuentes de datos",
+            "description": "Conexión a PostgreSQL externo con credenciales cifradas (AES-256-GCM), soporte SSL y solo lectura forzada por sesión"
+          },
+          {
+            "tech": "Catalog Explorer",
+            "description": "Introspección automática de esquemas, tablas y columnas vía pg_catalog, sincronizada en background con Oban"
+          },
+          {
+            "tech": "Editor SQL",
+            "description": "CodeMirror 6 con autocompletado desde el catálogo, guard que bloquea escrituras, parámetros con nombre, EXPLAIN ANALYZE y cancelación de queries"
+          },
+          {
+            "tech": "Dashboards",
+            "description": "Tarjetas KPI, tabla, barra, línea, torta, área y scatter con Chart.js, cross-filtering, modo presentación y enlaces públicos revocables"
+          },
+          {
+            "tech": "Reportes programados",
+            "description": "Cron de 5 campos sobre Oban, alertas condicionales por resultado y notificación vía email o webhook"
+          },
+          {
+            "tech": "Gobernanza",
+            "description": "Workspaces con roles, linaje dashboard → query → tabla, bitácora de auditoría y analítica de uso"
+          },
+          {
+            "tech": "API REST",
+            "description": "Versionada en /api/v1 con tokens por scope (read/execute/manage), rate limiting, spec OpenAPI 3 y Swagger UI"
+          }
+        ]
+      },
+      "images": [
+        {
+          "src": "/images/works/onesqlx/onesqlx_editor.png",
+          "alt": "onesqlx-sql-editor",
+          "title": "Editor SQL — autocompletado desde el catálogo, resultados e historial con tiempos de ejecución"
+        },
+        {
+          "src": "/images/works/onesqlx/onesqlx_dashboard.png",
+          "alt": "onesqlx-dashboard",
+          "title": "Dashboard — KPIs, series de tiempo, distribución por canal y tabla exportable"
+        },
+        {
+          "src": "/images/works/onesqlx/onesqlx_catalog.png",
+          "alt": "onesqlx-catalog",
+          "title": "Catalog Explorer — introspección de esquemas, tablas y columnas vía pg_catalog"
+        },
+        {
+          "src": "/images/works/onesqlx/onesqlx_schedules.png",
+          "alt": "onesqlx-schedules",
+          "title": "Scheduled Queries — ejecución recurrente con alertas por email y webhook"
+        }
+      ]
+    }
+  },
   "lynix": {
     "title": "Lynix — CLI de Testing de APIs para CI/CD",
     "year": "2026",

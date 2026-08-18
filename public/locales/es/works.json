@@ -4,6 +4,22 @@
     "subtitle": "Proyectos destacados",
     "projects": [
       {
+        "id": "onesqlx",
+        "title": "OneSQLx — Plataforma de Analítica SQL-First",
+        "description": "Plataforma de analítica open source en Elixir/Phoenix: conecta bases PostgreSQL, explora el catálogo, corre queries de solo lectura, arma dashboards y automatiza reportes.",
+        "technologies": [
+          "Elixir",
+          "Phoenix LiveView",
+          "PostgreSQL",
+          "Oban",
+          "Chart.js",
+          "Docker"
+        ],
+        "thumbnail": "/images/works/onesqlx/onesqlx_editor.png",
+        "date": "2026-08",
+        "category": "Plataformas de Datos"
+      },
+      {
         "id": "lynix",
         "title": "Lynix — CLI de Testing de APIs para CI/CD",
         "description": "CLI en Go para testing declarativo de APIs en pipelines CI/CD: colecciones YAML, aserciones JSONPath/JSON Schema y reportes JUnit.",

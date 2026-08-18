@@ -4,6 +4,22 @@
     "subtitle": "Featured Projects",
     "projects": [
       {
+        "id": "onesqlx",
+        "title": "OneSQLx — SQL-First Analytics Platform",
+        "description": "Open source analytics platform in Elixir/Phoenix: connect PostgreSQL databases, explore the catalog, run read-only queries, build dashboards and automate reports.",
+        "technologies": [
+          "Elixir",
+          "Phoenix LiveView",
+          "PostgreSQL",
+          "Oban",
+          "Chart.js",
+          "Docker"
+        ],
+        "thumbnail": "/images/works/onesqlx/onesqlx_editor.png",
+        "date": "2026-08",
+        "category": "Data Platforms"
+      },
+      {
         "id": "lynix",
         "title": "Lynix — API Testing CLI for CI/CD",
         "description": "Go CLI for declarative API testing in CI/CD pipelines: YAML collections, JSONPath/JSON Schema assertions and JUnit reports.",
