@@ -1,6 +1,9 @@
 import Section from '../components/section'
 import { WorkGridItem } from '../components/grid-items'
 import ProjectsComingSoon from '../components/projects-coming-soon'
+import thumbUpkeep from '../public/images/works/upkeep/upkeep_dashboard.png'
+import thumbLogiops from '../public/images/works/logiops/logiops_home.png'
+import thumbPusaq from '../public/images/works/pusaq/pusaq_thumb.png'
 import thumbLynix from '../public/images/works/lynix/lynix_run.png'
 import thumbOnesqlx from '../public/images/works/onesqlx/onesqlx_editor.png'
 import Layout from '../components/layouts/article'
@@ -8,6 +11,9 @@ import { useI18n } from '../lib/i18nContext'
 import { isProjectVisible } from '../lib/works-visibility'
 
 const thumbnailMap = {
+  upkeep: thumbUpkeep,
+  'logiops-ai': thumbLogiops,
+  pusaq: thumbPusaq,
   lynix: thumbLynix,
   onesqlx: thumbOnesqlx
 }

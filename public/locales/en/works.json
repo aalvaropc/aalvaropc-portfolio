@@ -4,6 +4,54 @@
     "subtitle": "Featured Projects",
     "projects": [
       {
+        "id": "upkeep",
+        "title": "Upkeep — Agent That Keeps Your Pull Requests Mergeable",
+        "description": "Go agent that works the queue of open PRs, plans the merge order, fixes what a bounded policy allows and proves every fix with the compiler and the tests.",
+        "technologies": [
+          "Go",
+          "Nemotron",
+          "Nebius Token Factory",
+          "Tavily",
+          "Docker",
+          "GitHub Actions"
+        ],
+        "thumbnail": "/images/works/upkeep/upkeep_dashboard.png",
+        "date": "2026-10",
+        "category": "AI Agents"
+      },
+      {
+        "id": "logiops-ai",
+        "title": "LogiOps AI — Operations Desk with an Agent and MCP",
+        "description": "A logistics operations desk you talk to: an agent investigates late shipments over MCP, code prices every plan and you approve with one \"yes\".",
+        "technologies": [
+          "Python",
+          "FastAPI",
+          "Strands Agents",
+          "Amazon Bedrock",
+          "MCP",
+          "OAuth2",
+          "AWS"
+        ],
+        "thumbnail": "/images/works/logiops/logiops_home.png",
+        "date": "2026-10",
+        "category": "AI Agents"
+      },
+      {
+        "id": "pusaq",
+        "title": "Pusaq — Model Gateway with Quotas and Cost Accounting",
+        "description": "OpenAI-compatible Go gateway: alias routing, tenant quotas, provider fallback and per-request cost accounting.",
+        "technologies": [
+          "Go",
+          "Redis",
+          "SSE",
+          "Docker",
+          "k6"
+        ],
+        "thumbnail": "/images/works/pusaq/pusaq_thumb.png",
+        "date": "2026-10",
+        "category": "AI Infrastructure"
+      },
+      {
         "id": "onesqlx",
         "title": "OneSQLx — SQL-First Analytics Platform",
         "description": "Open source analytics platform in Elixir/Phoenix: connect PostgreSQL databases, explore the catalog, run read-only queries, build dashboards and automate reports.",

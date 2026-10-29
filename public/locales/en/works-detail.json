@@ -1,4 +1,198 @@
 {
+  "upkeep": {
+    "title": "Upkeep — Agent That Keeps Your Pull Requests Mergeable",
+    "year": "2026",
+    "description": "Upkeep keeps a repository's pull requests mergeable. It looks at the whole queue of open PRs, plans the order they can merge in, fixes what a bounded policy allows, proves every fix with the compiler and the tests, remembers the fixes that passed and hands the rest back with a diagnosis and a receipt of what each model did and cost. It runs on NVIDIA Nemotron models (Ultra, Super and Nano) served by Nebius Token Factory, reads migration guides found with Tavily and ships as one Go binary with its dashboard built in. On upkeep-sample, a notes service with nine PRs built to show one blocker each, the whole run costs about two cents ($0.0191 against $0.0502 at the largest model's price for the same tokens), and five live runs against the real models ended with all 45 PRs as the scenario expects.",
+    "meta": {
+      "repository": "https://github.com/aalvaropc/upkeep",
+      "platform": "CLI + web dashboard (single binary), GitHub Action",
+      "stack": "Go/NVIDIA Nemotron/Nebius Token Factory/Tavily/Docker"
+    },
+    "sections": {
+      "features": {
+        "title": "Features",
+        "items": [
+          {
+            "tech": "Plan",
+            "description": "Before touching code it finds which PRs change the same files and which would conflict (git merge-tree), and suggests a merge order"
+          },
+          {
+            "tech": "Detect",
+            "description": "Merges the base branch into a scratch copy and runs build, vet and tests in a container without network; the first failure is the blocker"
+          },
+          {
+            "tech": "Forecast",
+            "description": "For dependency upgrades it searches the migration guide with Tavily, predicts what will break and later marks each prediction confirmed or not seen by the build"
+          },
+          {
+            "tech": "Fix",
+            "description": "Merges and formatting are mechanical; small conflicts go to Ultra in one call; broken builds and tests go to Super, with four tools and up to three clean attempts"
+          },
+          {
+            "tech": "Verify",
+            "description": "A checklist outside the model decides: build, vet and tests green, at most 5 files and 80 lines, no test touched, Go only and no new comments"
+          },
+          {
+            "tech": "Learn",
+            "description": "A fix that passed the verifier is reapplied with no model call when the same failure comes back; on the second run the cost dropped from $0.0191 to $0.0055"
+          },
+          {
+            "tech": "Limits in code",
+            "description": "Never force-pushes, never merges a PR opened by a person and never lets a fix edit, delete or skip tests; these are rules in code, not in a prompt"
+          }
+        ]
+      },
+      "images": [
+        {
+          "src": "/images/works/upkeep/upkeep_dashboard.png",
+          "alt": "upkeep-dashboard",
+          "title": "Dashboard after a run: the queue in merge order, the results and the models used"
+        },
+        {
+          "src": "/images/works/upkeep/upkeep_trace.png",
+          "alt": "upkeep-trace",
+          "title": "The live stage following the jwt major upgrade: stages, the forecast with the Tavily search and every Super turn"
+        },
+        {
+          "src": "/images/works/upkeep/upkeep_detail.png",
+          "alt": "upkeep-detail",
+          "title": "A PR's detail: merge confidence, forecast, diff, verifier and receipt"
+        },
+        {
+          "src": "/images/works/upkeep/upkeep_plan.png",
+          "alt": "upkeep-plan",
+          "title": "Results: the planned merge order and PRs grouped by outcome"
+        }
+      ]
+    }
+  },
+  "logiops-ai": {
+    "title": "LogiOps AI — Operations Desk with an Agent and MCP",
+    "year": "2026",
+    "description": "LogiOps AI is an operations desk you talk to, on a simulated Alexa+ device over a real self-hosted MCP server (Streamable HTTP, spec 2025-11-25, with an Agent Skill and MCP Apps). Ask about a late shipment: an agent reads the orders, stock and carrier quotes through MCP tools, code prices every feasible plan and the agent recommends one. You approve with one \"yes\"; the system executes the plan once and verifies the result. Measured on the deployed demo with live Amazon Bedrock: question to grounded recommendation in 12.2 s with 5 MCP calls, for about US$0.04 of Bedrock usage. The design principle: the agent proposes, you approve, code enforces it.",
+    "meta": {
+      "repository": "https://github.com/aalvaropc/logiops-ai",
+      "demo": "https://dir4g4n7eq982.cloudfront.net/demo",
+      "platform": "Web (simulated device + operator console), MCP server, AWS",
+      "stack": "Python/FastAPI/Strands Agents/Amazon Bedrock/MCP/OAuth2"
+    },
+    "sections": {
+      "features": {
+        "title": "Features",
+        "items": [
+          {
+            "tech": "Investigates",
+            "description": "The agent (Strands Agents on Amazon Bedrock) reads the incident through MCP tools; deterministic code calculates every feasible plan and the agent picks one by cost, arrival time and order priority"
+          },
+          {
+            "tech": "Checks itself",
+            "description": "Every answer, the spoken line included, is checked against the incident's data before it is shown"
+          },
+          {
+            "tech": "Waits for a person",
+            "description": "No tool can approve: an approval names the exact plan and data version, and a data change invalidates it and raises a proactive alert"
+          },
+          {
+            "tech": "Executes and books once",
+            "description": "Execution is idempotent and verified; a booking reads its price back and is charged once, with a receipt"
+          },
+          {
+            "tech": "Remembers",
+            "description": "A rule, a spend cap and a note steer the pick through fixed rules, and a signed-in person is welcomed back in the next session"
+          },
+          {
+            "tech": "Two views",
+            "description": "/demo, the simulated Alexa+ device with voice and the plans as an MCP App, and /console, the operator console; both share one backend"
+          }
+        ]
+      },
+      "images": [
+        {
+          "src": "/images/works/logiops/logiops_home.png",
+          "alt": "logiops-home",
+          "title": "Device home: critical units at risk and the open incidents as lanes"
+        },
+        {
+          "src": "/images/works/logiops/logiops_agent.png",
+          "alt": "logiops-agent",
+          "title": "The agent at work: five MCP tool calls on a lit rail"
+        },
+        {
+          "src": "/images/works/logiops/logiops_plans.png",
+          "alt": "logiops-plans",
+          "title": "The plans as an MCP App: every plan placed by delay and cost, the pick highlighted"
+        },
+        {
+          "src": "/images/works/logiops/logiops_confirm.png",
+          "alt": "logiops-confirm",
+          "title": "Confirmation: cost, each order's trail to its promise and Yes or No"
+        },
+        {
+          "src": "/images/works/logiops/logiops_console.png",
+          "alt": "logiops-console",
+          "title": "Operator console: incident queue, route map, plans table and agent rail"
+        }
+      ]
+    }
+  },
+  "pusaq": {
+    "title": "Pusaq — Model Gateway with Quotas and Cost Accounting",
+    "year": "2026",
+    "description": "Pusaq is a Go gateway for an OpenAI-compatible chat-completions subset. Your app points at its endpoint, picks a model alias and Pusaq handles access, limits and provider fallback. Redis holds quotas and monthly spend with atomic operations, configuration is validated at startup and every request emits a JSON cost event. The repository ships reproducible measurement reports with their protocol, environment and limits: limiter exactness, circuit-breaker detection, a 204-row labeled corpus for the content rules and regional failover. The scope is deliberate: no tool calling or structured outputs, and the semantic cache runs in shadow mode, measuring without ever serving responses.",
+    "meta": {
+      "repository": "https://github.com/aalvaropc/pusaq",
+      "platform": "HTTP service (Docker Compose, Redis)",
+      "stack": "Go/Redis/SSE/Docker/k6"
+    },
+    "sections": {
+      "features": {
+        "title": "Features",
+        "items": [
+          {
+            "tech": "Routing",
+            "description": "Configurable aliases (pusaq/fast, pusaq/best, pusaq/auto), feature rules, circuit breakers and provider fallback"
+          },
+          {
+            "tech": "Tenants",
+            "description": "API keys, per-model permissions and monthly spending limits"
+          },
+          {
+            "tech": "Quotas",
+            "description": "Request and token buckets with atomic Redis operations, in strict or leased mode"
+          },
+          {
+            "tech": "Visibility",
+            "description": "Buffered and SSE responses, token usage and JSON cost events with the price-table version"
+          },
+          {
+            "tech": "Policy filter",
+            "description": "Content heuristics and a semantic cache in shadow mode"
+          },
+          {
+            "tech": "Measurements",
+            "description": "Dated reports with protocol and limits, and recipes to reproduce them (make loadtest, make tpmtest, make breakertest)"
+          }
+        ]
+      },
+      "images": [
+        {
+          "src": "/images/works/pusaq/pusaq_request.png",
+          "alt": "pusaq-request",
+          "title": "A request to the pusaq/fast alias: the gateway answers with the served model and the route reason in headers"
+        },
+        {
+          "src": "/images/works/pusaq/pusaq_cost.png",
+          "alt": "pusaq-cost",
+          "title": "The cost event for that request: tokens charged, attempts, provider and cost in USD"
+        },
+        {
+          "src": "/images/works/pusaq/pusaq_quota.png",
+          "alt": "pusaq-quota",
+          "title": "A burst of 60 requests against the local stack: 11 pass and 49 get 429 rate_limited with Retry-After"
+        }
+      ]
+    }
+  },
   "onesqlx": {
     "title": "OneSQLx — SQL-First Analytics Platform",
     "year": "2026",
@@ -51,17 +245,12 @@
         {
           "src": "/images/works/onesqlx/onesqlx_dashboard.png",
           "alt": "onesqlx-dashboard",
-          "title": "Dashboard — KPIs, time series, channel breakdown and an exportable table"
+          "title": "Dashboard — KPI, orders by status, time series, bar chart and recent-orders table"
         },
         {
           "src": "/images/works/onesqlx/onesqlx_catalog.png",
           "alt": "onesqlx-catalog",
           "title": "Catalog Explorer — schema, table and column introspection via pg_catalog"
-        },
-        {
-          "src": "/images/works/onesqlx/onesqlx_schedules.png",
-          "alt": "onesqlx-schedules",
-          "title": "Scheduled Queries — recurring runs with email and webhook alerts"
         }
       ]
     }

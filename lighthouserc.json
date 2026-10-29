@@ -7,6 +7,9 @@
         "http://localhost:3000/posts",
         "http://localhost:3000/works/onesqlx",
         "http://localhost:3000/works/lynix",
+        "http://localhost:3000/works/upkeep",
+        "http://localhost:3000/works/logiops-ai",
+        "http://localhost:3000/works/pusaq",
         "http://localhost:3000/posts/ArqBasadaEventos"
       ],
       "numberOfRuns": 3,

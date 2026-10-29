@@ -4,6 +4,54 @@
     "subtitle": "Proyectos destacados",
     "projects": [
       {
+        "id": "upkeep",
+        "title": "Upkeep — Agente que Deja Mergeables tus Pull Requests",
+        "description": "Agente en Go que revisa la cola de PRs abiertos, planifica el orden de merge, corrige lo que una política acotada permite y demuestra cada fix con el compilador y los tests.",
+        "technologies": [
+          "Go",
+          "Nemotron",
+          "Nebius Token Factory",
+          "Tavily",
+          "Docker",
+          "GitHub Actions"
+        ],
+        "thumbnail": "/images/works/upkeep/upkeep_dashboard.png",
+        "date": "2026-10",
+        "category": "Agentes de IA"
+      },
+      {
+        "id": "logiops-ai",
+        "title": "LogiOps AI — Mesa de Operaciones con Agente y MCP",
+        "description": "Mesa de operaciones logísticas que se maneja hablando: un agente investiga envíos retrasados vía MCP, el código calcula cada plan y tú apruebas con un «sí».",
+        "technologies": [
+          "Python",
+          "FastAPI",
+          "Strands Agents",
+          "Amazon Bedrock",
+          "MCP",
+          "OAuth2",
+          "AWS"
+        ],
+        "thumbnail": "/images/works/logiops/logiops_home.png",
+        "date": "2026-10",
+        "category": "Agentes de IA"
+      },
+      {
+        "id": "pusaq",
+        "title": "Pusaq — Gateway de Modelos con Cuotas y Costos",
+        "description": "Gateway en Go compatible con OpenAI: ruteo por alias, cuotas por tenant, fallback entre proveedores y contabilidad de costos por request.",
+        "technologies": [
+          "Go",
+          "Redis",
+          "SSE",
+          "Docker",
+          "k6"
+        ],
+        "thumbnail": "/images/works/pusaq/pusaq_thumb.png",
+        "date": "2026-10",
+        "category": "Infraestructura de IA"
+      },
+      {
         "id": "onesqlx",
         "title": "OneSQLx — Plataforma de Analítica SQL-First",
         "description": "Plataforma de analítica open source en Elixir/Phoenix: conecta bases PostgreSQL, explora el catálogo, corre queries de solo lectura, arma dashboards y automatiza reportes.",

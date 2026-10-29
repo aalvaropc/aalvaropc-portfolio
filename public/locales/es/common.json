@@ -19,6 +19,12 @@
     "cv": "Curriculum vitae",
     "certificates": "Certificados"
   },
+  "work": {
+    "repository": "Repositorio",
+    "platform": "Plataforma",
+    "demo": "Demo",
+    "stack": "Stack"
+  },
   "hero": {
     "greeting": "¡Hola! Soy Alvaro 👋",
     "title": "Software Engineer",
