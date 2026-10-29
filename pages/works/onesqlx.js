@@ -9,8 +9,10 @@ import Layout from '../../components/layouts/article'
 import { ExternalLinkIcon } from '../../components/content'
 import { Title, WorkImage, Meta } from '../../components/work'
 import { useWorkDetail } from '../../lib/useWorkDetail'
+import { useI18n } from '../../lib/i18nContext'
 
 const Work = () => {
+  const { t } = useI18n()
   const { workDetail, loading, error } = useWorkDetail('onesqlx')
 
   if (loading) return <Layout title="Loading..."><Container>Loading...</Container></Layout>
@@ -29,17 +31,17 @@ const Work = () => {
 
         <List ml={4} my={4}>
           <ListItem>
-            <Meta>Repositorio</Meta>
+            <Meta>{t('work.repository', 'Repositorio')}</Meta>
             <Link href={workDetail.meta.repository}>
               {workDetail.meta.repository} <ExternalLinkIcon mx="2px" />
             </Link>
           </ListItem>
           <ListItem>
-            <Meta>Plataforma</Meta>
+            <Meta>{t('work.platform', 'Plataforma')}</Meta>
             <span>{workDetail.meta.platform}</span>
           </ListItem>
           <ListItem>
-            <Meta>Stack</Meta>
+            <Meta>{t('work.stack', 'Stack')}</Meta>
             <span>{workDetail.meta.stack}</span>
           </ListItem>
         </List>

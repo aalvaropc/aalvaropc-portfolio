@@ -1,20 +1,24 @@
 import NextLink from 'next/link'
 import { ChevronRight } from 'lucide-react'
+import { useI18n } from '../lib/i18nContext'
 
-export const Title = ({ children }) => (
-  <div className="mb-6">
-    <div className="mb-3 flex items-center gap-1 text-sm text-muted-foreground">
-      <NextLink
-        href="/posts"
-        className="transition-colors hover:text-foreground"
-      >
-        Publicaciones
-      </NextLink>
-      <ChevronRight className="h-3.5 w-3.5" />
+export const Title = ({ children }) => {
+  const { t } = useI18n()
+  return (
+    <div className="mb-6">
+      <div className="mb-3 flex items-center gap-1 text-sm text-muted-foreground">
+        <NextLink
+          href="/posts"
+          className="transition-colors hover:text-foreground"
+        >
+          {t('nav.posts', 'Publicaciones')}
+        </NextLink>
+        <ChevronRight className="h-3.5 w-3.5" />
+      </div>
+      <h1 className="text-2xl font-semibold tracking-tight">{children}</h1>
     </div>
-    <h1 className="text-2xl font-semibold tracking-tight">{children}</h1>
-  </div>
-)
+  )
+}
 
 export const PostImage = ({ src, alt }) => (
   // eslint-disable-next-line @next/next/no-img-element

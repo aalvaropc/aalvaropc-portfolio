@@ -11,6 +11,18 @@ import {
   Meta as PostMeta
 } from '../../components/post'
 
+let mockTranslations = {}
+
+jest.mock('../../lib/i18nContext', () => ({
+  useI18n: () => ({
+    t: (key, fallback) => mockTranslations[key] || fallback || key
+  })
+}))
+
+afterEach(() => {
+  mockTranslations = {}
+})
+
 describe('Work components', () => {
   it('Title shows a breadcrumb to /works and the heading', () => {
     render(<WorkTitle>My Project</WorkTitle>)
@@ -21,6 +33,16 @@ describe('Work components', () => {
     expect(
       screen.getByRole('heading', { name: 'My Project' })
     ).toBeInTheDocument()
+  })
+
+  it('Title translates the breadcrumb when the locale is English', () => {
+    mockTranslations = { 'nav.projects': 'Projects' }
+    render(<WorkTitle>My Project</WorkTitle>)
+    expect(screen.getByRole('link', { name: 'Projects' })).toHaveAttribute(
+      'href',
+      '/works'
+    )
+    expect(screen.queryByText('Proyectos')).not.toBeInTheDocument()
   })
 
   it('WorkImage renders an <img>', () => {
@@ -44,6 +66,16 @@ describe('Post components', () => {
       '/posts'
     )
     expect(screen.getByRole('heading', { name: 'My Post' })).toBeInTheDocument()
+  })
+
+  it('Title translates the breadcrumb when the locale is English', () => {
+    mockTranslations = { 'nav.posts': 'Posts' }
+    render(<PostTitle>My Post</PostTitle>)
+    expect(screen.getByRole('link', { name: 'Posts' })).toHaveAttribute(
+      'href',
+      '/posts'
+    )
+    expect(screen.queryByText('Publicaciones')).not.toBeInTheDocument()
   })
 
   it('PostImage renders an <img>', () => {
